@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+							android:orientation="vertical"
+							android:layout_width="match_parent"
+							android:layout_height="match_parent">
+
+	<ImageView
+		android:id="@+id/ivTitleLogin"
+		android:background="@drawable/getpluskotak"
+		android:scaleType="fitCenter"
+		android:layout_alignParentTop="true"
+		android:layout_centerHorizontal="true"
+		android:layout_height="128dp"
+		android:layout_width="128dp"/>
+
+	<LinearLayout
+		android:id="@+id/llPoinBalance"
+		android:background="@android:color/white"
+		android:orientation="vertical"
+		android:layout_width="match_parent"
+		android:layout_below="@id/ivTitleLogin"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="10dp">
+
+		<TextView
+			android:id="@+id/tvPoinBalance"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:textSize="20sp"
+			android:text="@string/strPointsBalance"/>
+
+		<TextView
+			android:id="@+id/tvTransaksiID"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="10dp"
+			android:textSize="20sp"
+			android:text="@string/strTransactionID"/>
+	</LinearLayout>
+
+	<Button
+		android:id="@+id/btnInformasi"
+		android:orientation="vertical"
+		android:layout_width="match_parent"
+		android:layout_below="@id/llPoinBalance"
+		android:layout_height="wrap_content"
+		android:text="OK"
+		android:textSize="22sp"
+		android:layout_marginTop="30dp"
+		android:layout_marginBottom="10dp"
+		android:layout_marginLeft="36dip"
+		android:layout_marginRight="36dip"/>
+
+</RelativeLayout>

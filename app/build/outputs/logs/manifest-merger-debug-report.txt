@@ -1,0 +1,314 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:2:1-54:12
+INJECTED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:2:1-54:12
+INJECTED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:2:1-54:12
+INJECTED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:2:1-54:12
+MERGED from [com.android.support:multidex:1.0.2] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\6e8db3918a5fb0895cf288e408f21ec1\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:design:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\356c63471e8b4e45ffb037f3a1dcf208\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\b58dd380878154e4b9735af6c34231c6\AndroidManifest.xml:17:1-22:12
+MERGED from [com.journeyapps:zxing-android-embedded:3.5.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.5.0.aar\cacebda5a695a20a30b272c5b6b02f19\AndroidManifest.xml:17:1-55:12
+MERGED from [com.android.support:support-v4:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\support-v4-28.0.0.aar\8d7eafed5bc62028a7aeb08d41155cff\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\9d651e65c6586194c5205a7cb958f584\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.volley:volley:1.1.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\volley-1.1.0.aar\4fc4c8e8835726d809e0fc87d351eda9\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\113e400e5cbb45190365c28bb312681c\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\ffe171c17a90bd4fb637106bb93b5eff\AndroidManifest.xml:17:1-22:12
+MERGED from [com.jakewharton:butterknife:8.5.1] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\butterknife-8.5.1.aar\3c6072bc9a65b62c430b1961c067197b\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\constraintlayout-1.1.3.aar\a56cdd7437e38a6b2ace150f7f0b54c1\AndroidManifest.xml:2:1-11:12
+MERGED from [io.reactivex:rxandroid:1.2.1] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\rxandroid-1.2.1.aar\fa8f7274b50b4ee3af1d41926692b24f\AndroidManifest.xml:15:1-21:12
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\8176de10f2707cb30fc55551a4d4c650\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\9c19590e176ffb3f84e8bd707dae0414\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\e272c1a8b44a0879e1850db89a62a507\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\98812a948de4283d4a394918b3c4c5aa\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\6ef39bc56cf744f206f5c566d01390e5\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\c3c969596ac6126039bb8d123ec2dc2a\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:loader:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\256a25b9f7e04e6067450808fe3ec4eb\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\bba7722aee82a8d69f31346c6e005e8e\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\5990a22c91ed7bc02ec5f57480932e1b\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\f590d28ed012547b555a71e73f097dcc\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\93ed110b9cd742db7cfa6a8076f8a21c\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customview:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\40a0319b03b14fd3204afa0a503799c9\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\96eb138b363fe5696404d024686a6bba\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\d9aecaebef5af23ef696dc263b133fab\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\support-media-compat-28.0.0.aar\6b62c76956d779ad3c6683bc18d7a5d1\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\f8b28e0beb0714ca330a8d657396dee8\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\30020705a5f6b366a86f9fa6a3b590f3\AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\1cad4a2d5bea243f54b80dcb93d4a1b0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\bf01c80442c953753545e7a88cb66cc4\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\153e09060118f44f817b573ce4b5e102\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:print:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\b2de7562a361ff1896dbf99b63a7b120\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\8aa609b9da2ed92550d136b1f9b8500b\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\5e9a57243b1d9ac7e47f0f126e930f90\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\48aa7e6bdd9f08dd3978953db79485ed\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\0cd8c06a49a77ea4db831bfb6fa0c1e7\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\419f63ef58afa507a845030314993a1c\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\bf76d4136bd28bfb083fb72a09bd24b2\AndroidManifest.xml:17:1-22:12
+INJECTED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:2:1-54:12
+INJECTED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:2:1-54:12
+INJECTED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:2:1-54:12
+	package
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:3:5-38
+		INJECTED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:2:1-54:12
+		INJECTED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:2:1-54:12
+		INJECTED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.CAMERA
+ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:5:5-64
+MERGED from [com.journeyapps:zxing-android-embedded:3.5.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.5.0.aar\cacebda5a695a20a30b272c5b6b02f19\AndroidManifest.xml:21:5-65
+MERGED from [com.journeyapps:zxing-android-embedded:3.5.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.5.0.aar\cacebda5a695a20a30b272c5b6b02f19\AndroidManifest.xml:21:5-65
+	android:name
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:5:22-62
+uses-permission#android.permission.INTERNET
+ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:6:5-66
+	android:name
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:6:22-64
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:7:5-74
+	android:name
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:7:22-72
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:8:5-78
+	android:name
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:8:22-76
+uses-permission#android.permission.VIBRATE
+ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:9:5-65
+	android:name
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:9:22-63
+application
+ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:11:5-52:19
+MERGED from [com.android.support:design:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\356c63471e8b4e45ffb037f3a1dcf208\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\356c63471e8b4e45ffb037f3a1dcf208\AndroidManifest.xml:22:5-20
+MERGED from [com.journeyapps:zxing-android-embedded:3.5.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.5.0.aar\cacebda5a695a20a30b272c5b6b02f19\AndroidManifest.xml:45:5-53:19
+MERGED from [com.journeyapps:zxing-android-embedded:3.5.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.5.0.aar\cacebda5a695a20a30b272c5b6b02f19\AndroidManifest.xml:45:5-53:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\9d651e65c6586194c5205a7cb958f584\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\9d651e65c6586194c5205a7cb958f584\AndroidManifest.xml:9:5-20
+MERGED from [com.android.volley:volley:1.1.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\volley-1.1.0.aar\4fc4c8e8835726d809e0fc87d351eda9\AndroidManifest.xml:9:5-20
+MERGED from [com.android.volley:volley:1.1.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\volley-1.1.0.aar\4fc4c8e8835726d809e0fc87d351eda9\AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\constraintlayout-1.1.3.aar\a56cdd7437e38a6b2ace150f7f0b54c1\AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\constraintlayout-1.1.3.aar\a56cdd7437e38a6b2ace150f7f0b54c1\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\f8b28e0beb0714ca330a8d657396dee8\AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\f8b28e0beb0714ca330a8d657396dee8\AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\30020705a5f6b366a86f9fa6a3b590f3\AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\30020705a5f6b366a86f9fa6a3b590f3\AndroidManifest.xml:22:5-23:19
+	android:appComponentFactory
+		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\f8b28e0beb0714ca330a8d657396dee8\AndroidManifest.xml:22:18-91
+	android:supportsRtl
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:16:9-35
+	android:label
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:14:9-41
+	android:roundIcon
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:15:9-54
+	android:icon
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:13:9-43
+	android:allowBackup
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:12:9-35
+	android:theme
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:17:9-40
+activity#id.mygetplus.getpluspos.MainDecider
+ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:18:9-19:20
+	android:name
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:18:19-46
+activity#id.mygetplus.getpluspos.ScrollingActivity
+ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:21:9-24:59
+	android:label
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:23:13-45
+	android:theme
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:24:13-56
+	android:name
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:22:13-46
+activity#id.mygetplus.getpluspos.CashierHome
+ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:25:9-28:58
+	android:label
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:27:13-64
+	android:theme
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:28:13-56
+	android:name
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:26:13-40
+activity#id.mygetplus.getpluspos.BillActivity
+ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:29:9-50
+	android:name
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:29:19-47
+activity#id.mygetplus.getpluspos.setIP
+ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:30:9-52
+	android:name
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:30:19-40
+activity#id.mygetplus.getpluspos.ScanQR
+ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:31:9-34:20
+	android:theme
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:33:13-56
+	android:name
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:32:13-35
+activity#id.mygetplus.getpluspos.Confirm
+ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:35:9-39:20
+	android:label
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:37:11-52
+	android:theme
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:38:11-54
+	android:name
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:36:11-34
+activity#id.mygetplus.getpluspos.mvp.login.view.LoginActivity
+ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:44:9-51:20
+	android:theme
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:46:13-56
+	android:name
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:45:13-57
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:47:13-50:29
+action#android.intent.action.MAIN
+ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:48:17-69
+	android:name
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:48:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:49:17-77
+	android:name
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:49:27-74
+uses-sdk
+INJECTED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml
+INJECTED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:multidex:1.0.2] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\6e8db3918a5fb0895cf288e408f21ec1\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:multidex:1.0.2] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\6e8db3918a5fb0895cf288e408f21ec1\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:design:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\356c63471e8b4e45ffb037f3a1dcf208\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\356c63471e8b4e45ffb037f3a1dcf208\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\b58dd380878154e4b9735af6c34231c6\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\b58dd380878154e4b9735af6c34231c6\AndroidManifest.xml:20:5-44
+MERGED from [com.journeyapps:zxing-android-embedded:3.5.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.5.0.aar\cacebda5a695a20a30b272c5b6b02f19\AndroidManifest.xml:19:5-43
+MERGED from [com.journeyapps:zxing-android-embedded:3.5.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.5.0.aar\cacebda5a695a20a30b272c5b6b02f19\AndroidManifest.xml:19:5-43
+MERGED from [com.android.support:support-v4:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\support-v4-28.0.0.aar\8d7eafed5bc62028a7aeb08d41155cff\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\support-v4-28.0.0.aar\8d7eafed5bc62028a7aeb08d41155cff\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\9d651e65c6586194c5205a7cb958f584\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\9d651e65c6586194c5205a7cb958f584\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.volley:volley:1.1.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\volley-1.1.0.aar\4fc4c8e8835726d809e0fc87d351eda9\AndroidManifest.xml:7:5-43
+MERGED from [com.android.volley:volley:1.1.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\volley-1.1.0.aar\4fc4c8e8835726d809e0fc87d351eda9\AndroidManifest.xml:7:5-43
+MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\113e400e5cbb45190365c28bb312681c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\113e400e5cbb45190365c28bb312681c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\ffe171c17a90bd4fb637106bb93b5eff\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\ffe171c17a90bd4fb637106bb93b5eff\AndroidManifest.xml:20:5-44
+MERGED from [com.jakewharton:butterknife:8.5.1] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\butterknife-8.5.1.aar\3c6072bc9a65b62c430b1961c067197b\AndroidManifest.xml:5:5-43
+MERGED from [com.jakewharton:butterknife:8.5.1] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\butterknife-8.5.1.aar\3c6072bc9a65b62c430b1961c067197b\AndroidManifest.xml:5:5-43
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\constraintlayout-1.1.3.aar\a56cdd7437e38a6b2ace150f7f0b54c1\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\constraintlayout-1.1.3.aar\a56cdd7437e38a6b2ace150f7f0b54c1\AndroidManifest.xml:5:5-7:41
+MERGED from [io.reactivex:rxandroid:1.2.1] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\rxandroid-1.2.1.aar\fa8f7274b50b4ee3af1d41926692b24f\AndroidManifest.xml:19:5-43
+MERGED from [io.reactivex:rxandroid:1.2.1] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\rxandroid-1.2.1.aar\fa8f7274b50b4ee3af1d41926692b24f\AndroidManifest.xml:19:5-43
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\8176de10f2707cb30fc55551a4d4c650\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\8176de10f2707cb30fc55551a4d4c650\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\9c19590e176ffb3f84e8bd707dae0414\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\9c19590e176ffb3f84e8bd707dae0414\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\e272c1a8b44a0879e1850db89a62a507\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\e272c1a8b44a0879e1850db89a62a507\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\98812a948de4283d4a394918b3c4c5aa\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\98812a948de4283d4a394918b3c4c5aa\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\6ef39bc56cf744f206f5c566d01390e5\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\6ef39bc56cf744f206f5c566d01390e5\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\c3c969596ac6126039bb8d123ec2dc2a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\c3c969596ac6126039bb8d123ec2dc2a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\256a25b9f7e04e6067450808fe3ec4eb\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\256a25b9f7e04e6067450808fe3ec4eb\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\bba7722aee82a8d69f31346c6e005e8e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\bba7722aee82a8d69f31346c6e005e8e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\5990a22c91ed7bc02ec5f57480932e1b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\5990a22c91ed7bc02ec5f57480932e1b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\f590d28ed012547b555a71e73f097dcc\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\f590d28ed012547b555a71e73f097dcc\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\93ed110b9cd742db7cfa6a8076f8a21c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\93ed110b9cd742db7cfa6a8076f8a21c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\40a0319b03b14fd3204afa0a503799c9\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\40a0319b03b14fd3204afa0a503799c9\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\96eb138b363fe5696404d024686a6bba\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\96eb138b363fe5696404d024686a6bba\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\d9aecaebef5af23ef696dc263b133fab\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\d9aecaebef5af23ef696dc263b133fab\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\support-media-compat-28.0.0.aar\6b62c76956d779ad3c6683bc18d7a5d1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\support-media-compat-28.0.0.aar\6b62c76956d779ad3c6683bc18d7a5d1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\f8b28e0beb0714ca330a8d657396dee8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\f8b28e0beb0714ca330a8d657396dee8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\30020705a5f6b366a86f9fa6a3b590f3\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\30020705a5f6b366a86f9fa6a3b590f3\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\1cad4a2d5bea243f54b80dcb93d4a1b0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\1cad4a2d5bea243f54b80dcb93d4a1b0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\bf01c80442c953753545e7a88cb66cc4\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\bf01c80442c953753545e7a88cb66cc4\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\153e09060118f44f817b573ce4b5e102\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\153e09060118f44f817b573ce4b5e102\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\b2de7562a361ff1896dbf99b63a7b120\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\b2de7562a361ff1896dbf99b63a7b120\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\8aa609b9da2ed92550d136b1f9b8500b\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\8aa609b9da2ed92550d136b1f9b8500b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\5e9a57243b1d9ac7e47f0f126e930f90\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\5e9a57243b1d9ac7e47f0f126e930f90\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\48aa7e6bdd9f08dd3978953db79485ed\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\48aa7e6bdd9f08dd3978953db79485ed\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\0cd8c06a49a77ea4db831bfb6fa0c1e7\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\0cd8c06a49a77ea4db831bfb6fa0c1e7\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\419f63ef58afa507a845030314993a1c\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\419f63ef58afa507a845030314993a1c\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\bf76d4136bd28bfb083fb72a09bd24b2\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\bf76d4136bd28bfb083fb72a09bd24b2\AndroidManifest.xml:20:5-44
+INJECTED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml
+INJECTED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml
+uses-feature#android.hardware.camera
+ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.5.0.aar\cacebda5a695a20a30b272c5b6b02f19\AndroidManifest.xml:24:5-26:36
+	android:required
+		ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.5.0.aar\cacebda5a695a20a30b272c5b6b02f19\AndroidManifest.xml:26:9-33
+	android:name
+		ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.5.0.aar\cacebda5a695a20a30b272c5b6b02f19\AndroidManifest.xml:25:9-47
+uses-feature#android.hardware.camera.front
+ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.5.0.aar\cacebda5a695a20a30b272c5b6b02f19\AndroidManifest.xml:27:5-29:36
+	android:required
+		ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.5.0.aar\cacebda5a695a20a30b272c5b6b02f19\AndroidManifest.xml:29:9-33
+	android:name
+		ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.5.0.aar\cacebda5a695a20a30b272c5b6b02f19\AndroidManifest.xml:28:9-53
+uses-feature#android.hardware.camera.autofocus
+ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.5.0.aar\cacebda5a695a20a30b272c5b6b02f19\AndroidManifest.xml:32:5-34:36
+	android:required
+		ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.5.0.aar\cacebda5a695a20a30b272c5b6b02f19\AndroidManifest.xml:34:9-33
+	android:name
+		ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.5.0.aar\cacebda5a695a20a30b272c5b6b02f19\AndroidManifest.xml:33:9-57
+uses-feature#android.hardware.camera.flash
+ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.5.0.aar\cacebda5a695a20a30b272c5b6b02f19\AndroidManifest.xml:35:5-37:36
+	android:required
+		ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.5.0.aar\cacebda5a695a20a30b272c5b6b02f19\AndroidManifest.xml:37:9-33
+	android:name
+		ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.5.0.aar\cacebda5a695a20a30b272c5b6b02f19\AndroidManifest.xml:36:9-53
+uses-feature#android.hardware.screen.landscape
+ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.5.0.aar\cacebda5a695a20a30b272c5b6b02f19\AndroidManifest.xml:38:5-40:36
+	android:required
+		ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.5.0.aar\cacebda5a695a20a30b272c5b6b02f19\AndroidManifest.xml:40:9-33
+	android:name
+		ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.5.0.aar\cacebda5a695a20a30b272c5b6b02f19\AndroidManifest.xml:39:9-57
+uses-feature#android.hardware.wifi
+ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.5.0.aar\cacebda5a695a20a30b272c5b6b02f19\AndroidManifest.xml:41:5-43:36
+	android:required
+		ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.5.0.aar\cacebda5a695a20a30b272c5b6b02f19\AndroidManifest.xml:43:9-33
+	android:name
+		ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.5.0.aar\cacebda5a695a20a30b272c5b6b02f19\AndroidManifest.xml:42:9-45
+activity#com.journeyapps.barcodescanner.CaptureActivity
+ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.5.0.aar\cacebda5a695a20a30b272c5b6b02f19\AndroidManifest.xml:46:9-52:63
+	android:screenOrientation
+		ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.5.0.aar\cacebda5a695a20a30b272c5b6b02f19\AndroidManifest.xml:49:13-56
+	android:clearTaskOnLaunch
+		ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.5.0.aar\cacebda5a695a20a30b272c5b6b02f19\AndroidManifest.xml:48:13-45
+	android:stateNotNeeded
+		ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.5.0.aar\cacebda5a695a20a30b272c5b6b02f19\AndroidManifest.xml:50:13-42
+	android:windowSoftInputMode
+		ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.5.0.aar\cacebda5a695a20a30b272c5b6b02f19\AndroidManifest.xml:52:13-60
+	android:theme
+		ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.5.0.aar\cacebda5a695a20a30b272c5b6b02f19\AndroidManifest.xml:51:13-54
+	android:name
+		ADDED from [com.journeyapps:zxing-android-embedded:3.5.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.5.0.aar\cacebda5a695a20a30b272c5b6b02f19\AndroidManifest.xml:47:13-74

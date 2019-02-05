@@ -1,0 +1,4 @@
+#Wed Feb 06 00:02:19 ICT 2019
+base.0=D\:\\Babar\\coding\\pribadi\\GetPlusIos\\GetPlusPOS\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\10
+path.0=classes.dex
+renamed.0=classes.dex

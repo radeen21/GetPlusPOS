@@ -1,0 +1,156 @@
+package id.mygetplus.getpluspos;
+
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.RadioButton;
+import android.widget.TextView;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Random;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
+public class Confirm extends AppCompatActivity
+{
+    @BindView(R.id.confirmtoolbar)
+    Toolbar confirmtoolbar;
+    @BindView(R.id.tvConfirmDate)
+    TextView tvConfirmDate;
+    @BindView(R.id.tvConfirmTime)
+    TextView tvConfirmTime;
+		@BindView(R.id.tvConfirmRef)
+		TextView tvConfirmRef;
+    @BindView(R.id.tvIsiTotal)
+    TextView tvIsiTotal;
+    @BindView(R.id.tvIsiBayar)
+    TextView tvIsiBayar;
+    @BindView(R.id.tvIsiTipe)
+    TextView tvIsiTipe;
+    @BindView(R.id.tvDetailBrand)
+    TextView tvDetailBrand;
+    @BindView(R.id.tvConfirmInvoice)
+    TextView tvConfirmInvoice;
+    @BindView(R.id.tvMerchantName)
+    TextView tvMerchantName;
+
+    @BindView(R.id.rbConfirmCash)
+    RadioButton rbConfirmCash;  // 0
+    @BindView(R.id.rbConfirmElectronic)
+    RadioButton rbConfirmElectronic;    // 1
+    @BindView(R.id.rbConfirmPoin)
+    RadioButton rbConfirmPoin;  // 2
+    @BindView(R.id.rbConfirmVoucher)
+    RadioButton rbConfirmVoucher;   // 3
+
+    private PopupMessege popupMessege = new PopupMessege();
+    private Context context = this;
+    private Activity activity = this;
+
+    private String TAG = "[Confirmation]";
+    Calendar c = Calendar.getInstance();
+    private String[] strNumber;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.confirm_lay);
+        ButterKnife.bind(this);
+
+        setSupportActionBar(confirmtoolbar);
+        SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        String formattedDate = df.format(c.getTime());
+
+        AValue aValue = Fungsi.getObjectFromSharedPref(context, AValue.class, Preference.PrefMerchantInfo);
+        tvMerchantName.setText(aValue.getBAccountOwnerDisplayValue());
+
+        // Now formattedDate have current date/time
+        tvConfirmDate.setText(getString(R.string.strConfirmDate, " " + Fungsi.getDate(formattedDate)));
+        tvConfirmTime.setText(getString(R.string.strConfirmTime, " " + Fungsi.getTime(formattedDate)));
+
+	      strNumber = Fungsi.getStringFromSharedPref(context, Preference.PrefScanQR).split("#");
+
+	      if(strNumber[0].matches("Number"))
+          tvConfirmRef.setText(getString(R.string.strConfirmRef, " 00000000"));
+	      else
+		      tvConfirmRef.setText(getString(R.string.strConfirmRef, " " + strNumber[0]));
+
+        Random random = new Random();
+        tvIsiTotal.setText(getString(R.string.strConfirmNilai, " 0"));
+        tvIsiBayar.setText(getString(R.string.strConfirmNilai, " 0"));
+        tvIsiTipe.setText("Cash");
+        tvConfirmInvoice.setText(getString(R.string.strConfirmInvoice, String.valueOf(random.nextInt(10000000) + 1)));
+
+	      Bundle extras = getIntent().getExtras();
+        if(extras != null)
+        {
+            tvIsiTotal.setText(getString(R.string.strConfirmNilai, " " + Fungsi.FormatDesimal(extras.getInt("Confirm_Total"))));
+            tvIsiBayar.setText(getString(R.string.strConfirmNilai, " " + Fungsi.FormatDesimal(extras.getInt("Confirm_Total"))));
+            tvDetailBrand.setText(extras.getString("Confirm_Brand"));
+        }
+    }
+
+    @OnClick({R.id.rbConfirmCash, R.id.rbConfirmElectronic, R.id.rbConfirmPoin, R.id.rbConfirmVoucher})
+    public void onViewClicked(View view)
+    {
+        switch(view.getId())
+        {
+            case R.id.rbConfirmCash:
+                initPilihPayment(0);
+            break;
+            case R.id.rbConfirmElectronic:
+                initPilihPayment(1);
+            break;
+            case R.id.rbConfirmPoin:
+                initPilihPayment(2);
+            break;
+            case R.id.rbConfirmVoucher:
+                initPilihPayment(3);
+            break;
+        }
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        Intent mainIntent = new Intent(Confirm.this, CashierHome.class);
+        startActivity(mainIntent);
+        finish();
+    }
+
+    private void initPilihPayment(int index)
+    {
+      rbConfirmCash.setChecked(false);
+      rbConfirmElectronic.setChecked(false);
+      rbConfirmPoin.setChecked(false);
+      rbConfirmVoucher.setChecked(false);
+
+      switch(index)
+      {
+        case 0:
+          rbConfirmCash.setChecked(true);
+          tvIsiTipe.setText(getString(R.string.strConfirmCash));
+        break;
+        case 1:
+          rbConfirmElectronic.setChecked(true);
+          tvIsiTipe.setText(getString(R.string.strConfirmElectronic));
+        break;
+        case 2:
+          rbConfirmPoin.setChecked(true);
+          tvIsiTipe.setText(getString(R.string.strConfirmPoin));
+        break;
+        case 3:
+          rbConfirmVoucher.setChecked(true);
+          tvIsiTipe.setText(getString(R.string.strConfirmVoucher));
+        break;
+      }
+    }
+}

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="id.mygetplus.getpluspos.CashierHome"
+    tools:showIn="@layout/app_bar_cashier_home"
+    android:background="@color/pureWhite">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="128dp"
+        android:background="@color/colorPrimary"
+        android:paddingBottom="8.4dp">
+
+        <ImageView
+          android:id="@+id/ivMerchant"
+          android:layout_marginTop="8dp"
+          android:layout_marginEnd="10dp"
+          app:layout_constraintTop_toTopOf="@id/cl_toolbar"
+          android:layout_width="128dp"
+          android:layout_height="match_parent"
+          android:scaleType="fitXY"
+          app:layout_constraintRight_toRightOf="@id/cl_toolbar"
+          app:srcCompat="@drawable/ic_plus_blue_homescreen"/>
+
+        <ImageView
+            android:id="@+id/img_profile"
+            android:layout_width="52.5dp"
+            android:layout_height="52.5dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="13dp"
+            app:layout_constraintTop_toTopOf="@id/cl_toolbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/ignat"
+            tools:layout_editor_absoluteY="78dp" />
+
+        <TextView
+            android:id="@+id/tv_welcome_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Merchant, "
+            android:textColor="@color/pureWhite"
+            app:layout_constraintTop_toTopOf="@id/cl_toolbar"
+            app:layout_constraintLeft_toRightOf="@id/img_profile"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="8dp"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/pureWhite"
+            android:textSize="16sp"
+            app:layout_constraintTop_toTopOf="@id/tv_welcome_back"
+            app:layout_constraintLeft_toRightOf="@id/img_profile"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="8dp"
+            android:text="Agustinus Ignat Deswanto"/>
+
+        <TextView
+            android:id="@+id/tv_your_points"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Nomor anggota"
+            android:textColor="@color/pureWhite"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@+id/img_profile"
+            app:layout_constraintTop_toBottomOf="@+id/img_profile" />
+
+        <TextView
+            android:id="@+id/your_points"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="1234567890 / 215760"
+            android:textColor="@color/pureBlack"
+            android:textSize="14sp"
+            android:inputType="number"
+            app:layout_constraintStart_toStartOf="@+id/tv_your_points"
+            app:layout_constraintTop_toBottomOf="@+id/tv_your_points"/>
+
+        <EditText
+          android:id="@+id/et_your_number"
+          android:layout_width="wrap_content"
+          android:layout_height="35dp"
+          android:hint="Masukan nomor customer"
+          android:textColor="@color/pureBlack"
+          android:textSize="12sp"
+          android:text=""
+          android:inputType="number"
+          app:layout_constraintStart_toStartOf="@+id/tv_your_points"
+          app:layout_constraintTop_toBottomOf="@+id/tv_your_points"
+          android:visibility="gone"
+          android:imeOptions="actionDone"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_below="@id/cl_toolbar">
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/rv"/>
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+</RelativeLayout>

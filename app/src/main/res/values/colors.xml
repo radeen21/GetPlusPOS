@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="tableFree">#2196F3</color>
+    <color name="tableBusy">#F44336</color>
+    <color name="tableWait">#FFC107</color>
+    <color name="normalBack">#EEEEEE</color>
+    <color name="pureWhite">#fff</color>
+    <color name="pureBlack">#000</color>
+
+    <color name="scanQR_trans">#cc5d5d5d</color>
+    <color name="scanQR_frame">#803F51B5</color>
+    <color name="GrayUserInputHint">#86888a</color>
+</resources>

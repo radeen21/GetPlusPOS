@@ -14,7 +14,7 @@ import java.lang.Override;
 public class ppInformasi_ViewBinding implements Unbinder {
   private ppInformasi target;
 
-  private View view2131230765;
+  private View view2131230762;
 
   @UiThread
   public ppInformasi_ViewBinding(ppInformasi target) {
@@ -29,7 +29,7 @@ public class ppInformasi_ViewBinding implements Unbinder {
     target.tvPoinBalance = Utils.findRequiredViewAsType(source, R.id.tvPoinBalance, "field 'tvPoinBalance'", TextView.class);
     target.tvTransaksiID = Utils.findRequiredViewAsType(source, R.id.tvTransaksiID, "field 'tvTransaksiID'", TextView.class);
     view = Utils.findRequiredView(source, R.id.btnInformasi, "method 'onViewClicked'");
-    view2131230765 = view;
+    view2131230762 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -48,7 +48,7 @@ public class ppInformasi_ViewBinding implements Unbinder {
     target.tvPoinBalance = null;
     target.tvTransaksiID = null;
 
-    view2131230765.setOnClickListener(null);
-    view2131230765 = null;
+    view2131230762.setOnClickListener(null);
+    view2131230762 = null;
   }
 }

@@ -72,6 +72,14 @@
         <!-- android:theme="@style/AppTheme.NoActionBar"> -->
         <!-- </activity> -->
         <activity
+            android:name="id.mygetplus.getpluspos.mvp.main.HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name="id.mygetplus.getpluspos.mvp.cekpoint.CekPointActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
             android:name="id.mygetplus.getpluspos.mvp.login.view.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>

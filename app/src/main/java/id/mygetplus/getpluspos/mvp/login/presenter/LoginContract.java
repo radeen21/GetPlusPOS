@@ -1,8 +1,10 @@
 package id.mygetplus.getpluspos.mvp.login.presenter;
 
-import id.mygetplus.getpluspos.FixValue;
+import id.mygetplus.getpluspos.AValue;
 import id.mygetplus.getpluspos.POSLink;
+import id.mygetplus.getpluspos.ResponsePojo;
 import id.mygetplus.getpluspos.base.IBaseViewPresenter;
+import id.mygetplus.getpluspos.mvp.login.model.UserData;
 
 public interface LoginContract {
 
@@ -11,6 +13,6 @@ public interface LoginContract {
     }
 
     interface View {
-        void setLoginView();
+        void setLogin(UserData userData);
     }
 }

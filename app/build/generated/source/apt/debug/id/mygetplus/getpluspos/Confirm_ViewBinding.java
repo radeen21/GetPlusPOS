@@ -18,27 +18,27 @@ import java.lang.Override;
 public class Confirm_ViewBinding implements Unbinder {
   private Confirm target;
 
-  private View view2131231018;
+  private View view2131231014;
 
-  private View view2131230916;
+  private View view2131230912;
 
-  private View view2131230917;
+  private View view2131230913;
 
-  private View view2131230918;
-
-  private View view2131230919;
+  private View view2131230914;
 
   private View view2131230915;
 
-  private View view2131230854;
+  private View view2131230911;
 
-  private View view2131230852;
+  private View view2131230850;
 
-  private View view2131230764;
+  private View view2131230848;
 
-  private View view2131230851;
+  private View view2131230761;
 
-  private View view2131230853;
+  private View view2131230847;
+
+  private View view2131230849;
 
   @UiThread
   public Confirm_ViewBinding(Confirm target) {
@@ -60,7 +60,7 @@ public class Confirm_ViewBinding implements Unbinder {
     target.tvDetailBrand = Utils.findRequiredViewAsType(source, R.id.tvDetailBrand, "field 'tvDetailBrand'", TextView.class);
     view = Utils.findRequiredView(source, R.id.tvConfirmInvoice, "field 'tvConfirmInvoice' and method 'onViewClicked'");
     target.tvConfirmInvoice = Utils.castView(view, R.id.tvConfirmInvoice, "field 'tvConfirmInvoice'", TextView.class);
-    view2131231018 = view;
+    view2131231014 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -77,7 +77,7 @@ public class Confirm_ViewBinding implements Unbinder {
     target.llConfirmAdjust = Utils.findRequiredViewAsType(source, R.id.llConfirmAdjust, "field 'llConfirmAdjust'", LinearLayout.class);
     view = Utils.findRequiredView(source, R.id.rbConfirmCash, "field 'rbConfirmCash' and method 'onViewClicked'");
     target.rbConfirmCash = Utils.castView(view, R.id.rbConfirmCash, "field 'rbConfirmCash'", RadioButton.class);
-    view2131230916 = view;
+    view2131230912 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -86,7 +86,7 @@ public class Confirm_ViewBinding implements Unbinder {
     });
     view = Utils.findRequiredView(source, R.id.rbConfirmElectronic, "field 'rbConfirmElectronic' and method 'onViewClicked'");
     target.rbConfirmElectronic = Utils.castView(view, R.id.rbConfirmElectronic, "field 'rbConfirmElectronic'", RadioButton.class);
-    view2131230917 = view;
+    view2131230913 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -95,7 +95,7 @@ public class Confirm_ViewBinding implements Unbinder {
     });
     view = Utils.findRequiredView(source, R.id.rbConfirmPoin, "field 'rbConfirmPoin' and method 'onViewClicked'");
     target.rbConfirmPoin = Utils.castView(view, R.id.rbConfirmPoin, "field 'rbConfirmPoin'", RadioButton.class);
-    view2131230918 = view;
+    view2131230914 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -104,7 +104,7 @@ public class Confirm_ViewBinding implements Unbinder {
     });
     view = Utils.findRequiredView(source, R.id.rbConfirmVoucher, "field 'rbConfirmVoucher' and method 'onViewClicked'");
     target.rbConfirmVoucher = Utils.castView(view, R.id.rbConfirmVoucher, "field 'rbConfirmVoucher'", RadioButton.class);
-    view2131230919 = view;
+    view2131230915 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -113,7 +113,7 @@ public class Confirm_ViewBinding implements Unbinder {
     });
     view = Utils.findRequiredView(source, R.id.rbConfirmAdjust, "field 'rbConfirmAdjust' and method 'onViewClicked'");
     target.rbConfirmAdjust = Utils.castView(view, R.id.rbConfirmAdjust, "field 'rbConfirmAdjust'", RadioButton.class);
-    view2131230915 = view;
+    view2131230911 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -121,7 +121,7 @@ public class Confirm_ViewBinding implements Unbinder {
       }
     });
     view = Utils.findRequiredView(source, R.id.ivSearchCardNumber, "method 'onViewClicked'");
-    view2131230854 = view;
+    view2131230850 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -129,7 +129,7 @@ public class Confirm_ViewBinding implements Unbinder {
       }
     });
     view = Utils.findRequiredView(source, R.id.ivScanCardNumber, "method 'onViewClicked'");
-    view2131230852 = view;
+    view2131230848 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -137,7 +137,7 @@ public class Confirm_ViewBinding implements Unbinder {
       }
     });
     view = Utils.findRequiredView(source, R.id.btnConfirm, "method 'onViewClicked'");
-    view2131230764 = view;
+    view2131230761 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -145,7 +145,7 @@ public class Confirm_ViewBinding implements Unbinder {
       }
     });
     view = Utils.findRequiredView(source, R.id.ivNoVoucher, "method 'onViewClicked'");
-    view2131230851 = view;
+    view2131230847 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -153,7 +153,7 @@ public class Confirm_ViewBinding implements Unbinder {
       }
     });
     view = Utils.findRequiredView(source, R.id.ivScanNoVoucher, "method 'onViewClicked'");
-    view2131230853 = view;
+    view2131230849 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -192,27 +192,27 @@ public class Confirm_ViewBinding implements Unbinder {
     target.rbConfirmVoucher = null;
     target.rbConfirmAdjust = null;
 
-    view2131231018.setOnClickListener(null);
-    view2131231018 = null;
-    view2131230916.setOnClickListener(null);
-    view2131230916 = null;
-    view2131230917.setOnClickListener(null);
-    view2131230917 = null;
-    view2131230918.setOnClickListener(null);
-    view2131230918 = null;
-    view2131230919.setOnClickListener(null);
-    view2131230919 = null;
+    view2131231014.setOnClickListener(null);
+    view2131231014 = null;
+    view2131230912.setOnClickListener(null);
+    view2131230912 = null;
+    view2131230913.setOnClickListener(null);
+    view2131230913 = null;
+    view2131230914.setOnClickListener(null);
+    view2131230914 = null;
     view2131230915.setOnClickListener(null);
     view2131230915 = null;
-    view2131230854.setOnClickListener(null);
-    view2131230854 = null;
-    view2131230852.setOnClickListener(null);
-    view2131230852 = null;
-    view2131230764.setOnClickListener(null);
-    view2131230764 = null;
-    view2131230851.setOnClickListener(null);
-    view2131230851 = null;
-    view2131230853.setOnClickListener(null);
-    view2131230853 = null;
+    view2131230911.setOnClickListener(null);
+    view2131230911 = null;
+    view2131230850.setOnClickListener(null);
+    view2131230850 = null;
+    view2131230848.setOnClickListener(null);
+    view2131230848 = null;
+    view2131230761.setOnClickListener(null);
+    view2131230761 = null;
+    view2131230847.setOnClickListener(null);
+    view2131230847 = null;
+    view2131230849.setOnClickListener(null);
+    view2131230849 = null;
   }
 }

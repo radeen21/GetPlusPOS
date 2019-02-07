@@ -1087,6 +1087,7 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable pertamina
 drawable ranchmarket
+drawable rectangle_preview_main
 drawable rectroundwhite
 drawable rounded_btn
 drawable scanqr_frame
@@ -1102,7 +1103,6 @@ id META
 id SHIFT
 id SYM
 id ablConfirmTop
-id act_text_Please_scan
 id action0
 id action_bar
 id action_bar_activity_content
@@ -1124,9 +1124,7 @@ id action_settings
 id action_text
 id actions
 id activity_chooser_view_content
-id activity_scanqr_footer
 id activity_scanqr_frame
-id activity_scanqr_img_flash
 id activity_scanqr_root
 id add
 id alertTitle
@@ -1141,8 +1139,8 @@ id blocking
 id bottom
 id btnConfirm
 id btnInformasi
-id btn_flash
 id btn_login
+id btn_ok
 id buttonPanel
 id cameraPreview
 id cancel_action
@@ -1222,7 +1220,6 @@ id itemPrice
 id itemQty
 id itemTotal
 id item_touch_helper_previous_elevation
-id ivBackQR
 id ivBrandImage
 id ivConfirmBack
 id ivMerchant
@@ -1300,13 +1297,13 @@ id rbKFC
 id rbPertamina
 id rbRanch
 id rbTiket
+id rec_home
 id recyclerBill
 id result
 id rgPembayaran
 id right
 id right_icon
 id right_side
-id rlHeadQR
 id rv
 id saveIP
 id save_image_matrix
@@ -1412,10 +1409,12 @@ id tvTipe
 id tvTotal
 id tvTransaksiID
 id tvVersion
+id tv_id
+id tv_jumlah
 id tv_user_name
+id tv_view_main
 id tv_welcome_back
 id tv_your_points
-id txt_flash
 id txtenterIP
 id uniform
 id unlabeled
@@ -1491,6 +1490,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_bill
 layout activity_cashier_home
+layout activity_home
 layout activity_login
 layout activity_scrolling
 layout activity_set_ip
@@ -1535,12 +1535,15 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout popup_point
 layout scanqrkartu_lay
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout splash_lay
 layout support_simple_spinner_dropdown_item
+layout toolbar_view
+layout view_main_home
 layout zxing_barcode_scanner
 layout zxing_capture
 menu activity_cashier_home_drawer
@@ -2165,6 +2168,7 @@ style Widget_MaterialComponents_TextInputLayout_OutlinedBox
 style Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense
 style Widget_MaterialComponents_Toolbar
 style Widget_Support_CoordinatorLayout
+style dialogsimple
 style zxing_CaptureTheme
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity

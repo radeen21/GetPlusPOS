@@ -6,7 +6,9 @@ import java.util.concurrent.TimeUnit;
 
 import id.mygetplus.getpluspos.BuildConfig;
 import id.mygetplus.getpluspos.POSLink;
+import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
+import okhttp3.Request;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -27,7 +29,7 @@ public class PosLinkGenerator {
 
     private static Retrofit retroBuilder(OkHttpClient okHttpClient) {
         return new Retrofit.Builder()
-                .baseUrl("https://mygetplus-development.azurewebsites.net/mobile/v1/201812/")
+                .baseUrl("https://mygetplus-development.azurewebsites.net/pos/v1/201812/")
                 .client(okHttpClient)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
@@ -39,5 +41,16 @@ public class PosLinkGenerator {
                 .connectTimeout(20, TimeUnit.SECONDS)
                 .readTimeout(20, TimeUnit.SECONDS)
                 .writeTimeout(120, TimeUnit.SECONDS);
+    }
+
+    private static Request requestBuilderToken(Interceptor.Chain chain, Context context) {
+        Request.Builder requestBuilder = chain.request().newBuilder();
+//        RequestBuilderHeader requestBuilderHeader = new RequestBuilderHeader(requestBuilder, context);
+//        requestBuilderHeader.addToken();
+//        requestBuilderHeader.addCoordinate();
+//        requestBuilderHeader.addLang();
+//        requestBuilderHeader.addManisVer();
+//        requestBuilderHeader.addManisBuild();
+        return requestBuilder.build();
     }
 }

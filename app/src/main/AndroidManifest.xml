@@ -42,6 +42,14 @@
             <!--android:theme="@style/AppTheme.NoActionBar">-->
         <!--</activity>-->
         <activity
+        android:name=".mvp.main.HomeActivity"
+        android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".mvp.cekpoint.CekPointActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
             android:name=".mvp.login.view.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>

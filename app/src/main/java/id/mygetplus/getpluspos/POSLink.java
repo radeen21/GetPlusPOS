@@ -16,6 +16,8 @@
 package id.mygetplus.getpluspos;
 
 
+import id.mygetplus.getpluspos.mvp.cekpoint.model.CekPointHolder;
+import id.mygetplus.getpluspos.mvp.login.model.LoginHolder;
 import id.mygetplus.getpluspos.service.response.WrapperLogin;
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -50,8 +52,14 @@ public interface POSLink
 	@POST(FixValue.RestTransaksiAdjust)
 	Call<ResponsePojo> TransaksiAdjustService(@Body RequestHolder requestHolder);
 
-	@POST(FixValue.RestLogin)
+    @POST(FixValue.RestLogin)
     Observable<WrapperLogin> getLogin(@Body AccountHolder accountHolder);
+
+    @POST(FixValue.RestLogin)
+    Observable<ResponsePojo> getUserLogin(@Body LoginHolder loginHolder);
+
+    @POST(FixValue.RestfulSelectMember)
+    Observable<ResponsePojo> getPoints(@Body CekPointHolder cekPointHolder);
 
 }
 

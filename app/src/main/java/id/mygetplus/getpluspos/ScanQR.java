@@ -34,8 +34,8 @@ import butterknife.OnClick;
 
 public class ScanQR extends AppCompatActivity implements SurfaceHolder.Callback
 {
-  @BindView(R.id.txt_flash)
-  TextView txt_flash;
+//  @BindView(R.id.txt_flash)
+//  TextView txt_flash;
   @BindView(R.id.cameraPreview)
   SurfaceView cameraPreview;
 
@@ -80,20 +80,20 @@ public class ScanQR extends AppCompatActivity implements SurfaceHolder.Callback
     hasSurface = false;
   }
 
-  @OnClick({R.id.ivBackQR, R.id.btn_flash})
-  public void onViewClicked(View view)
-  {
-    switch(view.getId())
-    {
-      case R.id.ivBackQR:
-        BackActivity();
-        break;
-      case R.id.btn_flash:
-        if(hasFlash())
-          switchFlashlight();
-        break;
-    }
-  }
+//  @OnClick({R.id.ivBackQR, R.id.btn_flash})
+//  public void onViewClicked(View view)
+//  {
+//    switch(view.getId())
+//    {
+//      case R.id.ivBackQR:
+//        BackActivity();
+//        break;
+//      case R.id.btn_flash:
+//        if(hasFlash())
+////          switchFlashlight();
+//        break;
+//    }
+//  }
 
   private Camera.PreviewCallback barcodeCallback = new Camera.PreviewCallback()
   {
@@ -148,26 +148,26 @@ public class ScanQR extends AppCompatActivity implements SurfaceHolder.Callback
     }
   };
 
-  private boolean hasFlash()
-  {
-    return getApplicationContext().getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH);
-  }
+//  private boolean hasFlash()
+//  {
+//    return getApplicationContext().getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH);
+//  }
 
-  private void switchFlashlight()
-  {
-    if(!flashOn)
-    {
-      cameraManager.setTorch(true);
-      txt_flash.setText(getString(R.string.strFlashOn));
-    }
-    else
-    {
-      cameraManager.setTorch(false);
-      txt_flash.setText(getString(R.string.strFlashOff));
-    }
-
-    flashOn = !flashOn;
-  }
+//  private void switchFlashlight()
+//  {
+//    if(!flashOn)
+//    {
+//      cameraManager.setTorch(true);
+//      txt_flash.setText(getString(R.string.strFlashOn));
+//    }
+//    else
+//    {
+//      cameraManager.setTorch(false);
+//      txt_flash.setText(getString(R.string.strFlashOff));
+//    }
+//
+//    flashOn = !flashOn;
+//  }
 
   @Override
   protected void onResume()
@@ -181,25 +181,20 @@ public class ScanQR extends AppCompatActivity implements SurfaceHolder.Callback
       @Override
       public void run()
       {
-        runOnUiThread(new Runnable()
-        {
-          @Override
-          public void run()
+        runOnUiThread(() -> {
+          SurfaceHolder surfaceHolder = cameraPreview.getHolder();
+          if(hasSurface)
           {
-            SurfaceHolder surfaceHolder = cameraPreview.getHolder();
-            if(hasSurface)
-            {
-              // The activity was paused but not stopped, so the surface still exists.
-              // Therefore surfaceCreated() won't be called, so init the camera here.
-              initCamera(cameraPreview, true);
-            }
-            else
-            {
-              // Install the callback and wait for surfaceCreated() to init the camera.
-              surfaceHolder.addCallback(ScanQR.this);
-              surfaceHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
-              initCamera(cameraPreview, true);
-            }
+            // The activity was paused but not stopped, so the surface still exists.
+            // Therefore surfaceCreated() won't be called, so init the camera here.
+            initCamera(cameraPreview, true);
+          }
+          else
+          {
+            // Install the callback and wait for surfaceCreated() to init the camera.
+            surfaceHolder.addCallback(ScanQR.this);
+            surfaceHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
+            initCamera(cameraPreview, true);
           }
         });
       }

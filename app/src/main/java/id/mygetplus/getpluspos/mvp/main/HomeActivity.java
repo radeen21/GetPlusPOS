@@ -15,10 +15,13 @@ import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import id.mygetplus.getpluspos.R;
 import id.mygetplus.getpluspos.ScanQR;
 import id.mygetplus.getpluspos.mvp.cekpoint.CekPointActivity;
+import id.mygetplus.getpluspos.mvp.login.view.LoginActivity;
 import id.mygetplus.getpluspos.mvp.main.adapter.HomeAdapter;
+import id.mygetplus.getpluspos.preference.GetPlusSession;
 
 
 public class HomeActivity extends AppCompatActivity implements HomeAdapter.ItemClickListener {
@@ -45,10 +48,12 @@ public class HomeActivity extends AppCompatActivity implements HomeAdapter.ItemC
         TypedArray a = this.obtainStyledAttributes(ATTRS);
         Drawable divider = a.getDrawable(0);
         int inset = getResources().getDimensionPixelSize(R.dimen.nav_header_vertical_spacing);
-        InsetDrawable insetDivider = new InsetDrawable(divider, inset, 10, inset, 110);
+        InsetDrawable insetDivider = new InsetDrawable(divider, inset,
+                10, inset, 10);
         a.recycle();
 
-        DividerItemDecoration itemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
+        DividerItemDecoration itemDecoration = new DividerItemDecoration(this,
+                DividerItemDecoration.VERTICAL);
         itemDecoration.setDrawable(insetDivider);
         recHome.addItemDecoration(itemDecoration);
         recHome.setHasFixedSize(true);
@@ -85,5 +90,12 @@ public class HomeActivity extends AppCompatActivity implements HomeAdapter.ItemC
 
         }
         this.startActivity(intent);
+    }
+
+    @OnClick(R.id.Iv_logout)
+    void onClickLoout() {
+        GetPlusSession.getInstance(this).clearSession();
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
     }
 }

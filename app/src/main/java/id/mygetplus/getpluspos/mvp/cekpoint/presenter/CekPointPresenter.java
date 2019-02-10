@@ -14,6 +14,7 @@ import id.mygetplus.getpluspos.base.ResponseSubscriber;
 import id.mygetplus.getpluspos.mvp.cekpoint.model.CekPointHolder;
 import id.mygetplus.getpluspos.mvp.cekpoint.model.PointRequestNew;
 import id.mygetplus.getpluspos.mvp.cekpoint.model.SimValues;
+import id.mygetplus.getpluspos.preference.GetPlusSession;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
@@ -28,21 +29,16 @@ public class CekPointPresenter extends BaseViewPresenter implements CekPointCont
     }
 
     @Override
-    public void loadCekPointData(POSLink posLink) {
-        AValue aValue = Fungsi.getObjectFromSharedPref(context, AValue.class,
-                Preference.PrefMerchantInfo);
-
-        PoinRequest poinRequest = new PoinRequest();
-        poinRequest.setSimToken(aValue.getBToken());
-
-        SimValues simValues = new SimValues();
-        simValues.setSim1Cardnumber(simValues.toString());
-        simValues.setSim1ReturnAllMemberData("true");
-
+    public void loadCekPointData(POSLink posLink, String token, String cardNumber) {
         PointRequestNew pointRequestNew = new PointRequestNew();
-        pointRequestNew.setSimToken(aValue.getBToken());
+        pointRequestNew.setSimToken(token);
 
         CekPointHolder cekPointHolder = new CekPointHolder();
+        cekPointHolder.setPoinRequest(pointRequestNew);
+
+        SimValues simValues = new SimValues();
+        simValues.setSim1Cardnumber(cardNumber);
+        simValues.setSim1ReturnAllMemberData("true");
 
         posLink.getPoints(cekPointHolder).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -55,7 +51,6 @@ public class CekPointPresenter extends BaseViewPresenter implements CekPointCont
                     @Override
                     public void onNext(ResponsePojo responsePojo) {
                         super.onNext(responsePojo);
-                        responsePojo.getAValue().getBToken();
                         view.setCekPoint(responsePojo);
                     }
                 });

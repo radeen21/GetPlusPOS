@@ -8,7 +8,7 @@ import id.mygetplus.getpluspos.mvp.login.model.UserData;
 public interface CekPointContract {
 
     interface Presenter extends IBaseViewPresenter {
-        void loadCekPointData(POSLink posLink);
+        void loadCekPointData(POSLink posLink, String token, String cardNumber);
     }
 
     interface View {

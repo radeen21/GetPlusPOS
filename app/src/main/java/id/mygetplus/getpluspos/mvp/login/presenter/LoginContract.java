@@ -9,11 +9,10 @@ import id.mygetplus.getpluspos.mvp.login.model.UserData;
 public interface LoginContract {
 
     interface Presenter extends IBaseViewPresenter {
-        void loadLoginData(POSLink posLink);
+        void loadLoginData(POSLink posLink, String username, String password);
     }
 
     interface View {
-        void setLogin(UserData userData);
         void getData(ResponsePojo responsePojo);
     }
 }

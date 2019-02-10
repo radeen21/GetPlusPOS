@@ -1068,11 +1068,13 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_plus_blue_homescreen
+drawable ic_power_logout
 drawable ico_check
 drawable ico_flash
 drawable ignat
 drawable kfc
 drawable logo_get_plus_vertical
+drawable logo_white
 drawable logobca
 drawable logoblibli
 drawable logohero
@@ -1110,6 +1112,7 @@ drawable tooltip_frame_light
 id ALT
 id CTRL
 id FUNCTION
+id Iv_logout
 id META
 id SHIFT
 id SYM
@@ -1399,6 +1402,7 @@ id title
 id titleDividerNoCustom
 id title_template
 id toolbar
+id toolbarMain
 id toolbar_layout
 id top
 id topPanel
@@ -1579,6 +1583,7 @@ layout select_dialog_singlechoice_material
 layout splash_lay
 layout support_simple_spinner_dropdown_item
 layout toolbar_getplus
+layout toolbar_login
 layout toolbar_view
 layout view_main_home
 layout zxing_barcode_scanner

@@ -34,6 +34,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import id.mygetplus.getpluspos.mvp.cekpoint.CekPointActivity;
+import id.mygetplus.getpluspos.mvp.main.HomeActivity;
 
 public class ScanQR extends AppCompatActivity implements SurfaceHolder.Callback
 {
@@ -296,7 +297,7 @@ public class ScanQR extends AppCompatActivity implements SurfaceHolder.Callback
       BackIntent = new Intent(ScanQR.this, CashierHome.class);
     else
     if((intActiveMenu == 1) || (intActiveMenu == 2))
-      BackIntent = new Intent(ScanQR.this, CekPointActivity.class);
+      BackIntent = new Intent(ScanQR.this, HomeActivity.class);
 
     startActivity(BackIntent);
     finish();

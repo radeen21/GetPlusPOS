@@ -9,6 +9,11 @@ import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
+import id.mygetplus.getpluspos.mvp.cekpoint.CekPointActivity;
+import id.mygetplus.getpluspos.mvp.login.view.LoginActivity;
+import id.mygetplus.getpluspos.mvp.main.HomeActivity;
+import id.mygetplus.getpluspos.preference.GetPlusSession;
+
 public class Splash extends AppCompatActivity
 {
   private TextView tvVersion;
@@ -36,19 +41,25 @@ public class Splash extends AppCompatActivity
 
     tvVersion.setText("Versi " + myVersionName);
 
-    new Handler().postDelayed(new Runnable()
-    {
-      @Override
-      public void run()
-      {
-        PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString(FixValue.strNamePref, null);
-        Fungsi.storeToSharedPref(getApplicationContext(),"", Preference.PrefScanQR);
-        Fungsi.storeToSharedPref(getApplicationContext(),"", Preference.PrefScanQRConfirm);
-        Fungsi.storeToSharedPref(getApplicationContext(),0, Preference.PrefMerchantOwner);
-        Intent mainIntent = new Intent(Splash.this, CashierHome.class);
-        startActivity(mainIntent);
-        finish();
-      }
+    new Handler().postDelayed(() -> {
+      PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString(FixValue.strNamePref, null);
+      Fungsi.storeToSharedPref(getApplicationContext(),"", Preference.PrefScanQR);
+      Fungsi.storeToSharedPref(getApplicationContext(),"", Preference.PrefScanQRConfirm);
+      Fungsi.storeToSharedPref(getApplicationContext(),0, Preference.PrefMerchantOwner);
+      Intent mainIntent = new Intent(Splash.this, CashierHome.class);
+      startActivity(mainIntent);
+      checkToken();
+      finish();
     }, FixValue.SPLASH_DISPLAY_LENGHT);
+  }
+
+  public void checkToken() {
+   if (GetPlusSession.getInstance(this).isLoggedIn()) {
+     Intent intent = new Intent(this, HomeActivity.class);
+     startActivity(intent);
+   } else {
+     Intent intent = new Intent(this, LoginActivity.class);
+     startActivity(intent);
+   }
   }
 }

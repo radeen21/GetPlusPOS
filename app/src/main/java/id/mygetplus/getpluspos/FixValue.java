@@ -6,8 +6,8 @@ package id.mygetplus.getpluspos;
 public class FixValue
 {
 // Server Online
-	public static final String BASE_URL = "https://mygetplus-staging.azurewebsites.net/mobile/v1/201812/";      // URL to GPI Gateway
-	public static final String POS_URL = "https://mygetplus-staging.azurewebsites.net/pos/v1/201812/";      // URL to GPI Gateway
+	public static final String BASE_URL = "https://mygetplus-development.azurewebsites.net/mobile/v1/201812/";      // URL to GPI Gateway
+	public static final String POS_URL = "https://mygetplus-development.azurewebsites.net/pos/v1/201812/";      // URL to GPI Gateway
 
 // Server Offline Mobile
 //	public static final String BASE_URL = "http://10.10.10.93:3000/mobile/v1/201812/";      // URL to GPI Gateway

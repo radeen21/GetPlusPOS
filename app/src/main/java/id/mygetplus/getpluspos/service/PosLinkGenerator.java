@@ -9,6 +9,7 @@ import id.mygetplus.getpluspos.POSLink;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -29,7 +30,7 @@ public class PosLinkGenerator {
 
     private static Retrofit retroBuilder(OkHttpClient okHttpClient) {
         return new Retrofit.Builder()
-                .baseUrl("https://mygetplus-staging.azurewebsites.net/pos/v1/201812/")
+                .baseUrl("https://mygetplus-development.azurewebsites.net/pos/v1/201812/")
                 .client(okHttpClient)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
@@ -37,7 +38,10 @@ public class PosLinkGenerator {
     }
 
     private static OkHttpClient.Builder okBuilder(Context context) {
+        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
+        logging.setLevel(HttpLoggingInterceptor.Level.BODY);
         return new OkHttpClient.Builder()
+                .addInterceptor(logging)
                 .connectTimeout(20, TimeUnit.SECONDS)
                 .readTimeout(20, TimeUnit.SECONDS)
                 .writeTimeout(120, TimeUnit.SECONDS);

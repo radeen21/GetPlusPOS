@@ -10,10 +10,10 @@ public class SaveSharedPreference {
     public static final String TOKEN_PREF = "token_pref";
 
     private static SaveSharedPreference sSharedPrefs;
-    private static  mPref;
+//    private static  mPref;
 
 	private SaveSharedPreference (Context context) {
-		mPref = context.getSharedPreferences(SESSION_IN_PREF, Context.MODE_PRIVATE);
+//		mPref = context.getSharedPreferences(SESSION_IN_PREF, Context.MODE_PRIVATE);
 	}
 
 	public static SaveSharedPreference getInstance(Context context) {
@@ -23,27 +23,27 @@ public class SaveSharedPreference {
 		return sSharedPrefs;
 	}
 
-    /**
-     * Set the Login Status
-     * @param context
-     * @param token
-     */
-    public void setToken(String token) {
-        mPref.putString(TOKEN_PREF, token);
-        mPref.apply();
-    }
+//    /**
+//     * Set the Login Status
+//     * @param context
+//     * @param token
+//     */
+//    public void setToken(String token) {
+//        mPref.putString(TOKEN_PREF, token);
+//        mPref.apply();
+//    }
 
-    /**
-     * Get the Login Status
-     * @param context
-     * @return String: token
-     */
-    public String getToken() {
-        return mPref.getString(TOKEN_PREF, "");
-    }
-
-    public boolean anyToken() {
-        return mPref.getString(TOKEN_PREF, "").isEmpty();
-    }
+//    /**
+//     * Get the Login Status
+//     * @param context
+//     * @return String: token
+//     */
+//    public String getToken() {
+//        return mPref.getString(TOKEN_PREF, "");
+//    }
+//
+//    public boolean anyToken() {
+//        return mPref.getString(TOKEN_PREF, "").isEmpty();
+//    }
 
 }

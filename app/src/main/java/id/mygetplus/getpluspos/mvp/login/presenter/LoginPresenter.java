@@ -7,7 +7,6 @@ import android.support.v4.app.ActivityCompat;
 import android.telephony.TelephonyManager;
 import android.view.View;
 
-import id.mygetplus.getpluspos.AValue;
 import id.mygetplus.getpluspos.POSLink;
 import id.mygetplus.getpluspos.ResponsePojo;
 import id.mygetplus.getpluspos.base.BaseViewPresenter;
@@ -16,7 +15,6 @@ import id.mygetplus.getpluspos.mvp.login.model.DeviceData;
 import id.mygetplus.getpluspos.mvp.login.model.LoginHolder;
 import id.mygetplus.getpluspos.mvp.login.model.UserData;
 import id.mygetplus.getpluspos.preference.GetPlusSession;
-import retrofit2.Response;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
@@ -36,15 +34,16 @@ public class LoginPresenter extends BaseViewPresenter implements LoginContract.P
     }
 
     @Override
-    public void loadLoginData(POSLink posLink) {
+    public void loadLoginData(POSLink posLink, String username, String password) {
         UserData userData = new UserData();
-        userData.setUsername("UserPOS1");
-        userData.setPassword("123456");
+        userData.setUsername(username);
+        userData.setPassword(password);
 
 
         TelephonyManager telephonyManager = (TelephonyManager)
                 context.getSystemService(Context.TELEPHONY_SERVICE);
-        if (ActivityCompat.checkSelfPermission(context, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+        if (ActivityCompat.checkSelfPermission(context, Manifest.permission.READ_PHONE_STATE)
+                != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions
             // here to request the missing permissions, and then overriding
@@ -82,8 +81,6 @@ public class LoginPresenter extends BaseViewPresenter implements LoginContract.P
                         super.onNext(responsePojo);
                         String tokenSession = responsePojo.getAValue().getBToken();
                         GetPlusSession.getInstance(context).setToken(tokenSession);
-//                        responsePojo.getAValue().getBToken();
-                        view.setLogin(userData);
                         view.getData(responsePojo);
                     }
                 });

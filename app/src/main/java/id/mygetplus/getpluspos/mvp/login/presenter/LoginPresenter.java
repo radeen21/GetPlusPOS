@@ -15,6 +15,8 @@ import id.mygetplus.getpluspos.base.ResponseSubscriber;
 import id.mygetplus.getpluspos.mvp.login.model.DeviceData;
 import id.mygetplus.getpluspos.mvp.login.model.LoginHolder;
 import id.mygetplus.getpluspos.mvp.login.model.UserData;
+import id.mygetplus.getpluspos.preference.GetPlusSession;
+import retrofit2.Response;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
@@ -65,6 +67,8 @@ public class LoginPresenter extends BaseViewPresenter implements LoginContract.P
         LoginHolder loginHolder = new LoginHolder();
         loginHolder.setUserData(userData);
         loginHolder.setDeviceData(deviceData);
+
+
         posLink.getUserLogin(loginHolder).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new ResponseSubscriber<ResponsePojo>() {
@@ -76,9 +80,11 @@ public class LoginPresenter extends BaseViewPresenter implements LoginContract.P
                     @Override
                     public void onNext(ResponsePojo responsePojo) {
                         super.onNext(responsePojo);
+                        String tokenSession = responsePojo.getAValue().getBToken();
+                        GetPlusSession.getInstance(context).setToken(tokenSession);
 //                        responsePojo.getAValue().getBToken();
                         view.setLogin(userData);
-
+                        view.getData(responsePojo);
                     }
                 });
     }

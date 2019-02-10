@@ -3,6 +3,7 @@ package id.mygetplus.getpluspos;
 import android.app.Activity;
 import android.app.Dialog;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.Window;
 import android.widget.EditText;
@@ -16,9 +17,14 @@ import butterknife.OnClick;
 
 public class ppInformasi extends Dialog
 {
-	@BindView(R.id.tvPoinBalance)
+//	@BindView(R.id.tvPoinBalance)
+//	TextView tvPoinBalance;
+//	@BindView(R.id.tvTransaksiID)
+//	TextView tvTransaksiID;
+
+	@BindView(R.id.tv_jumlah)
 	TextView tvPoinBalance;
-	@BindView(R.id.tvTransaksiID)
+	@BindView(R.id.tv_id)
 	TextView tvTransaksiID;
 
 	private Activity ParentAct;
@@ -37,12 +43,24 @@ public class ppInformasi extends Dialog
 	{
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		setContentView(R.layout.informasi_lay);
+		setContentView(R.layout.popup_point);
 		ButterKnife.bind(this);
+		initPopUp();
 
 		double d = Double.parseDouble(PoinBalance);
 		tvPoinBalance.setText(getContext().getString(R.string.strPointsBalance, Fungsi.FormatDesimal((int) d)));
 		tvTransaksiID.setText(getContext().getString(R.string.strTransactionID, TransaksiID));
+	}
+
+	void initPopUp() {
+
+		DisplayMetrics dm = new DisplayMetrics();
+//		this.getWindowManager().getDefaultDisplay().getMetrics(dm);
+
+		int width = dm.widthPixels;
+		int height = dm.heightPixels;
+
+		getWindow().setLayout((int) (width*.8), (int) (height*.6));
 	}
 
 	@OnClick({R.id.btnInformasi})

@@ -13,15 +13,18 @@ import id.mygetplus.getpluspos.base.BaseViewPresenter;
 import id.mygetplus.getpluspos.base.ResponseSubscriber;
 import id.mygetplus.getpluspos.mvp.cekpoint.model.CekPointHolder;
 import id.mygetplus.getpluspos.mvp.cekpoint.model.PointRequestNew;
+import id.mygetplus.getpluspos.mvp.cekpoint.model.SimValues;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
 public class CekPointPresenter extends BaseViewPresenter implements CekPointContract.Presenter {
 
     private Context context;
+    private CekPointContract.View view;
 
-    public CekPointPresenter(Context context) {
+    public CekPointPresenter(Context context, CekPointContract.View view) {
         this.context = context;
+        this.view = view;
     }
 
     @Override
@@ -32,12 +35,14 @@ public class CekPointPresenter extends BaseViewPresenter implements CekPointCont
         PoinRequest poinRequest = new PoinRequest();
         poinRequest.setSimToken(aValue.getBToken());
 
+        SimValues simValues = new SimValues();
+        simValues.setSim1Cardnumber(simValues.toString());
+        simValues.setSim1ReturnAllMemberData("true");
+
         PointRequestNew pointRequestNew = new PointRequestNew();
         pointRequestNew.setSimToken(aValue.getBToken());
 
-
         CekPointHolder cekPointHolder = new CekPointHolder();
-//        cekPointHolder.setPoinRequest(aValue.getBToken());
 
         posLink.getPoints(cekPointHolder).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -50,6 +55,8 @@ public class CekPointPresenter extends BaseViewPresenter implements CekPointCont
                     @Override
                     public void onNext(ResponsePojo responsePojo) {
                         super.onNext(responsePojo);
+                        responsePojo.getAValue().getBToken();
+                        view.setCekPoint(responsePojo);
                     }
                 });
     }

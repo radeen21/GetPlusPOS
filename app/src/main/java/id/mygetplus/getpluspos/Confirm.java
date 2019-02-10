@@ -23,6 +23,7 @@ import java.util.Random;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import id.mygetplus.getpluspos.mvp.cekpoint.CekPointActivity;
 import retrofit2.Call;
 import retrofit2.Callback;
 
@@ -114,17 +115,17 @@ public class Confirm extends AppCompatActivity
 
     tvIsiBayar.setText(getString(R.string.strConfirmNilai, "0"));
 
-    strNumber = Fungsi.getStringFromSharedPref(context, Preference.PrefScanQR);
+//    strNumber = Fungsi.getStringFromSharedPref(context, Preference.PrefScanQR);
 	  etCardNumber.setText(strNumber);
 	  tvConfirmRef.setText(getString(R.string.strConfirmRef, strNumber));
 
-    if((!TextUtils.isEmpty(strNumber)) && (Fungsi.getIntFromSharedPref(context, Preference.PrefActiveMenu) == 1))
+//    if((!TextUtils.isEmpty(strNumber)) && (Fungsi.getIntFromSharedPref(context, Preference.PrefActiveMenu) == 1))
       AmbilDataMember();
 
-	  strVoucher = Fungsi.getStringFromSharedPref(context, Preference.PrefScanQRConfirm);
+//	  strVoucher = Fungsi.getStringFromSharedPref(context, Preference.PrefScanQRConfirm);
     etNoVoucher.setText(strVoucher);
 
-	  if((!TextUtils.isEmpty(strVoucher)) && (Fungsi.getIntFromSharedPref(context, Preference.PrefActiveMenu) == 2))
+//	  if((!TextUtils.isEmpty(strVoucher)) && (Fungsi.getIntFromSharedPref(context, Preference.PrefActiveMenu) == 2))
 		  CheckVoucher(0);
   }
 
@@ -162,17 +163,17 @@ public class Confirm extends AppCompatActivity
 		    boolPilih = true;
 		    break;
       case R.id.ivScanCardNumber:
-	      Fungsi.storeToSharedPref(context, etCardNumber.getText().toString(), Preference.PrefScanQR);
-	      Fungsi.storeToSharedPref(context, etNoVoucher.getText().toString(), Preference.PrefScanQRConfirm);
-        Fungsi.storeToSharedPref(context, 1, Preference.PrefActiveMenu);
+//	      Fungsi.storeToSharedPref(context, etCardNumber.getText().toString(), Preference.PrefScanQR);
+//	      Fungsi.storeToSharedPref(context, etNoVoucher.getText().toString(), Preference.PrefScanQRConfirm);
+//        Fungsi.storeToSharedPref(context, 1, Preference.PrefActiveMenu);
         Intent QRCodeIntent = new Intent(Confirm.this, ScanQR.class);
         startActivity(QRCodeIntent);
         finish();
         break;
 	    case R.id.ivScanNoVoucher:
-		    Fungsi.storeToSharedPref(context, etCardNumber.getText().toString(), Preference.PrefScanQR);
-		    Fungsi.storeToSharedPref(context, etNoVoucher.getText().toString(), Preference.PrefScanQRConfirm);
-		    Fungsi.storeToSharedPref(context, 2, Preference.PrefActiveMenu);
+//		    Fungsi.storeToSharedPref(context, etCardNumber.getText().toString(), Preference.PrefScanQR);
+//		    Fungsi.storeToSharedPref(context, etNoVoucher.getText().toString(), Preference.PrefScanQRConfirm);
+//		    Fungsi.storeToSharedPref(context, 2, Preference.PrefActiveMenu);
 		    Intent QRVoucherIntent = new Intent(Confirm.this, ScanQR.class);
 		    startActivity(QRVoucherIntent);
 		    finish();
@@ -332,7 +333,7 @@ public class Confirm extends AppCompatActivity
     dateTrans = Fungsi.getDate(dateTrans, "yyyy-MM-dd HH:mm:ss", "yyyy-MM-dd") + "T" +
                 Fungsi.getTime(dateTrans, "yyyy-MM-dd HH:mm:ss", "HH:mm:ss");
 
-    AValue aValue = Fungsi.getObjectFromSharedPref(context, AValue.class, Preference.PrefMerchantInfo);
+//    AValue aValue = Fungsi.getObjectFromSharedPref(context, AValue.class, Preference.PrefMerchantInfo);
     tvMerchantName.setText(aValue.getBAccountOwnerDisplayValue());
 
     Sim1SaleTransactionLine sim1SaleTransactionLine = new Sim1SaleTransactionLine();
@@ -381,7 +382,11 @@ public class Confirm extends AppCompatActivity
               response.body().getAValue().getBLoyaltyPointsBalance(),
               response.body().getAValue().getBTransactionID());
 
-            ppInformasi.show();
+//            CekPointActivity cekPointActivity = new CekPointActivity(Confirm.this,
+//                    response.body().getAValue().getBLoyaltyPointsBalance(),
+//                    response.body().getAValue().getBTransactionID());
+//
+//            cekPointActivity.show();
           }
           else
           {
@@ -424,7 +429,7 @@ public class Confirm extends AppCompatActivity
 		dateTrans = Fungsi.getDate(dateTrans, "yyyy-MM-dd HH:mm:ss", "yyyy-MM-dd") + "T" +
 			Fungsi.getTime(dateTrans, "yyyy-MM-dd HH:mm:ss", "HH:mm:ss");
 
-		AValue aValue = Fungsi.getObjectFromSharedPref(context, AValue.class, Preference.PrefMerchantInfo);
+//		AValue aValue = Fungsi.getObjectFromSharedPref(context, AValue.class, Preference.PrefMerchantInfo);
 		tvMerchantName.setText(aValue.getBAccountOwnerDisplayValue());
 
 		Sim1SaleTransactionLine sim1SaleTransactionLine = new Sim1SaleTransactionLine();
@@ -475,7 +480,11 @@ public class Confirm extends AppCompatActivity
 							response.body().getAValue().getBLoyaltyPointsBalance(),
 							response.body().getAValue().getBTransactionID());
 
-						ppInformasi.show();
+//                        CekPointActivity cekPointActivity = new CekPointActivity(Confirm.this,
+//                                response.body().getAValue().getBLoyaltyPointsBalance(),
+//                                response.body().getAValue().getBTransactionID());
+//
+//                        cekPointActivity.show();
 					}
 					else
 					{
@@ -518,7 +527,7 @@ public class Confirm extends AppCompatActivity
 		dateTrans = Fungsi.getDate(dateTrans, "yyyy-MM-dd HH:mm:ss", "yyyy-MM-dd") + "T" +
 			Fungsi.getTime(dateTrans, "yyyy-MM-dd HH:mm:ss", "HH:mm:ss");
 
-		AValue aValue = Fungsi.getObjectFromSharedPref(context, AValue.class, Preference.PrefMerchantInfo);
+//		AValue aValue = Fungsi.getObjectFromSharedPref(context, AValue.class, Preference.PrefMerchantInfo);
 		tvMerchantName.setText(aValue.getBAccountOwnerDisplayValue());
 
 		Sim1SaleTransactionLine sim1SaleTransactionLine = new Sim1SaleTransactionLine();
@@ -570,7 +579,11 @@ public class Confirm extends AppCompatActivity
 							response.body().getAValue().getBLoyaltyPointsBalance(),
 							response.body().getAValue().getBTransactionID());
 
-						ppInformasi.show();
+//                        CekPointActivity cekPointActivity = new CekPointActivity(Confirm.this,
+//                                response.body().getAValue().getBLoyaltyPointsBalance(),
+//                                response.body().getAValue().getBTransactionID());
+//
+//                        cekPointActivity.show();
 					}
 					else
 					{
@@ -613,7 +626,7 @@ public class Confirm extends AppCompatActivity
 		dateTrans = Fungsi.getDate(dateTrans, "yyyy-MM-dd HH:mm:ss", "yyyy-MM-dd") + "T" +
 			Fungsi.getTime(dateTrans, "yyyy-MM-dd HH:mm:ss", "HH:mm:ss");
 
-		AValue aValue = Fungsi.getObjectFromSharedPref(context, AValue.class, Preference.PrefMerchantInfo);
+//		AValue aValue = Fungsi.getObjectFromSharedPref(context, AValue.class, Preference.PrefMerchantInfo);
 		tvMerchantName.setText(aValue.getBAccountOwnerDisplayValue());
 
 		SimValue simValue = new SimValue();
@@ -656,7 +669,11 @@ public class Confirm extends AppCompatActivity
 							response.body().getAValue().getBLoyaltyPointsBalance(),
 							response.body().getAValue().getBTransactionID());
 
-						ppInformasi.show();
+//                        CekPointActivity cekPointActivity = new CekPointActivity(Confirm.this,
+//                                response.body().getAValue().getBLoyaltyPointsBalance(),
+//                                response.body().getAValue().getBTransactionID());
+//
+//                        cekPointActivity.show();
 					}
 					else
 					{
@@ -695,7 +712,7 @@ public class Confirm extends AppCompatActivity
 		dateTrans = Fungsi.getDate(dateTrans, "yyyy-MM-dd HH:mm:ss", "yyyy-MM-dd") + "T" +
 			Fungsi.getTime(dateTrans, "yyyy-MM-dd HH:mm:ss", "HH:mm:ss");
 
-		AValue aValue = Fungsi.getObjectFromSharedPref(context, AValue.class, Preference.PrefMerchantInfo);
+//		AValue aValue = Fungsi.getObjectFromSharedPref(context, AValue.class, Preference.PrefMerchantInfo);
 		tvMerchantName.setText(aValue.getBAccountOwnerDisplayValue());
 
 		SimValue simValue = new SimValue();

@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:ignore="MissingConstraints"
+    android:background="@color/colorPrimary"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <android.support.v7.widget.AppCompatImageView
@@ -28,13 +29,18 @@
             android:id="@+id/til_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColorHint="@color/pureWhite"
             android:layout_margin="@dimen/activity_horizontal_margin"
             app:hintEnabled="false">
 
             <android.support.design.widget.TextInputEditText
                 android:id="@+id/et_email"
                 android:layout_width="match_parent"
+                android:textColor="@color/pureWhite"
+                android:textColorHint="@color/pureWhite"
                 android:layout_height="wrap_content"
+                android:textColorLink="@color/pureWhite"
+                android:shadowColor="@color/pureWhite"
                 android:hint="Email/Phone number" />
 
         </android.support.design.widget.TextInputLayout>
@@ -51,6 +57,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
+                android:textColor="@color/pureWhite"
+                android:textColorHint="@color/pureWhite"
                 android:hint="Password" />
 
         </android.support.design.widget.TextInputLayout>

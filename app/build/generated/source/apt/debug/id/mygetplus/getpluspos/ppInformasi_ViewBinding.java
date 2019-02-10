@@ -26,8 +26,8 @@ public class ppInformasi_ViewBinding implements Unbinder {
     this.target = target;
 
     View view;
-    target.tvPoinBalance = Utils.findRequiredViewAsType(source, R.id.tvPoinBalance, "field 'tvPoinBalance'", TextView.class);
-    target.tvTransaksiID = Utils.findRequiredViewAsType(source, R.id.tvTransaksiID, "field 'tvTransaksiID'", TextView.class);
+    target.tvPoinBalance = Utils.findRequiredViewAsType(source, R.id.tv_jumlah, "field 'tvPoinBalance'", TextView.class);
+    target.tvTransaksiID = Utils.findRequiredViewAsType(source, R.id.tv_id, "field 'tvTransaksiID'", TextView.class);
     view = Utils.findRequiredView(source, R.id.btnInformasi, "method 'onViewClicked'");
     view2131230762 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {

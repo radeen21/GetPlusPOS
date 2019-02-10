@@ -29,7 +29,7 @@ public class PosLinkGenerator {
 
     private static Retrofit retroBuilder(OkHttpClient okHttpClient) {
         return new Retrofit.Builder()
-                .baseUrl("https://mygetplus-development.azurewebsites.net/pos/v1/201812/")
+                .baseUrl("https://mygetplus-staging.azurewebsites.net/pos/v1/201812/")
                 .client(okHttpClient)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())

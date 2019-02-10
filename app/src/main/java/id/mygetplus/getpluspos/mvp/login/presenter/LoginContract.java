@@ -14,5 +14,6 @@ public interface LoginContract {
 
     interface View {
         void setLogin(UserData userData);
+        void getData(ResponsePojo responsePojo);
     }
 }

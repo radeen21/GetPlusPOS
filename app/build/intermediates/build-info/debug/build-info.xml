@@ -6,40 +6,40 @@
     density="420dpi"
     format="10"
     plugin-version="3.2.0"
-    timestamp="1549538359985"
+    timestamp="1549786093858"
     token="-4365814791826110698"
     verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="7446" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="287" />
+        duration="0" />
     <task
         name="verifier"
-        duration="12" />
+        duration="0" />
 
-    <artifact
-        location="D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
-        type="SPLIT" />
     <artifact
         location="D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
         type="SPLIT" />
     <artifact
-        location="D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+        location="D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
         type="SPLIT" />
     <artifact
-        location="D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+        location="D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
         type="SPLIT" />
     <artifact
         location="D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
         type="SPLIT" />
     <artifact
         location="D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+        type="SPLIT" />
+    <artifact
+        location="D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
         type="SPLIT" />
     <artifact
         location="D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
@@ -54,10 +54,10 @@
         location="D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
         type="SPLIT" />
     <artifact
-        location="D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+        location="D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
         type="SPLIT" />
     <artifact
-        location="D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
+        location="D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
         type="SPLIT" />
     <artifact
         location="D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
@@ -65,25 +65,25 @@
 
     <build
         build-mode="FULL"
-        timestamp="1549538359985"
+        timestamp="1549786093858"
         verifier="FULL_BUILD_REQUESTED" >
-        <artifact
-            location="D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
-            type="SPLIT" />
         <artifact
             location="D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
             type="SPLIT" />
         <artifact
-            location="D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+            location="D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
             type="SPLIT" />
         <artifact
-            location="D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+            location="D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
             type="SPLIT" />
         <artifact
             location="D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
             type="SPLIT" />
         <artifact
             location="D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
             type="SPLIT" />
         <artifact
             location="D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
@@ -98,10 +98,10 @@
             location="D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
             type="SPLIT" />
         <artifact
-            location="D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+            location="D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
             type="SPLIT" />
         <artifact
-            location="D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
+            location="D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
             type="SPLIT" />
         <artifact
             location="D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\build\intermediates\instant-run-apk\debug\app-debug.apk"

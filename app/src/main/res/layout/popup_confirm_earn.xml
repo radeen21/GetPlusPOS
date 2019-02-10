@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@color/btn_bg">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/pureWhite"
+            android:textSize="20sp"
+            android:text="Konfirmasi"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lin_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Getplus ID"
+            android:textColor="@color/pureWhite"
+            android:textSize="13sp"/>
+
+        <TextView
+            android:id="@+id/tv_getplusid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/pureWhite"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:text="oii"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nama Pengguna"
+            android:layout_marginTop="12dp"
+            android:textColor="@color/pureWhite"
+            android:textSize="13sp"/>
+
+        <TextView
+            android:id="@+id/tv_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/pureWhite"
+            android:text="oii"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reff No"
+            android:layout_marginTop="12dp"
+            android:textColor="@color/pureWhite"
+            android:textSize="13sp"/>
+
+        <TextView
+            android:id="@+id/tv_reff_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="18sp"
+            android:textColor="@color/pureWhite"
+            android:textStyle="bold"
+            android:text="oii"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nama Pengguna"
+            android:layout_marginTop="12dp"
+            android:textColor="@color/pureWhite"
+            android:textSize="13sp"/>
+
+        <TextView
+            android:id="@+id/tv_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/pureWhite"
+            android:text="oii"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_margin="40dp"
+        android:background="@drawable/rounded_btn"
+        android:text="Lanjut"
+        android:textColor="@color/pureWhite"
+        app:layout_constraintTop_toBottomOf="@id/lin_main"/>
+</android.support.constraint.ConstraintLayout>

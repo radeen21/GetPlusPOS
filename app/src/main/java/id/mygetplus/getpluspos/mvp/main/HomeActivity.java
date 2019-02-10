@@ -1,6 +1,9 @@
 package id.mygetplus.getpluspos.mvp.main;
 
 import android.content.Intent;
+import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.InsetDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -16,6 +19,7 @@ import id.mygetplus.getpluspos.R;
 import id.mygetplus.getpluspos.ScanQR;
 import id.mygetplus.getpluspos.mvp.cekpoint.CekPointActivity;
 import id.mygetplus.getpluspos.mvp.main.adapter.HomeAdapter;
+
 
 public class HomeActivity extends AppCompatActivity implements HomeAdapter.ItemClickListener {
 
@@ -36,6 +40,17 @@ public class HomeActivity extends AppCompatActivity implements HomeAdapter.ItemC
     }
 
     void init() {
+        int[] ATTRS = new int[]{android.R.attr.listDivider};
+
+        TypedArray a = this.obtainStyledAttributes(ATTRS);
+        Drawable divider = a.getDrawable(0);
+        int inset = getResources().getDimensionPixelSize(R.dimen.nav_header_vertical_spacing);
+        InsetDrawable insetDivider = new InsetDrawable(divider, inset, 10, inset, 110);
+        a.recycle();
+
+        DividerItemDecoration itemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
+        itemDecoration.setDrawable(insetDivider);
+        recHome.addItemDecoration(itemDecoration);
         recHome.setHasFixedSize(true);
         recHome.setLayoutManager(new LinearLayoutManager(this));
         HomeAdapter mainAdapter = new HomeAdapter(this, titleMain);
@@ -48,7 +63,7 @@ public class HomeActivity extends AppCompatActivity implements HomeAdapter.ItemC
         Intent intent = new Intent();
         switch (position){
             case 0:
-                intent =  new Intent(this, CekPointActivity.class);
+                intent =  new Intent(this, ScanQR.class);
 //                Toast.makeText(this, "click oii 0", Toast.LENGTH_SHORT).show();
                 break;
             case 1:

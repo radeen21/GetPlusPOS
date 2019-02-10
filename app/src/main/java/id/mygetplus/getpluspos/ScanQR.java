@@ -1,5 +1,6 @@
 package id.mygetplus.getpluspos;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.PeriodicSync;
@@ -8,6 +9,7 @@ import android.graphics.Color;
 import android.hardware.Camera;
 import android.os.Bundle;
 import android.os.Vibrator;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -31,6 +33,7 @@ import java.util.TimerTask;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import id.mygetplus.getpluspos.mvp.cekpoint.CekPointActivity;
 
 public class ScanQR extends AppCompatActivity implements SurfaceHolder.Callback
 {
@@ -127,24 +130,28 @@ public class ScanQR extends AppCompatActivity implements SurfaceHolder.Callback
         }
 
         Intent mainIntent = null;
+        Fungsi.storeToSharedPref(getApplicationContext(), barcodeText, Preference.PrefScanQRConfirm);
+        Toast.makeText(getApplicationContext(), barcodeText, Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(ScanQR.this, CekPointActivity.class);
+        startActivity(intent);
 
-        if(intActiveMenu == 0)
-          mainIntent = new Intent(ScanQR.this, CashierHome.class);
-        else
-        if((intActiveMenu == 1) || (intActiveMenu == 2))
-        {
-          if(intActiveMenu == 1)
-            Fungsi.storeToSharedPref(getApplicationContext(), barcodeText, Preference.PrefScanQR);
-          else
-          if(intActiveMenu == 2)
-            Fungsi.storeToSharedPref(getApplicationContext(), barcodeText, Preference.PrefScanQRConfirm);
-
-          mainIntent = new Intent(ScanQR.this, Confirm.class);
+//        if(intActiveMenu == 0)
+//          mainIntent = new Intent(ScanQR.this, CashierHome.class);
+//        else
+//        if((intActiveMenu == 1) || (intActiveMenu == 2))
+//        {
+//          if(intActiveMenu == 1)
+//            Fungsi.storeToSharedPref(getApplicationContext(), barcodeText, Preference.PrefScanQR);
+//          else
+//          if(intActiveMenu == 2)
+//            Fungsi.storeToSharedPref(getApplicationContext(), barcodeText, Preference.PrefScanQRConfirm);
+//
+//          mainIntent = new Intent(ScanQR.this, Confirm.class);
         }
 
-        startActivity(mainIntent);
-        finish();
-      }
+//        startActivity(mainIntent);
+//        finish();
+//      }
     }
   };
 
@@ -289,7 +296,7 @@ public class ScanQR extends AppCompatActivity implements SurfaceHolder.Callback
       BackIntent = new Intent(ScanQR.this, CashierHome.class);
     else
     if((intActiveMenu == 1) || (intActiveMenu == 2))
-      BackIntent = new Intent(ScanQR.this, Confirm.class);
+      BackIntent = new Intent(ScanQR.this, CekPointActivity.class);
 
     startActivity(BackIntent);
     finish();

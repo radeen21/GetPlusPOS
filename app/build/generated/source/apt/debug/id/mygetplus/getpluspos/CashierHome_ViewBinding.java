@@ -20,7 +20,7 @@ import java.lang.Override;
 public class CashierHome_ViewBinding implements Unbinder {
   private CashierHome target;
 
-  private View view2131231074;
+  private View view2131231075;
 
   private View view2131230821;
 
@@ -38,7 +38,7 @@ public class CashierHome_ViewBinding implements Unbinder {
     View view;
     view = Utils.findRequiredView(source, R.id.your_points, "field 'your_points' and method 'onViewClicked'");
     target.your_points = Utils.castView(view, R.id.your_points, "field 'your_points'", TextView.class);
-    view2131231074 = view;
+    view2131231075 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -88,8 +88,8 @@ public class CashierHome_ViewBinding implements Unbinder {
     target.ivMerchant = null;
     target.img_profile = null;
 
-    view2131231074.setOnClickListener(null);
-    view2131231074 = null;
+    view2131231075.setOnClickListener(null);
+    view2131231075 = null;
     view2131230821.setOnClickListener(null);
     view2131230821 = null;
     view2131230855.setOnClickListener(null);

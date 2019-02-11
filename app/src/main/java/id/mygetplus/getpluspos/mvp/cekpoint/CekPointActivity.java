@@ -1,6 +1,5 @@
 package id.mygetplus.getpluspos.mvp.cekpoint;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -8,26 +7,20 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
+import android.view.Window;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import id.mygetplus.getpluspos.AValue;
-import id.mygetplus.getpluspos.BrandsRsp;
-import id.mygetplus.getpluspos.CashierHome;
 import id.mygetplus.getpluspos.Fungsi;
 import id.mygetplus.getpluspos.Preference;
 import id.mygetplus.getpluspos.R;
 import id.mygetplus.getpluspos.ResponsePojo;
 import id.mygetplus.getpluspos.SimValue;
-import id.mygetplus.getpluspos.mvp.cekpoint.model.SimValues;
 import id.mygetplus.getpluspos.mvp.cekpoint.presenter.CekPointContract;
 import id.mygetplus.getpluspos.mvp.cekpoint.presenter.CekPointPresenter;
-import id.mygetplus.getpluspos.mvp.login.model.UserData;
 import id.mygetplus.getpluspos.preference.GetPlusSession;
 import id.mygetplus.getpluspos.service.PosLinkGenerator;
-import retrofit2.Callback;
 
 public class CekPointActivity extends AppCompatActivity  implements CekPointContract.View {
 
@@ -38,14 +31,8 @@ public class CekPointActivity extends AppCompatActivity  implements CekPointCont
 
     @BindView(R.id.tv_jumlah)
     TextView tvJumlah;
-    String PoinBalance;
-    String TransaksiID;
-    private Activity ParentAct;
 
     Dialog myDialog;
-    String strVoucher="";
-    BrandsRsp brandsRsp;
-    AValue aValue;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -72,6 +59,7 @@ public class CekPointActivity extends AppCompatActivity  implements CekPointCont
 
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
+        getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         int width = dm.widthPixels;
         int height = dm.heightPixels;
@@ -81,8 +69,9 @@ public class CekPointActivity extends AppCompatActivity  implements CekPointCont
 
     @Override
     public void setCekPoint(ResponsePojo userData) {
-        tvId.setText(userData.getAValue().getBTransactionID());
-//        tvJumlah.setText(userData.getAValue());
-        Toast.makeText(this, userData.getAValue().getBTransactionID(), Toast.LENGTH_SHORT).show();
+        double d = Double.parseDouble(userData.getAValue()
+                .getBProgramMemberships().getBProgramMembership().getBPointsBalance());
+        tvId.setText(Fungsi.getStringFromSharedPref(this, Preference.PrefScanQRConfirm));
+        tvJumlah.setText(Fungsi.FormatDesimal((int) d));
     }
 }

@@ -18,9 +18,7 @@ import java.lang.Override;
 public class Confirm_ViewBinding implements Unbinder {
   private Confirm target;
 
-  private View view2131231030;
-
-  private View view2131230922;
+  private View view2131231031;
 
   private View view2131230923;
 
@@ -28,7 +26,9 @@ public class Confirm_ViewBinding implements Unbinder {
 
   private View view2131230925;
 
-  private View view2131230921;
+  private View view2131230926;
+
+  private View view2131230922;
 
   private View view2131230859;
 
@@ -60,7 +60,7 @@ public class Confirm_ViewBinding implements Unbinder {
     target.tvDetailBrand = Utils.findRequiredViewAsType(source, R.id.tvDetailBrand, "field 'tvDetailBrand'", TextView.class);
     view = Utils.findRequiredView(source, R.id.tvConfirmInvoice, "field 'tvConfirmInvoice' and method 'onViewClicked'");
     target.tvConfirmInvoice = Utils.castView(view, R.id.tvConfirmInvoice, "field 'tvConfirmInvoice'", TextView.class);
-    view2131231030 = view;
+    view2131231031 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -77,7 +77,7 @@ public class Confirm_ViewBinding implements Unbinder {
     target.llConfirmAdjust = Utils.findRequiredViewAsType(source, R.id.llConfirmAdjust, "field 'llConfirmAdjust'", LinearLayout.class);
     view = Utils.findRequiredView(source, R.id.rbConfirmCash, "field 'rbConfirmCash' and method 'onViewClicked'");
     target.rbConfirmCash = Utils.castView(view, R.id.rbConfirmCash, "field 'rbConfirmCash'", RadioButton.class);
-    view2131230922 = view;
+    view2131230923 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -86,7 +86,7 @@ public class Confirm_ViewBinding implements Unbinder {
     });
     view = Utils.findRequiredView(source, R.id.rbConfirmElectronic, "field 'rbConfirmElectronic' and method 'onViewClicked'");
     target.rbConfirmElectronic = Utils.castView(view, R.id.rbConfirmElectronic, "field 'rbConfirmElectronic'", RadioButton.class);
-    view2131230923 = view;
+    view2131230924 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -95,7 +95,7 @@ public class Confirm_ViewBinding implements Unbinder {
     });
     view = Utils.findRequiredView(source, R.id.rbConfirmPoin, "field 'rbConfirmPoin' and method 'onViewClicked'");
     target.rbConfirmPoin = Utils.castView(view, R.id.rbConfirmPoin, "field 'rbConfirmPoin'", RadioButton.class);
-    view2131230924 = view;
+    view2131230925 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -104,7 +104,7 @@ public class Confirm_ViewBinding implements Unbinder {
     });
     view = Utils.findRequiredView(source, R.id.rbConfirmVoucher, "field 'rbConfirmVoucher' and method 'onViewClicked'");
     target.rbConfirmVoucher = Utils.castView(view, R.id.rbConfirmVoucher, "field 'rbConfirmVoucher'", RadioButton.class);
-    view2131230925 = view;
+    view2131230926 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -113,7 +113,7 @@ public class Confirm_ViewBinding implements Unbinder {
     });
     view = Utils.findRequiredView(source, R.id.rbConfirmAdjust, "field 'rbConfirmAdjust' and method 'onViewClicked'");
     target.rbConfirmAdjust = Utils.castView(view, R.id.rbConfirmAdjust, "field 'rbConfirmAdjust'", RadioButton.class);
-    view2131230921 = view;
+    view2131230922 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -192,18 +192,18 @@ public class Confirm_ViewBinding implements Unbinder {
     target.rbConfirmVoucher = null;
     target.rbConfirmAdjust = null;
 
-    view2131231030.setOnClickListener(null);
-    view2131231030 = null;
-    view2131230922.setOnClickListener(null);
-    view2131230922 = null;
+    view2131231031.setOnClickListener(null);
+    view2131231031 = null;
     view2131230923.setOnClickListener(null);
     view2131230923 = null;
     view2131230924.setOnClickListener(null);
     view2131230924 = null;
     view2131230925.setOnClickListener(null);
     view2131230925 = null;
-    view2131230921.setOnClickListener(null);
-    view2131230921 = null;
+    view2131230926.setOnClickListener(null);
+    view2131230926 = null;
+    view2131230922.setOnClickListener(null);
+    view2131230922 = null;
     view2131230859.setOnClickListener(null);
     view2131230859 = null;
     view2131230857.setOnClickListener(null);

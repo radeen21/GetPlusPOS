@@ -5,7 +5,6 @@ import android.support.annotation.CallSuper;
 import android.support.annotation.UiThread;
 import android.support.design.widget.TextInputEditText;
 import android.view.View;
-import android.widget.Button;
 import butterknife.Unbinder;
 import butterknife.internal.DebouncingOnClickListener;
 import butterknife.internal.Utils;
@@ -30,8 +29,7 @@ public class LoginActivity_ViewBinding implements Unbinder {
     View view;
     target.etMail = Utils.findRequiredViewAsType(source, R.id.et_email, "field 'etMail'", TextInputEditText.class);
     target.etPass = Utils.findRequiredViewAsType(source, R.id.et_password, "field 'etPass'", TextInputEditText.class);
-    view = Utils.findRequiredView(source, R.id.btn_login, "field 'btnLogin' and method 'onClickLogin'");
-    target.btnLogin = Utils.castView(view, R.id.btn_login, "field 'btnLogin'", Button.class);
+    view = Utils.findRequiredView(source, R.id.btn_login, "method 'onClickLogin'");
     view2131230765 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
@@ -50,7 +48,6 @@ public class LoginActivity_ViewBinding implements Unbinder {
 
     target.etMail = null;
     target.etPass = null;
-    target.btnLogin = null;
 
     view2131230765.setOnClickListener(null);
     view2131230765 = null;

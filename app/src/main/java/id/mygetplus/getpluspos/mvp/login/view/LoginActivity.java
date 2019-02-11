@@ -29,9 +29,6 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
     @BindView(R.id.et_password)
     TextInputEditText etPass;
 
-    @BindView(R.id.btn_login)
-    Button btnLogin;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,10 +39,8 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
 
     @OnClick(R.id.btn_login)
     void onClickLogin() {
-        btnLogin.setOnClickListener(v -> {
             loginPresenter.loadLoginData(PosLinkGenerator.createService(this),
                     etMail.getText().toString(), etPass.getText().toString());
-        });
     }
 
     @Override

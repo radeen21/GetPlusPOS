@@ -132,7 +132,6 @@ public class ScanQR extends AppCompatActivity implements SurfaceHolder.Callback
 
         Intent mainIntent = null;
         Fungsi.storeToSharedPref(getApplicationContext(), barcodeText, Preference.PrefScanQRConfirm);
-        Toast.makeText(getApplicationContext(), barcodeText, Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(ScanQR.this, CekPointActivity.class);
         startActivity(intent);
 

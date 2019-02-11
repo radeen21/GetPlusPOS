@@ -1040,6 +1040,7 @@ drawable avd_show_password
 drawable back
 drawable bg_receipt
 drawable btn_flash_gray
+drawable btn_logout
 drawable central
 drawable cgv
 drawable design_bottom_navigation_item_background
@@ -1254,6 +1255,7 @@ id labeled
 id largeLabel
 id left
 id lin_main
+id lin_toolbar
 id line1
 id line3
 id listMode

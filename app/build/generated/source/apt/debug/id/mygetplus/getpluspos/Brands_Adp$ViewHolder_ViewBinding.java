@@ -18,9 +18,9 @@ public class Brands_Adp$ViewHolder_ViewBinding implements Unbinder {
 
   private View view2131230853;
 
-  private View view2131230872;
+  private View view2131230873;
 
-  private View view2131231027;
+  private View view2131231028;
 
   @UiThread
   public Brands_Adp$ViewHolder_ViewBinding(final Brands_Adp.ViewHolder target, View source) {
@@ -38,7 +38,7 @@ public class Brands_Adp$ViewHolder_ViewBinding implements Unbinder {
     });
     view = Utils.findRequiredView(source, R.id.llBrandGroup, "field 'llBrandGroup' and method 'onViewClicked'");
     target.llBrandGroup = Utils.castView(view, R.id.llBrandGroup, "field 'llBrandGroup'", LinearLayout.class);
-    view2131230872 = view;
+    view2131230873 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -49,7 +49,7 @@ public class Brands_Adp$ViewHolder_ViewBinding implements Unbinder {
     target.tvBrandDetail = Utils.findRequiredViewAsType(source, R.id.tvBrandDetail, "field 'tvBrandDetail'", TextView.class);
     view = Utils.findRequiredView(source, R.id.tvBrandPrice, "field 'tvBrandPrice' and method 'onViewClicked'");
     target.tvBrandPrice = Utils.castView(view, R.id.tvBrandPrice, "field 'tvBrandPrice'", TextView.class);
-    view2131231027 = view;
+    view2131231028 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -73,9 +73,9 @@ public class Brands_Adp$ViewHolder_ViewBinding implements Unbinder {
 
     view2131230853.setOnClickListener(null);
     view2131230853 = null;
-    view2131230872.setOnClickListener(null);
-    view2131230872 = null;
-    view2131231027.setOnClickListener(null);
-    view2131231027 = null;
+    view2131230873.setOnClickListener(null);
+    view2131230873 = null;
+    view2131231028.setOnClickListener(null);
+    view2131231028 = null;
   }
 }

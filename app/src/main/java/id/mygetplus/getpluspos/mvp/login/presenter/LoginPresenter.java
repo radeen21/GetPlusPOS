@@ -39,7 +39,6 @@ public class LoginPresenter extends BaseViewPresenter implements LoginContract.P
         userData.setUsername(username);
         userData.setPassword(password);
 
-
         TelephonyManager telephonyManager = (TelephonyManager)
                 context.getSystemService(Context.TELEPHONY_SERVICE);
         if (ActivityCompat.checkSelfPermission(context, Manifest.permission.READ_PHONE_STATE)
@@ -53,6 +52,7 @@ public class LoginPresenter extends BaseViewPresenter implements LoginContract.P
             // for ActivityCompat#requestPermissions for more details.
             return;
         }
+
         String deviceId = telephonyManager.getDeviceId();
         String serial = telephonyManager.getSimSerialNumber();
         String imei = telephonyManager.getImei();

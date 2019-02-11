@@ -52,7 +52,8 @@ public class CekPointActivity extends AppCompatActivity  implements CekPointCont
         simValues.setSim1CardNumber(cardId);
 
         cekPointPresenter = new CekPointPresenter(this, this);
-        cekPointPresenter.loadCekPointData(PosLinkGenerator.createService(this), token, cardId);
+        cekPointPresenter.loadCekPointData(PosLinkGenerator.createService(this),
+                token, cardId);
     }
 
     void initPopUp() {

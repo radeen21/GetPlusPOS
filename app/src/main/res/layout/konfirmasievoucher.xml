@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimary">
+
+    <LinearLayout
+        android:id="@+id/lin_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:background="@color/btn_bg">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/strKonfirmasi"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lin_toolbar">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/msgPakaiVoucher"
+            android:gravity="center"
+            android:textSize="23sp"
+            android:textColor="@color/pureWhite"
+            android:layout_marginTop="20dp"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnBatalVoucher"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/pureWhite"
+        android:background="@drawable/btn_add_more_receipt"
+        app:layout_constraintBottom_toTopOf="@id/btnLanjutVoucher"/>
+
+    <Button
+      android:id="@+id/btnLanjutVoucher"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="60dp"
+      android:layout_marginRight="60dp"
+      android:layout_marginBottom="20dp"
+      android:textColor="@color/pureWhite"
+      android:background="@drawable/btn_add_more_receipt"
+      app:layout_constraintBottom_toBottomOf="parent"/>
+
+</android.support.constraint.ConstraintLayout>

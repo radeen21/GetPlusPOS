@@ -19,10 +19,13 @@ import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import id.mygetplus.getpluspos.Fungsi;
 import id.mygetplus.getpluspos.PopupMessege;
+import id.mygetplus.getpluspos.Preference;
 import id.mygetplus.getpluspos.R;
 import id.mygetplus.getpluspos.ResponsePojo;
 import id.mygetplus.getpluspos.ScanQR;
+import id.mygetplus.getpluspos.mvp.evoucher.view.EVoucher;
 import id.mygetplus.getpluspos.mvp.login.view.LoginActivity;
 import id.mygetplus.getpluspos.mvp.logout.presenter.LogoutContract;
 import id.mygetplus.getpluspos.mvp.logout.presenter.LogoutPresenter;
@@ -164,27 +167,29 @@ public class HomeActivity extends AppCompatActivity implements HomeAdapter.ItemC
 		R.id.Iv_logout, R.id.Iv_Settle})
 	public void onViewClicked(View view)
 	{
-		Intent intent = new Intent();
-
 		switch (view.getId())
 		{
 			case R.id.btnJumPoin:
-				intent = new Intent(this, ScanQR.class);
+				Fungsi.storeToSharedPref(context, 1, Preference.PrefActiveMenu);
+				Intent intent = new Intent(this, ScanQR.class);
+				startActivity(intent);
 				break;
 			case R.id.btnBeriPoin:
 				break;
 			case R.id.btnBayarPoin:
 				break;
 			case R.id.btnVoucherPoin:
+				Fungsi.storeToSharedPref(getApplicationContext(), "", Preference.PrefGetPlusID);
+				Fungsi.storeToSharedPref(getApplicationContext(), "", Preference.PrefEVoucher);
+				Intent EVoucherintent = new Intent(this, EVoucher.class);
+				startActivity(EVoucherintent);
+				finish();
 				break;
 			case R.id.Iv_logout:
 				LogoutProcess();
 				break;
 			case R.id.Iv_Settle:
-				LogoutProcess();
 				break;
 		}
-
-		startActivity(intent);
 	}
 }

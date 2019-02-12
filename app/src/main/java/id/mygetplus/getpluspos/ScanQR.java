@@ -34,6 +34,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import id.mygetplus.getpluspos.mvp.cekpoint.CekPointActivity;
+import id.mygetplus.getpluspos.mvp.evoucher.view.EVoucher;
 import id.mygetplus.getpluspos.mvp.main.HomeActivity;
 
 public class ScanQR extends AppCompatActivity implements SurfaceHolder.Callback
@@ -130,29 +131,29 @@ public class ScanQR extends AppCompatActivity implements SurfaceHolder.Callback
           barcodeText = sym.getData().trim();
         }
 
-//        Intent mainIntent = null;
-        Fungsi.storeToSharedPref(getApplicationContext(), barcodeText, Preference.PrefScanQRConfirm);
-        Intent intent = new Intent(ScanQR.this, CekPointActivity.class);
-        startActivity(intent);
-        finish();
+        Intent mainIntent = null;
 
-//        if(intActiveMenu == 0)
-//          mainIntent = new Intent(ScanQR.this, CashierHome.class);
-//        else
-//        if((intActiveMenu == 1) || (intActiveMenu == 2))
-//        {
-//          if(intActiveMenu == 1)
-//            Fungsi.storeToSharedPref(getApplicationContext(), barcodeText, Preference.PrefScanQR);
-//          else
-//          if(intActiveMenu == 2)
-//            Fungsi.storeToSharedPref(getApplicationContext(), barcodeText, Preference.PrefScanQRConfirm);
-//
-//          mainIntent = new Intent(ScanQR.this, Confirm.class);
+        if(intActiveMenu == 1)
+        {
+          Fungsi.storeToSharedPref(getApplicationContext(), barcodeText, Preference.PrefGetPlusID);
+          mainIntent = new Intent(ScanQR.this, CekPointActivity.class);
+        }
+        else
+        if(intActiveMenu == 41)
+        {
+          Fungsi.storeToSharedPref(getApplicationContext(), barcodeText, Preference.PrefGetPlusID);
+          mainIntent = new Intent(ScanQR.this, EVoucher.class);
+        }
+        else
+        if(intActiveMenu == 42)
+        {
+          Fungsi.storeToSharedPref(getApplicationContext(), barcodeText, Preference.PrefEVoucher);
+          mainIntent = new Intent(ScanQR.this, EVoucher.class);
         }
 
-//        startActivity(mainIntent);
-//        finish();
-//      }
+        startActivity(mainIntent);
+        finish();
+      }
     }
   };
 
@@ -292,15 +293,13 @@ public class ScanQR extends AppCompatActivity implements SurfaceHolder.Callback
   private void BackActivity()
   {
     Intent BackIntent = null;
-/*
-    if(intActiveMenu == 0)
-      BackIntent = new Intent(ScanQR.this, CashierHome.class);
-    else
-    if((intActiveMenu == 1) || (intActiveMenu == 2))
-      BackIntent = new Intent(ScanQR.this, HomeActivity.class);
-*/
 
-    BackIntent = new Intent(ScanQR.this, HomeActivity.class);
+    if(intActiveMenu == 1)
+      BackIntent = new Intent(ScanQR.this, HomeActivity.class);
+    else
+    if((intActiveMenu == 41) || (intActiveMenu == 42))
+      BackIntent = new Intent(ScanQR.this, EVoucher.class);
+
     startActivity(BackIntent);
     finish();
   }

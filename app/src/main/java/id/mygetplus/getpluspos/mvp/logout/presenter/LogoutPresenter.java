@@ -1,11 +1,10 @@
-package id.mygetplus.getpluspos.mvp.login.presenter;
+package id.mygetplus.getpluspos.mvp.logout.presenter;
 
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.support.v4.app.ActivityCompat;
 import android.telephony.TelephonyManager;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -18,16 +17,15 @@ import id.mygetplus.getpluspos.helper.ConfigManager;
 import id.mygetplus.getpluspos.mvp.model.DeviceData;
 import id.mygetplus.getpluspos.mvp.model.LoginHolder;
 import id.mygetplus.getpluspos.mvp.model.UserData;
-import id.mygetplus.getpluspos.preference.GetPlusSession;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
-public class LoginPresenter extends BaseViewPresenter implements LoginContract.Presenter {
+public class LogoutPresenter extends BaseViewPresenter implements LogoutContract.Presenter {
 
     private Context context;
-    private LoginContract.View view;
+    private LogoutContract.View view;
 
-    public LoginPresenter(Context context, LoginContract.View view) {
+    public LogoutPresenter(Context context, LogoutContract.View view) {
         this.context = context;
         this.view = view;
     }
@@ -38,10 +36,9 @@ public class LoginPresenter extends BaseViewPresenter implements LoginContract.P
     }
 
     @Override
-    public void loadLoginData(POSLink posLink, String username, String password) {
+    public void loadLogoutData(POSLink posLink, String username) {
         UserData userData = new UserData();
         userData.setUsername(username);
-        userData.setPassword(password);
 
         TelephonyManager telephonyManager = (TelephonyManager)
                 context.getSystemService(Context.TELEPHONY_SERVICE);
@@ -73,7 +70,8 @@ public class LoginPresenter extends BaseViewPresenter implements LoginContract.P
         loginHolder.setUserData(userData);
         loginHolder.setDeviceData(deviceData);
 
-        posLink.getUserLogin(loginHolder).subscribeOn(Schedulers.io())
+
+        posLink.getUserLogout(loginHolder).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new ResponseSubscriber<ResponsePojo>() {
                     @Override

@@ -1,4 +1,4 @@
-package id.mygetplus.getpluspos.mvp.cekpoint.model;
+package id.mygetplus.getpluspos.mvp.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

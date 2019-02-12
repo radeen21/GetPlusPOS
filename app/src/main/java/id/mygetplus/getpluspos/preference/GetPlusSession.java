@@ -38,7 +38,6 @@ public class GetPlusSession {
         editor.apply();
     }
 
-
     public void setToken(String token) {
         SharedPreferences.Editor editor = preferencesGetPlus.edit();
         editor.putString(ConfigManager.AccountSession.TOKEN, token);
@@ -68,4 +67,23 @@ public class GetPlusSession {
         return PreferenceManager.getDefaultSharedPreferences(context);
     }
 
+    public void setMsgResponse(String msg) {
+        SharedPreferences.Editor editor = preferencesGetPlus.edit();
+        editor.putString(ConfigManager.AccountSession.MSG_RESPONSE, msg);
+        editor.apply();
+    }
+
+    public String getMsgResponse() {
+        return preferencesGetPlus.getString(ConfigManager.AccountSession.MSG_RESPONSE, "");
+    }
+
+    public void setUserEmail(String UserEmail) {
+        SharedPreferences.Editor editor = preferencesGetPlus.edit();
+        editor.putString(ConfigManager.AccountSession.UserEmail, UserEmail);
+        editor.apply();
+    }
+
+    public String getUserEmail() {
+        return preferencesGetPlus.getString(ConfigManager.AccountSession.UserEmail, "");
+    }
 }

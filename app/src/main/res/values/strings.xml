@@ -146,4 +146,8 @@
     <string name="msgTransaksiPoin">Proses transaksi poin</string>
     <string name="msgCheckVoucher">Proses cek voucher</string>
     <string name="msgProdukKosong">Data produk kosong</string>
+    <string name="msgUsernameEmpty">Masukan username</string>
+    <string name="msgPasswordEmpty">Masukan password</string>
+    <string name="msgLoginFailed">Login failed</string>
+    <string name="msgLogoutApp">Tutup aplikasi ?</string>
 </resources>

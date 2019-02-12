@@ -1,12 +1,7 @@
-package id.mygetplus.getpluspos.mvp.cekpoint.model;
+package id.mygetplus.getpluspos.mvp.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
-import id.mygetplus.getpluspos.PoinRequest;
-import id.mygetplus.getpluspos.RequestHolder;
-import id.mygetplus.getpluspos.mvp.login.model.DeviceData;
-import id.mygetplus.getpluspos.mvp.login.model.UserData;
 
 public class CekPointHolder {
 

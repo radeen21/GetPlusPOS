@@ -46,10 +46,7 @@ public class Splash extends AppCompatActivity
       Fungsi.storeToSharedPref(getApplicationContext(),"", Preference.PrefScanQR);
       Fungsi.storeToSharedPref(getApplicationContext(),"", Preference.PrefScanQRConfirm);
       Fungsi.storeToSharedPref(getApplicationContext(),0, Preference.PrefMerchantOwner);
-      Intent mainIntent = new Intent(Splash.this, CashierHome.class);
-      startActivity(mainIntent);
       checkToken();
-      finish();
     }, FixValue.SPLASH_DISPLAY_LENGHT);
   }
 

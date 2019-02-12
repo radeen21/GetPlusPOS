@@ -2,13 +2,15 @@ package id.mygetplus.getpluspos.mvp.cekpoint.presenter;
 
 import android.content.Context;
 
+import id.mygetplus.getpluspos.Fungsi;
 import id.mygetplus.getpluspos.POSLink;
 import id.mygetplus.getpluspos.ResponsePojo;
 import id.mygetplus.getpluspos.base.BaseViewPresenter;
 import id.mygetplus.getpluspos.base.ResponseSubscriber;
-import id.mygetplus.getpluspos.mvp.cekpoint.model.CekPointHolder;
-import id.mygetplus.getpluspos.mvp.cekpoint.model.PointRequestNew;
-import id.mygetplus.getpluspos.mvp.cekpoint.model.SimValues;
+import id.mygetplus.getpluspos.helper.ConfigManager;
+import id.mygetplus.getpluspos.mvp.model.CekPointHolder;
+import id.mygetplus.getpluspos.mvp.model.PointRequestNew;
+import id.mygetplus.getpluspos.mvp.model.SimValues;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
@@ -41,6 +43,7 @@ public class CekPointPresenter extends BaseViewPresenter implements CekPointCont
                     @Override
                     public void onError(Throwable throwable) {
                         super.onError(throwable);
+                      view.setCekPoint(Fungsi.getObjectFromSharedPref(context, ResponsePojo.class, ConfigManager.AccountSession.MSG_RESPONSE));
                     }
 
                     @Override

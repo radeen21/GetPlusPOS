@@ -1,14 +1,13 @@
-package id.mygetplus.getpluspos.mvp.login.presenter;
+package id.mygetplus.getpluspos.mvp.logout.presenter;
 
-import id.mygetplus.getpluspos.AValue;
 import id.mygetplus.getpluspos.POSLink;
 import id.mygetplus.getpluspos.ResponsePojo;
 import id.mygetplus.getpluspos.base.IBaseViewPresenter;
 
-public interface LoginContract {
+public interface LogoutContract {
 
     interface Presenter extends IBaseViewPresenter {
-        void loadLoginData(POSLink posLink, String username, String password);
+        void loadLogoutData(POSLink posLink, String username);
     }
 
     interface View {

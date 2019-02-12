@@ -130,10 +130,11 @@ public class ScanQR extends AppCompatActivity implements SurfaceHolder.Callback
           barcodeText = sym.getData().trim();
         }
 
-        Intent mainIntent = null;
+//        Intent mainIntent = null;
         Fungsi.storeToSharedPref(getApplicationContext(), barcodeText, Preference.PrefScanQRConfirm);
         Intent intent = new Intent(ScanQR.this, CekPointActivity.class);
         startActivity(intent);
+        finish();
 
 //        if(intActiveMenu == 0)
 //          mainIntent = new Intent(ScanQR.this, CashierHome.class);
@@ -291,13 +292,15 @@ public class ScanQR extends AppCompatActivity implements SurfaceHolder.Callback
   private void BackActivity()
   {
     Intent BackIntent = null;
-
+/*
     if(intActiveMenu == 0)
       BackIntent = new Intent(ScanQR.this, CashierHome.class);
     else
     if((intActiveMenu == 1) || (intActiveMenu == 2))
       BackIntent = new Intent(ScanQR.this, HomeActivity.class);
+*/
 
+    BackIntent = new Intent(ScanQR.this, HomeActivity.class);
     startActivity(BackIntent);
     finish();
   }

@@ -1,4 +1,4 @@
-package id.mygetplus.getpluspos.mvp.login.model;
+package id.mygetplus.getpluspos.mvp.model;
 
 public class DeviceData {
 

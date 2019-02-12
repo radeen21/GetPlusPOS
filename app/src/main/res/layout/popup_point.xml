@@ -81,15 +81,15 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btn_ok"
+        android:id="@+id/btn_ok_point"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="80dp"
-        android:layout_marginRight="80dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
         android:layout_marginBottom="20dp"
         android:text="OK"
         android:textColor="@color/pureWhite"
-        android:background="@drawable/rounded_btn"
+        android:background="@drawable/btn_add_more_receipt"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
 

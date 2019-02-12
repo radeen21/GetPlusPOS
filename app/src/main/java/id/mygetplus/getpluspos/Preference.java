@@ -19,4 +19,5 @@ public class Preference
   public static final String PrefActiveMenu = "PrefActiveMenu";
   public static final String PrefBrandItem = "PrefBrandItem";
   public static final String PrefMerchantOwner = "PrefMerchantOwner";
+  public static final String PrefUserEmail = "PrefUserEmail";
 }

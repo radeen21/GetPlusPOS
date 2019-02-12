@@ -20,11 +20,11 @@ import java.lang.Override;
 public class CashierHome_ViewBinding implements Unbinder {
   private CashierHome target;
 
-  private View view2131231075;
+  private View view2131231087;
 
-  private View view2131230821;
+  private View view2131230831;
 
-  private View view2131230855;
+  private View view2131230865;
 
   @UiThread
   public CashierHome_ViewBinding(CashierHome target) {
@@ -38,7 +38,7 @@ public class CashierHome_ViewBinding implements Unbinder {
     View view;
     view = Utils.findRequiredView(source, R.id.your_points, "field 'your_points' and method 'onViewClicked'");
     target.your_points = Utils.castView(view, R.id.your_points, "field 'your_points'", TextView.class);
-    view2131231075 = view;
+    view2131231087 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -50,7 +50,7 @@ public class CashierHome_ViewBinding implements Unbinder {
     target.toolbar = Utils.findRequiredViewAsType(source, R.id.toolbar, "field 'toolbar'", Toolbar.class);
     view = Utils.findRequiredView(source, R.id.fab, "field 'fab' and method 'onViewClicked'");
     target.fab = Utils.castView(view, R.id.fab, "field 'fab'", FloatingActionButton.class);
-    view2131230821 = view;
+    view2131230831 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -61,7 +61,7 @@ public class CashierHome_ViewBinding implements Unbinder {
     target.swipeRefreshLayout = Utils.findRequiredViewAsType(source, R.id.swipeRefreshLayout, "field 'swipeRefreshLayout'", SwipeRefreshLayout.class);
     view = Utils.findRequiredView(source, R.id.ivMerchant, "field 'ivMerchant' and method 'onViewClicked'");
     target.ivMerchant = Utils.castView(view, R.id.ivMerchant, "field 'ivMerchant'", ImageView.class);
-    view2131230855 = view;
+    view2131230865 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -88,11 +88,11 @@ public class CashierHome_ViewBinding implements Unbinder {
     target.ivMerchant = null;
     target.img_profile = null;
 
-    view2131231075.setOnClickListener(null);
-    view2131231075 = null;
-    view2131230821.setOnClickListener(null);
-    view2131230821 = null;
-    view2131230855.setOnClickListener(null);
-    view2131230855 = null;
+    view2131231087.setOnClickListener(null);
+    view2131231087 = null;
+    view2131230831.setOnClickListener(null);
+    view2131230831 = null;
+    view2131230865.setOnClickListener(null);
+    view2131230865 = null;
   }
 }

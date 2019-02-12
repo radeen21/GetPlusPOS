@@ -25,6 +25,7 @@ import id.mygetplus.getpluspos.Preference;
 import id.mygetplus.getpluspos.R;
 import id.mygetplus.getpluspos.ResponsePojo;
 import id.mygetplus.getpluspos.ScanQR;
+import id.mygetplus.getpluspos.mvp.earnpoint.view.EarnPointActivity;
 import id.mygetplus.getpluspos.mvp.evoucher.view.EVoucher;
 import id.mygetplus.getpluspos.mvp.login.view.LoginActivity;
 import id.mygetplus.getpluspos.mvp.logout.presenter.LogoutContract;
@@ -62,24 +63,24 @@ public class HomeActivity extends AppCompatActivity implements HomeAdapter.ItemC
 
 	void init()
 	{
-		int[] ATTRS = new int[]{android.R.attr.listDivider};
-
-		TypedArray a = this.obtainStyledAttributes(ATTRS);
-		Drawable divider = a.getDrawable(0);
-		int inset = getResources().getDimensionPixelSize(R.dimen.nav_header_vertical_spacing);
-		InsetDrawable insetDivider = new InsetDrawable(divider, inset,
-			10, inset, 10);
-		a.recycle();
-
-		DividerItemDecoration itemDecoration = new DividerItemDecoration(this,
-			DividerItemDecoration.VERTICAL);
-		itemDecoration.setDrawable(insetDivider);
-		recHome.addItemDecoration(itemDecoration);
-		recHome.setHasFixedSize(true);
-		recHome.setLayoutManager(new LinearLayoutManager(this));
-		HomeAdapter mainAdapter = new HomeAdapter(this, titleMain);
-		mainAdapter.setClickListener(this);
-		recHome.setAdapter(mainAdapter);
+//		int[] ATTRS = new int[]{android.R.attr.listDivider};
+//
+//		TypedArray a = this.obtainStyledAttributes(ATTRS);
+//		Drawable divider = a.getDrawable(0);
+//		int inset = getResources().getDimensionPixelSize(R.dimen.nav_header_vertical_spacing);
+//		InsetDrawable insetDivider = new InsetDrawable(divider, inset,
+//			10, inset, 10);
+//		a.recycle();
+//
+//		DividerItemDecoration itemDecoration = new DividerItemDecoration(this,
+//			DividerItemDecoration.VERTICAL);
+//		itemDecoration.setDrawable(insetDivider);
+//		recHome.addItemDecoration(itemDecoration);
+//		recHome.setHasFixedSize(true);
+//		recHome.setLayoutManager(new LinearLayoutManager(this));
+//		HomeAdapter mainAdapter = new HomeAdapter(this, titleMain);
+//		mainAdapter.setClickListener(this);
+//		recHome.setAdapter(mainAdapter);
 	}
 
 	@Override
@@ -90,11 +91,9 @@ public class HomeActivity extends AppCompatActivity implements HomeAdapter.ItemC
 		{
 			case 0:
 				intent = new Intent(this, ScanQR.class);
-//                Toast.makeText(this, "click oii 0", Toast.LENGTH_SHORT).show();
 				break;
 			case 1:
 				intent = new Intent(this, ScanQR.class);
-//                Toast.makeText(this, "click oii 1", Toast.LENGTH_SHORT).show();
 				break;
 			case 2:
 				Toast.makeText(this, "click oii 2", Toast.LENGTH_SHORT).show();
@@ -127,7 +126,8 @@ public class HomeActivity extends AppCompatActivity implements HomeAdapter.ItemC
 			finish();
 		}
 		else
-			Toast.makeText(getApplicationContext(), responsePojo.getAFaultDescription(), Toast.LENGTH_SHORT).show();
+			Toast.makeText(getApplicationContext(), responsePojo.getAFaultDescription(),
+					Toast.LENGTH_SHORT).show();
 	}
 
 	private void LogoutProcess()
@@ -138,20 +138,10 @@ public class HomeActivity extends AppCompatActivity implements HomeAdapter.ItemC
 			.setMessage(context.getString(R.string.msgLogoutApp))
 			.setIcon(android.R.drawable.ic_dialog_alert)
 			.setCancelable(false)
-			.setPositiveButton(R.string.strBtnOK, new DialogInterface.OnClickListener()
-			{
-				public void onClick(DialogInterface dialog, int which)
-				{
-					logoutPresenter.loadLogoutData(PosLinkGenerator.createService(context), GetPlusSession.getInstance(context).getUserEmail());
-				}
-			})
-			.setNegativeButton(R.string.strBtnCancel, new DialogInterface.OnClickListener()
-			{
-				public void onClick(DialogInterface dialog, int id)
-				{
-					dialog.cancel();
-				}
-			});
+			.setPositiveButton(R.string.strBtnOK, (dialog, which) -> logoutPresenter
+					.loadLogoutData(PosLinkGenerator.createService(context),
+							GetPlusSession.getInstance(context).getUserEmail()))
+			.setNegativeButton(R.string.strBtnCancel, (dialog, id) -> dialog.cancel());
 
 		AlertDialog alert = builder.create();
 		alert.show();
@@ -163,18 +153,22 @@ public class HomeActivity extends AppCompatActivity implements HomeAdapter.ItemC
 		LogoutProcess();
 	}
 
-	@OnClick({R.id.btnJumPoin, R.id.btnBeriPoin, R.id.btnBayarPoin, R.id.btnVoucherPoin,
-		R.id.Iv_logout, R.id.Iv_Settle})
+	@OnClick({R.id.btn_JumPoin, R.id.btnBeriPoin, R.id.btnBayarPoin, R.id.btnVoucherPoin,
+		R.id.Iv_logout, R.id.Iv_Settles})
 	public void onViewClicked(View view)
 	{
 		switch (view.getId())
 		{
-			case R.id.btnJumPoin:
+			case R.id.btn_JumPoin:
 				Fungsi.storeToSharedPref(context, 1, Preference.PrefActiveMenu);
 				Intent intent = new Intent(this, ScanQR.class);
 				startActivity(intent);
 				break;
 			case R.id.btnBeriPoin:
+				Fungsi.storeToSharedPref(context, 2, Preference.PrefActiveMenu);
+				Fungsi.storeToSharedPref(getApplicationContext(), "", Preference.PrefGetPlusID);
+				Intent earnIntent = new Intent(this, EarnPointActivity.class);
+				startActivity(earnIntent);
 				break;
 			case R.id.btnBayarPoin:
 				break;
@@ -188,7 +182,7 @@ public class HomeActivity extends AppCompatActivity implements HomeAdapter.ItemC
 			case R.id.Iv_logout:
 				LogoutProcess();
 				break;
-			case R.id.Iv_Settle:
+			case R.id.Iv_Settles:
 				break;
 		}
 	}

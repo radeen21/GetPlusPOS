@@ -1,24 +1,14 @@
 package id.mygetplus.getpluspos;
 
-import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
-import android.content.PeriodicSync;
-import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.hardware.Camera;
 import android.os.Bundle;
 import android.os.Vibrator;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import net.sourceforge.zbar.Config;
 import net.sourceforge.zbar.Image;
@@ -32,25 +22,20 @@ import java.util.TimerTask;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 import id.mygetplus.getpluspos.mvp.cekpoint.CekPointActivity;
+import id.mygetplus.getpluspos.mvp.earnpoint.view.EarnPointActivity;
 import id.mygetplus.getpluspos.mvp.evoucher.view.EVoucher;
 import id.mygetplus.getpluspos.mvp.main.HomeActivity;
 
-public class ScanQR extends AppCompatActivity implements SurfaceHolder.Callback
-{
-//  @BindView(R.id.txt_flash)
-//  TextView txt_flash;
+public class ScanQR extends AppCompatActivity implements SurfaceHolder.Callback {
   @BindView(R.id.cameraPreview)
   SurfaceView cameraPreview;
 
   private String TAG = "[Scan QR]";
   private CameraManager cameraManager;
   private Context context = this;
-  PopupMessege pesan = new PopupMessege();
   private ImageScanner mScanner;
   private boolean hasSurface;
-  private boolean flashOn = false;
   private boolean isInitCameraProcess = false;
 
   int intActiveMenu = 0;
@@ -84,21 +69,6 @@ public class ScanQR extends AppCompatActivity implements SurfaceHolder.Callback
   {
     hasSurface = false;
   }
-
-//  @OnClick({R.id.ivBackQR, R.id.btn_flash})
-//  public void onViewClicked(View view)
-//  {
-//    switch(view.getId())
-//    {
-//      case R.id.ivBackQR:
-//        BackActivity();
-//        break;
-//      case R.id.btn_flash:
-//        if(hasFlash())
-////          switchFlashlight();
-//        break;
-//    }
-//  }
 
   private Camera.PreviewCallback barcodeCallback = new Camera.PreviewCallback()
   {
@@ -135,8 +105,13 @@ public class ScanQR extends AppCompatActivity implements SurfaceHolder.Callback
 
         if(intActiveMenu == 1)
         {
-          Fungsi.storeToSharedPref(getApplicationContext(), barcodeText, Preference.PrefGetPlusID);
+          Fungsi.storeToSharedPref(getApplicationContext(), barcodeText, Preference.PrefScanQRConfirm);
           mainIntent = new Intent(ScanQR.this, CekPointActivity.class);
+        }
+        if(intActiveMenu == 2)
+        {
+          Fungsi.storeToSharedPref(getApplicationContext(), barcodeText, Preference.PrefScanQRConfirm);
+          mainIntent = new Intent(ScanQR.this, EarnPointActivity.class);
         }
         else
         if(intActiveMenu == 41)
@@ -156,27 +131,6 @@ public class ScanQR extends AppCompatActivity implements SurfaceHolder.Callback
       }
     }
   };
-
-//  private boolean hasFlash()
-//  {
-//    return getApplicationContext().getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH);
-//  }
-
-//  private void switchFlashlight()
-//  {
-//    if(!flashOn)
-//    {
-//      cameraManager.setTorch(true);
-//      txt_flash.setText(getString(R.string.strFlashOn));
-//    }
-//    else
-//    {
-//      cameraManager.setTorch(false);
-//      txt_flash.setText(getString(R.string.strFlashOff));
-//    }
-//
-//    flashOn = !flashOn;
-//  }
 
   @Override
   protected void onResume()
@@ -296,6 +250,9 @@ public class ScanQR extends AppCompatActivity implements SurfaceHolder.Callback
 
     if(intActiveMenu == 1)
       BackIntent = new Intent(ScanQR.this, HomeActivity.class);
+    else
+    if(intActiveMenu == 2)
+      BackIntent = new Intent(ScanQR.this, EarnPointActivity.class);
     else
     if((intActiveMenu == 41) || (intActiveMenu == 42))
       BackIntent = new Intent(ScanQR.this, EVoucher.class);

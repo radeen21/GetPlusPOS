@@ -39,8 +39,7 @@ public class CekPointActivity extends AppCompatActivity implements CekPointContr
 	Dialog myDialog;
 
 	@Override
-	public void onCreate(@Nullable Bundle savedInstanceState)
-	{
+	public void onCreate(@Nullable Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.popup_point);
 		ButterKnife.bind(this);
@@ -60,9 +59,7 @@ public class CekPointActivity extends AppCompatActivity implements CekPointContr
 			token, cardId);
 	}
 
-	void initPopUp()
-	{
-
+	void initPopUp() {
 		DisplayMetrics dm = new DisplayMetrics();
 		getWindowManager().getDefaultDisplay().getMetrics(dm);
 		getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
@@ -74,20 +71,18 @@ public class CekPointActivity extends AppCompatActivity implements CekPointContr
 	}
 
 	@Override
-	public void setCekPoint(ResponsePojo userData)
-	{
+	public void setCekPoint(ResponsePojo userData) {
 		double d = Double.parseDouble(userData.getAValue()
 			.getBProgramMemberships().getBProgramMembership().getBPointsBalance());
 		tvId.setText(Fungsi.getStringFromSharedPref(this, Preference.PrefScanQRConfirm));
 		tvJumlah.setText(Fungsi.FormatDesimal((int) d));
 	}
 
-	@OnClick(R.id.btn_ok_point)
-	public void onViewClicked(View view)
-	{
+	@OnClick(R.id.btn_ok_points)
+	public void onViewClicked(View view) {
 		switch (view.getId())
 		{
-			case R.id.btn_ok_point:
+			case R.id.btn_ok_points:
 				Intent intent = new Intent(this, HomeActivity.class);
 				startActivity(intent);
 				finish();

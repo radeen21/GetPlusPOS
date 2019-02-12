@@ -15,6 +15,16 @@ import java.lang.Override;
 public class HomeActivity_ViewBinding implements Unbinder {
   private HomeActivity target;
 
+  private View view2131230771;
+
+  private View view2131230765;
+
+  private View view2131230764;
+
+  private View view2131230770;
+
+  private View view2131230724;
+
   private View view2131230723;
 
   @UiThread
@@ -28,12 +38,52 @@ public class HomeActivity_ViewBinding implements Unbinder {
 
     View view;
     target.recHome = Utils.findRequiredViewAsType(source, R.id.rec_home, "field 'recHome'", RecyclerView.class);
-    view = Utils.findRequiredView(source, R.id.Iv_logout, "method 'onClickLoout'");
+    view = Utils.findRequiredView(source, R.id.btn_JumPoin, "method 'onViewClicked'");
+    view2131230771 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.onViewClicked(p0);
+      }
+    });
+    view = Utils.findRequiredView(source, R.id.btnBeriPoin, "method 'onViewClicked'");
+    view2131230765 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.onViewClicked(p0);
+      }
+    });
+    view = Utils.findRequiredView(source, R.id.btnBayarPoin, "method 'onViewClicked'");
+    view2131230764 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.onViewClicked(p0);
+      }
+    });
+    view = Utils.findRequiredView(source, R.id.btnVoucherPoin, "method 'onViewClicked'");
+    view2131230770 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.onViewClicked(p0);
+      }
+    });
+    view = Utils.findRequiredView(source, R.id.Iv_logout, "method 'onViewClicked'");
+    view2131230724 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.onViewClicked(p0);
+      }
+    });
+    view = Utils.findRequiredView(source, R.id.Iv_Settles, "method 'onViewClicked'");
     view2131230723 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
-        target.onClickLoout();
+        target.onViewClicked(p0);
       }
     });
   }
@@ -47,6 +97,16 @@ public class HomeActivity_ViewBinding implements Unbinder {
 
     target.recHome = null;
 
+    view2131230771.setOnClickListener(null);
+    view2131230771 = null;
+    view2131230765.setOnClickListener(null);
+    view2131230765 = null;
+    view2131230764.setOnClickListener(null);
+    view2131230764 = null;
+    view2131230770.setOnClickListener(null);
+    view2131230770 = null;
+    view2131230724.setOnClickListener(null);
+    view2131230724 = null;
     view2131230723.setOnClickListener(null);
     view2131230723 = null;
   }

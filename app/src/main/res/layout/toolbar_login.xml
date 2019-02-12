@@ -30,7 +30,7 @@
             />
 
         <ImageView
-            android:id="@+id/Iv_Settle"
+            android:id="@+id/Iv_Settles"
             android:layout_width="40dp"
             android:layout_height="30dp"
             android:src="@drawable/btn_settlement"

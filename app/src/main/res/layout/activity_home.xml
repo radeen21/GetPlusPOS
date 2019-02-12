@@ -29,7 +29,7 @@
                   android:orientation="vertical">
 
                     <Button
-                      android:id="@+id/btnJumPoin"
+                      android:id="@+id/btn_JumPoin"
                       android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
                       android:layout_gravity="center_horizontal"

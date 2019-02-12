@@ -52,41 +52,36 @@ public class PosLinkGenerator {
     }
 
     private static OkHttpClient.Builder okBuilder(Context context) {
-//        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
-//        logging.setLevel(HttpLoggingInterceptor.Level.BODY);
+        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
+        logging.setLevel(HttpLoggingInterceptor.Level.BODY);
         return new OkHttpClient.Builder()
-//                .addInterceptor(logging)
+                .addInterceptor(logging)
                 .connectTimeout(20, TimeUnit.SECONDS)
                 .readTimeout(20, TimeUnit.SECONDS)
                 .writeTimeout(120, TimeUnit.SECONDS)
-                .addInterceptor(new Interceptor()
-                {
-                    @Override
-                    public Response intercept(Chain chain) throws IOException
+                .addInterceptor(chain -> {
+                    Request request = chain.request();
+                    Response response = chain.proceed(request);
+
+                    if(response.code() != 200)
                     {
-                        Request request = chain.request();
-                        okhttp3.Response response = chain.proceed(request);
-
-                        if(response.code() != 200)
+                        try
                         {
-                            try
-                            {
-                                Gson gson = new Gson();
-                                JSONObject json = new JSONObject(response.body().string());
-                                ResponsePojo responsePojo = gson.fromJson(json.toString(), ResponsePojo.class);
-                                Fungsi.storeObjectToSharedPref(context, responsePojo, ConfigManager.AccountSession.MSG_RESPONSE);
-                            }
-                            catch (JSONException e)
-                            {
-                                ResponsePojo responsePojo = new ResponsePojo();
-                                responsePojo.setAFaultCode("-1");
-                                responsePojo.setAFaultDescription("Internal unknown error");
-                                Fungsi.storeObjectToSharedPref(context, responsePojo, ConfigManager.AccountSession.MSG_RESPONSE);
-                            }
+                            Gson gson = new Gson();
+                            JSONObject json = new JSONObject(response.body().string());
+                            ResponsePojo responsePojo = gson.fromJson(json.toString(), ResponsePojo.class);
+                            Fungsi.storeObjectToSharedPref(context, responsePojo, ConfigManager.AccountSession.MSG_RESPONSE);
                         }
-
-                        return response;
+                        catch (JSONException e)
+                        {
+                            ResponsePojo responsePojo = new ResponsePojo();
+                            responsePojo.setAFaultCode("-1");
+                            responsePojo.setAFaultDescription("Internal unknown error");
+                            Fungsi.storeObjectToSharedPref(context, responsePojo, ConfigManager.AccountSession.MSG_RESPONSE);
+                        }
                     }
+
+                    return response;
                 });
     }
 

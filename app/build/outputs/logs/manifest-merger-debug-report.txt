@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:2:1-66:12
-INJECTED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:2:1-66:12
-INJECTED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:2:1-66:12
-INJECTED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:2:1-66:12
+ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:2:1-65:12
+INJECTED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:2:1-65:12
+INJECTED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:2:1-65:12
+INJECTED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:2:1-65:12
 MERGED from [com.android.support:multidex:1.0.2] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\6e8db3918a5fb0895cf288e408f21ec1\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:design:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\356c63471e8b4e45ffb037f3a1dcf208\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\b58dd380878154e4b9735af6c34231c6\AndroidManifest.xml:17:1-22:12
@@ -43,47 +43,47 @@ MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\babar.trihapsoro\.g
 MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\0cd8c06a49a77ea4db831bfb6fa0c1e7\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.1] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\419f63ef58afa507a845030314993a1c\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\bf76d4136bd28bfb083fb72a09bd24b2\AndroidManifest.xml:17:1-22:12
-INJECTED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:2:1-66:12
-INJECTED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:2:1-66:12
-INJECTED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:2:1-66:12
+INJECTED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:2:1-65:12
+INJECTED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:2:1-65:12
+INJECTED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:2:1-65:12
 	package
-		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:3:5-38
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:3:2-35
 		INJECTED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml
 		INJECTED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml
-		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:2:1-66:12
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:2:1-65:12
 		INJECTED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml
-		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:2:1-66:12
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:2:1-65:12
 		INJECTED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.CAMERA
-ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:5:5-64
+ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:5:2-62
 MERGED from [com.journeyapps:zxing-android-embedded:3.5.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.5.0.aar\cacebda5a695a20a30b272c5b6b02f19\AndroidManifest.xml:21:5-65
 MERGED from [com.journeyapps:zxing-android-embedded:3.5.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.5.0.aar\cacebda5a695a20a30b272c5b6b02f19\AndroidManifest.xml:21:5-65
 	android:name
-		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:5:22-62
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:5:19-59
 uses-permission#android.permission.INTERNET
-ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:6:5-66
+ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:6:2-64
 	android:name
-		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:6:22-64
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:6:19-61
 uses-permission#android.permission.READ_PHONE_STATE
-ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:7:5-74
+ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:7:2-72
 	android:name
-		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:7:22-72
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:7:19-69
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:8:5-78
+ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:8:2-76
 	android:name
-		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:8:22-76
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:8:19-73
 uses-permission#android.permission.VIBRATE
-ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:9:5-65
+ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:9:2-63
 	android:name
-		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:9:22-63
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:9:19-60
 application
-ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:11:5-64:19
+ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:11:2-63:16
 MERGED from [com.android.support:design:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\356c63471e8b4e45ffb037f3a1dcf208\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\356c63471e8b4e45ffb037f3a1dcf208\AndroidManifest.xml:22:5-20
 MERGED from [com.journeyapps:zxing-android-embedded:3.5.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.5.0.aar\cacebda5a695a20a30b272c5b6b02f19\AndroidManifest.xml:45:5-53:19
@@ -101,93 +101,107 @@ MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\babar.trih
 	android:appComponentFactory
 		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\babar.trihapsoro\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\f8b28e0beb0714ca330a8d657396dee8\AndroidManifest.xml:22:18-91
 	android:supportsRtl
-		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:16:9-35
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:16:3-29
 	android:label
-		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:14:9-41
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:14:3-35
 	android:roundIcon
-		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:15:9-54
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:15:3-48
 	android:icon
-		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:13:9-43
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:13:3-37
 	android:allowBackup
-		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:12:9-35
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:12:3-29
 	android:theme
-		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:17:9-40
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:17:3-34
 activity#id.mygetplus.getpluspos.MainDecider
-ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:18:9-19:20
+ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:18:3-52
 	android:name
-		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:18:19-46
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:18:13-40
 activity#id.mygetplus.getpluspos.ScrollingActivity
-ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:21:9-24:59
+ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:19:3-22:50
 	android:label
-		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:23:13-45
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:21:4-36
 	android:theme
-		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:24:13-56
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:22:4-47
 	android:name
-		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:22:13-46
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:20:4-37
 activity#id.mygetplus.getpluspos.CashierHome
-ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:25:9-28:58
+ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:23:3-26:50
 	android:label
-		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:27:13-64
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:25:4-55
 	android:theme
-		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:28:13-56
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:26:4-47
 	android:name
-		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:26:13-40
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:24:4-31
 activity#id.mygetplus.getpluspos.BillActivity
-ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:29:9-50
+ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:27:3-44
 	android:name
-		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:29:19-47
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:27:13-41
 activity#id.mygetplus.getpluspos.setIP
-ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:30:9-52
+ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:28:3-37
 	android:name
-		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:30:19-40
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:28:13-34
 activity#id.mygetplus.getpluspos.ScanQR
-ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:31:9-34:20
+ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:29:3-31:59
 	android:theme
-		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:33:13-56
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:31:4-47
 	android:name
-		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:32:13-35
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:30:4-26
 activity#id.mygetplus.getpluspos.Confirm
-ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:35:9-39:20
+ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:32:3-35:59
 	android:label
-		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:37:11-52
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:34:4-45
 	android:theme
-		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:38:11-54
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:35:4-47
 	android:name
-		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:36:11-34
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:33:4-27
 activity#id.mygetplus.getpluspos.mvp.main.HomeActivity
-ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:44:9-47:20
+ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:40:3-42:59
 	android:theme
-		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:46:9-52
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:42:4-47
 	android:name
-		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:45:9-46
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:41:4-41
 activity#id.mygetplus.getpluspos.mvp.cekpoint.CekPointActivity
-ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:48:9-51:20
+ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:43:3-45:59
 	android:theme
-		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:50:13-56
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:45:4-47
 	android:name
-		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:49:13-58
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:44:4-49
 activity#id.mygetplus.getpluspos.mvp.login.view.LoginActivity
-ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:52:9-55:20
+ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:46:3-48:59
 	android:theme
-		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:54:13-56
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:48:4-47
 	android:name
-		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:53:13-57
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:47:4-48
+activity#id.mygetplus.getpluspos.mvp.earnpoint.view.EarnPointActivity
+ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:49:3-51:59
+	android:theme
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:51:4-47
+	android:name
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:50:4-56
 activity#id.mygetplus.getpluspos.Splash
-ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:56:9-63:20
+ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:52:3-60:14
 	android:theme
-		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:58:13-56
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:54:4-47
 	android:name
-		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:57:13-35
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:53:4-26
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:59:13-62:29
+ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:55:4-59:20
 action#android.intent.action.MAIN
-ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:60:17-69
+ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:56:5-57
 	android:name
-		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:60:25-66
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:56:13-54
 category#android.intent.category.LAUNCHER
-ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:61:17-77
+ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:58:5-65
 	android:name
-		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:61:27-74
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:58:15-62
+activity#id.mygetplus.getpluspos.mvp.evoucher.view.EVoucher
+ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:61:3-67
+	android:name
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:61:13-55
+activity#id.mygetplus.getpluspos.mvp.evoucher.view.KonfirmasiEvoucher
+ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:62:3-77
+	android:name
+		ADDED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml:62:13-65
 uses-sdk
 INJECTED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\Babar\coding\pribadi\GetPlusIos\GetPlusPOS\app\src\main\AndroidManifest.xml

@@ -81,7 +81,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btn_ok_point"
+        android:id="@+id/btn_ok_points"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="60dp"

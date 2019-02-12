@@ -6,12 +6,12 @@ package id.mygetplus.getpluspos;
 public class FixValue
 {
 // Server Online
-//	public static final String BASE_URL = "https://mygetplus-development.azurewebsites.net/mobile/v1/201812/";      // URL to GPI Gateway
-//	public static final String POS_URL = "https://mygetplus-development.azurewebsites.net/pos/v1/201812/";      // URL to GPI Gateway
+	public static final String BASE_URL = "https://mygetplus-development.azurewebsites.net/mobile/v1/201812/";      // URL to GPI Gateway
+	public static final String POS_URL = "https://mygetplus-development.azurewebsites.net/pos/v1/201812/";      // URL to GPI Gateway
 
 // Server Offline
-	public static final String BASE_URL = "http://192.168.137.1:3000/mobile/v1/201812/";      // URL to GPI Gateway
-	public static final String POS_URL = "http://192.168.137.1:3000/pos/v1/201812/";      // URL to GPI Gateway
+//	public static final String BASE_URL = "http://192.168.137.1:3000/mobile/v1/201812/";      // URL to GPI Gateway
+//	public static final String POS_URL = "http://192.168.137.1:3000/pos/v1/201812/";      // URL to GPI Gateway
 
   // Route path to mobile API
   public static final String RestfulWarehouse = "merchants/brands/{AccountRSN}";
@@ -26,6 +26,7 @@ public class FixValue
 	public static final String RestTransaksiAdjust = "transaction/adjusttransaction";
 	public static final String RestLogin = "account/userlogin";
 	public static final String RestLogout = "account/userlogout";
+	public static final String EarnPoint = "transaction/SaleTransaction";
 
 	//Network Connectivity
 	public static final int TimeoutConnection = 45000;

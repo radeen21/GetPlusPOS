@@ -43,7 +43,8 @@ public class CekPointPresenter extends BaseViewPresenter implements CekPointCont
                     @Override
                     public void onError(Throwable throwable) {
                         super.onError(throwable);
-                      view.setCekPoint(Fungsi.getObjectFromSharedPref(context, ResponsePojo.class, ConfigManager.AccountSession.MSG_RESPONSE));
+                      view.setCekPoint(Fungsi.getObjectFromSharedPref(context, ResponsePojo.class,
+                              ConfigManager.AccountSession.MSG_RESPONSE));
                     }
 
                     @Override

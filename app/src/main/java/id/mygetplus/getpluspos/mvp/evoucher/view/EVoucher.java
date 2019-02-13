@@ -63,6 +63,8 @@ public class EVoucher extends AppCompatActivity
 				else
 				{
 					Intent KonfirmasiVoucher = new Intent(this, KonfirmasiEvoucher.class);
+					KonfirmasiVoucher.putExtra("GetPlusID", etGetPlusID.getText().toString());
+					KonfirmasiVoucher.putExtra("VoucherID", etEVoucher.getText().toString());
 					startActivity(KonfirmasiVoucher);
 				}
 				break;

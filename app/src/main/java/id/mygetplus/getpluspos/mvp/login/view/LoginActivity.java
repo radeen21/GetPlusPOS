@@ -13,6 +13,7 @@ import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import id.mygetplus.getpluspos.AValue;
 import id.mygetplus.getpluspos.Fungsi;
 import id.mygetplus.getpluspos.PopupMessege;
 import id.mygetplus.getpluspos.Preference;
@@ -58,6 +59,7 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
 			else
 			{
 				GetPlusSession.getInstance(this).setToken(responsePojo.getAValue().getBToken());
+				Fungsi.storeObjectToSharedPref(context, responsePojo.getAValue(), Preference.PrefResponsePojo);
 
 				Intent intent = new Intent(this, HomeActivity.class);
 				startActivity(intent);

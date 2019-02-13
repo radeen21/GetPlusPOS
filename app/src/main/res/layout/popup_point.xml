@@ -39,6 +39,36 @@
         app:layout_constraintTop_toBottomOf="@id/lin_toolbar">
 
         <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:textColor="@color/pureWhite"
+          android:layout_marginTop="10dp"
+          android:text="Nama Pengguna"
+          android:textSize="18sp" />
+
+        <TextView
+          android:id="@+id/tv_NamaCekPoin"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:text="Nama Pengguna"
+          android:gravity="center"
+          android:textSize="23sp"
+          android:textColor="@color/pureWhite"
+          android:textStyle="bold"
+          android:layout_marginTop="7dp"/>
+
+        <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:textColor="@color/pureWhite"
+          android:layout_marginTop="10dp"
+          android:text="GetPlus ID"
+          android:textSize="18sp" />
+
+        <TextView
+          android:id="@+id/tv_id"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="GetPlus ID"
@@ -46,19 +76,20 @@
             android:textSize="23sp"
             android:textColor="@color/pureWhite"
             android:textStyle="bold"
-            android:layout_marginTop="20dp"/>
+            android:layout_marginTop="7dp"/>
 
         <TextView
-            android:id="@+id/tv_id"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textColor="@color/pureWhite"
-            android:layout_marginTop="10dp"
-            android:textSize="18sp"
-            />
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:textColor="@color/pureWhite"
+          android:layout_marginTop="10dp"
+          android:textSize="18sp"
+          android:text="Jumlah"
+          />
 
         <TextView
+          android:id="@+id/tv_jumlah"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Jumlah"
@@ -66,17 +97,8 @@
             android:textSize="23sp"
             android:textColor="@color/pureWhite"
             android:textStyle="bold"
-            android:layout_marginTop="20dp"/>
+            android:layout_marginTop="7dp"/>
 
-        <TextView
-            android:id="@+id/tv_jumlah"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textColor="@color/pureWhite"
-            android:layout_marginTop="10dp"
-            android:textSize="18sp"
-            />
 
     </LinearLayout>
 
@@ -87,7 +109,6 @@
         android:layout_marginLeft="60dp"
         android:layout_marginRight="60dp"
         android:layout_marginBottom="20dp"
-        android:text="OK"
         android:textColor="@color/pureWhite"
         android:background="@drawable/btn_add_more_receipt"
         app:layout_constraintBottom_toBottomOf="parent"/>

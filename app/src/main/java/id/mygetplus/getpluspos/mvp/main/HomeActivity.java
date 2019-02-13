@@ -1,17 +1,11 @@
 package id.mygetplus.getpluspos.mvp.main;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.res.TypedArray;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.InsetDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Toast;
@@ -31,6 +25,7 @@ import id.mygetplus.getpluspos.mvp.login.view.LoginActivity;
 import id.mygetplus.getpluspos.mvp.logout.presenter.LogoutContract;
 import id.mygetplus.getpluspos.mvp.logout.presenter.LogoutPresenter;
 import id.mygetplus.getpluspos.mvp.main.adapter.HomeAdapter;
+import id.mygetplus.getpluspos.mvp.tukarpoin.view.TukarPoint;
 import id.mygetplus.getpluspos.preference.GetPlusSession;
 import id.mygetplus.getpluspos.service.PosLinkGenerator;
 
@@ -154,9 +149,12 @@ public class HomeActivity extends AppCompatActivity implements HomeAdapter.ItemC
 	}
 
 	@OnClick({R.id.btn_JumPoin, R.id.btnBeriPoin, R.id.btnBayarPoin, R.id.btnVoucherPoin,
-		R.id.Iv_logout, R.id.Iv_Settles})
+		R.id.btnTukarPoin, R.id.Iv_logout, R.id.Iv_Settles})
 	public void onViewClicked(View view)
 	{
+		Fungsi.storeToSharedPref(getApplicationContext(), "", Preference.PrefGetPlusID);
+		Fungsi.storeToSharedPref(getApplicationContext(), "", Preference.PrefEVoucher);
+
 		switch (view.getId())
 		{
 			case R.id.btn_JumPoin:
@@ -164,17 +162,19 @@ public class HomeActivity extends AppCompatActivity implements HomeAdapter.ItemC
 				Intent intent = new Intent(this, ScanQR.class);
 				startActivity(intent);
 				break;
+			case R.id.btnTukarPoin:
+				Intent tukarIntent = new Intent(this, TukarPoint.class);
+				startActivity(tukarIntent);
+				finish();
+				break;
 			case R.id.btnBeriPoin:
-				Fungsi.storeToSharedPref(context, 2, Preference.PrefActiveMenu);
-				Fungsi.storeToSharedPref(getApplicationContext(), "", Preference.PrefGetPlusID);
 				Intent earnIntent = new Intent(this, EarnPointActivity.class);
 				startActivity(earnIntent);
+				finish();
 				break;
 			case R.id.btnBayarPoin:
 				break;
 			case R.id.btnVoucherPoin:
-				Fungsi.storeToSharedPref(getApplicationContext(), "", Preference.PrefGetPlusID);
-				Fungsi.storeToSharedPref(getApplicationContext(), "", Preference.PrefEVoucher);
 				Intent EVoucherintent = new Intent(this, EVoucher.class);
 				startActivity(EVoucherintent);
 				finish();

@@ -55,7 +55,7 @@ public class PosLinkGenerator {
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
         logging.setLevel(HttpLoggingInterceptor.Level.BODY);
         return new OkHttpClient.Builder()
-                .addInterceptor(logging)
+//                .addInterceptor(logging)
                 .connectTimeout(20, TimeUnit.SECONDS)
                 .readTimeout(20, TimeUnit.SECONDS)
                 .writeTimeout(120, TimeUnit.SECONDS)

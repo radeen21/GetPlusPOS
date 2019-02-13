@@ -21,4 +21,5 @@ public class Preference
   public static final String PrefMerchantOwner = "PrefMerchantOwner";
   public static final String PrefGetPlusID = "PrefGetPlusID";
   public static final String PrefEVoucher = "PrefEVoucher";
+  public static final String PrefResponsePojo = "PrefResponsePojo";
 }

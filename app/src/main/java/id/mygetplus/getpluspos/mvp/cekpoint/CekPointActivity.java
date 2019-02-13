@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -21,6 +22,7 @@ import id.mygetplus.getpluspos.ResponsePojo;
 import id.mygetplus.getpluspos.SimValue;
 import id.mygetplus.getpluspos.mvp.cekpoint.presenter.CekPointContract;
 import id.mygetplus.getpluspos.mvp.cekpoint.presenter.CekPointPresenter;
+import id.mygetplus.getpluspos.mvp.evoucher.view.InformasiEvoucher;
 import id.mygetplus.getpluspos.mvp.main.HomeActivity;
 import id.mygetplus.getpluspos.preference.GetPlusSession;
 import id.mygetplus.getpluspos.service.PosLinkGenerator;
@@ -35,6 +37,9 @@ public class CekPointActivity extends AppCompatActivity implements CekPointContr
 
 	@BindView(R.id.tv_jumlah)
 	TextView tvJumlah;
+
+  @BindView(R.id.tv_NamaCekPoin)
+  TextView tvNamaCekPoin;
 
 	Dialog myDialog;
 
@@ -72,10 +77,16 @@ public class CekPointActivity extends AppCompatActivity implements CekPointContr
 
 	@Override
 	public void setCekPoint(ResponsePojo userData) {
-		double d = Double.parseDouble(userData.getAValue()
-			.getBProgramMemberships().getBProgramMembership().getBPointsBalance());
-		tvId.setText(Fungsi.getStringFromSharedPref(this, Preference.PrefScanQRConfirm));
-		tvJumlah.setText(Fungsi.FormatDesimal((int) d));
+		if (userData.getAFaultCode().matches("0"))
+		{
+			double d = Double.parseDouble(userData.getAValue()
+				.getBProgramMemberships().getBProgramMembership().getBPointsBalance());
+			tvId.setText(Fungsi.getStringFromSharedPref(this, Preference.PrefScanQRConfirm));
+			tvJumlah.setText(Fungsi.FormatDesimal((int) d));
+      tvNamaCekPoin.setText(userData.getAValue().getBDisplayValue());
+		}
+		else
+			Toast.makeText(getApplicationContext(), userData.getAFaultDescription(), Toast.LENGTH_SHORT).show();
 	}
 
 	@OnClick(R.id.btn_ok_points)

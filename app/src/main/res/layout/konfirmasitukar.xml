@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimary">
+
+    <LinearLayout
+        android:id="@+id/lin_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+          android:layout_width="match_parent"
+          android:layout_height="60dp"
+          android:gravity="center"
+          android:background="@color/btn_bg">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/strKonfirmasi"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:layout_gravity="center_horizontal"
+                android:textStyle="bold"/>
+        </RelativeLayout>
+
+        <TextView
+          android:text="GetPlus ID"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:textColor="@color/pureWhite"
+          android:layout_marginTop="10dp"
+          android:textSize="18sp"/>
+
+        <TextView
+          android:id="@+id/tv_id"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:text="GetPlus ID"
+          android:gravity="center"
+          android:textSize="23sp"
+          android:textColor="@color/pureWhite"
+          android:textStyle="bold"
+          android:layout_marginTop="5dp"/>
+
+        <TextView
+          android:text="Nama Pengguna"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:textColor="@color/pureWhite"
+          android:layout_marginTop="10dp"
+          android:textSize="18sp"/>
+
+        <TextView
+          android:id="@+id/tv_nama"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:text="Nama Pengguna"
+          android:gravity="center"
+          android:textSize="23sp"
+          android:textColor="@color/pureWhite"
+          android:textStyle="bold"
+          android:layout_marginTop="5dp"/>
+
+        <TextView
+          android:text="No. Reff"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:textColor="@color/pureWhite"
+          android:layout_marginTop="10dp"
+          android:textSize="18sp"/>
+
+        <TextView
+          android:id="@+id/tv_reff"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:text="No. Reff"
+          android:gravity="center"
+          android:textSize="23sp"
+          android:textColor="@color/pureWhite"
+          android:textStyle="bold"
+          android:layout_marginTop="5dp"/>
+
+        <TextView
+          android:text="Jumlah"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:textColor="@color/pureWhite"
+          android:layout_marginTop="10dp"
+          android:textSize="18sp"/>
+
+        <TextView
+          android:id="@+id/tv_jumlah"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:text="Jumlah"
+          android:gravity="center"
+          android:textSize="23sp"
+          android:textColor="@color/pureWhite"
+          android:textStyle="bold"
+          android:layout_marginTop="5dp"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnBatalTukar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/btn_next_copy"
+        app:layout_constraintTop_toBottomOf="@id/lin_toolbar"/>
+
+    <Button
+      android:id="@+id/btnLanjutTukar"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="60dp"
+      android:layout_marginRight="60dp"
+      android:layout_marginTop="15dp"
+      android:background="@drawable/btn_lanjut_dark"
+      app:layout_constraintTop_toBottomOf="@id/btnBatalTukar"/>
+
+</android.support.constraint.ConstraintLayout>

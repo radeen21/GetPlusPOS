@@ -1,6 +1,7 @@
 package id.mygetplus.getpluspos.mvp.cekpoint.presenter;
 
 import android.content.Context;
+import android.util.Log;
 
 import id.mygetplus.getpluspos.Fungsi;
 import id.mygetplus.getpluspos.POSLink;

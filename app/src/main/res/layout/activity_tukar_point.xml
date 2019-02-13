@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -65,66 +66,6 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="4dp"
             android:textSize="14sp"
-            android:textColor="@color/pureWhite"
-            android:textStyle="bold"
-            android:text="Member ID"/>
-
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/tilMemberId"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColorHint="@color/pureWhite"
-            app:errorEnabled="true">
-
-        <android.support.design.widget.TextInputEditText
-            android:id="@+id/etMemberId"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:imeOptions="actionNext"
-            android:inputType="number"
-            android:textColor="@color/pureWhite"
-            android:textSize="16sp"
-            app:backgroundTint="@color/pureWhite"
-            android:textColorHint="@color/pureWhite"
-            android:textColorHighlight="@color/pureWhite" />
-        </android.support.design.widget.TextInputLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="4dp"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            android:textColor="@color/pureWhite"
-            android:layout_marginTop="10dp"
-            android:text="Nama Merchant"/>
-
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/tilMerchantName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColorHint="@color/pureWhite"
-            android:outlineAmbientShadowColor="@color/pureWhite"
-            android:outlineSpotShadowColor="@color/pureWhite"
-            app:errorEnabled="true">
-
-            <android.support.design.widget.TextInputEditText
-                android:id="@+id/etMechantName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:imeOptions="actionNext"
-                android:textColor="@color/pureWhite"
-                android:textSize="16sp"
-                app:backgroundTint="@color/pureWhite"
-                android:textColorHint="@color/pureWhite"
-                android:textColorHighlight="@color/pureWhite"/>
-        </android.support.design.widget.TextInputLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="4dp"
-            android:textSize="14sp"
             android:textStyle="bold"
             android:layout_marginTop="10dp"
             android:textColor="@color/pureWhite"
@@ -142,8 +83,8 @@
                 android:layout_height="wrap_content"
                 android:imeOptions="actionNext"
                 android:inputType="number"
-                android:textSize="16sp"
                 android:textColor="@color/pureWhite"
+                android:textSize="16sp"
                 app:backgroundTint="@color/pureWhite"
                 android:textColorHint="@color/pureWhite"
                 android:textColorHighlight="@color/pureWhite"/>
@@ -172,8 +113,8 @@
                 android:imeOptions="actionNext"
                 android:inputType="number"
                 android:textSize="16sp"
-                app:backgroundTint="@color/pureWhite"
                 android:textColor="@color/pureWhite"
+                app:backgroundTint="@color/pureWhite"
                 android:textColorHint="@color/pureWhite"
                 android:textColorHighlight="@color/pureWhite"/>
         </android.support.design.widget.TextInputLayout>
@@ -227,9 +168,9 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/btnLanjutEarn"
+            android:id="@+id/btnLanjutTukar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:layout_marginTop="60dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"

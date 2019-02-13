@@ -134,6 +134,8 @@
 	<string name="strGetPlusID">GetPlus ID</string>
 	<string name="strEVoucher">Kode Voucher</string>
 	<string name="strKonfirmasi">KONFIRMASI</string>
+  <string name="strBerhasil">BERHASIL</string>
+  <string name="strEVoucherBerhasil">Penggunaan eVoucher telah berhasil diproses</string>
 
 	<string name="msgWait">Please wait</string>
 	<string name="msgBrandDetail">Get brand detail</string>

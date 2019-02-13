@@ -29,13 +29,12 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/llPesanVoucher"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="50dp"
         app:layout_constraintTop_toBottomOf="@id/lin_toolbar">
 
         <TextView
@@ -54,10 +53,9 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="60dp"
         android:layout_marginRight="60dp"
-        android:layout_marginBottom="20dp"
-        android:textColor="@color/pureWhite"
-        android:background="@drawable/btn_add_more_receipt"
-        app:layout_constraintBottom_toTopOf="@id/btnLanjutVoucher"/>
+        android:layout_marginTop="65dp"
+        android:background="@drawable/btn_next_copy"
+        app:layout_constraintTop_toBottomOf="@id/llPesanVoucher"/>
 
     <Button
       android:id="@+id/btnLanjutVoucher"
@@ -65,9 +63,8 @@
       android:layout_height="wrap_content"
       android:layout_marginLeft="60dp"
       android:layout_marginRight="60dp"
-      android:layout_marginBottom="20dp"
-      android:textColor="@color/pureWhite"
-      android:background="@drawable/btn_add_more_receipt"
-      app:layout_constraintBottom_toBottomOf="parent"/>
+      android:layout_marginTop="20dp"
+      android:background="@drawable/btn_lanjut_dark"
+      app:layout_constraintTop_toBottomOf="@id/btnBatalVoucher"/>
 
 </android.support.constraint.ConstraintLayout>

@@ -26,6 +26,7 @@ import id.mygetplus.getpluspos.mvp.cekpoint.CekPointActivity;
 import id.mygetplus.getpluspos.mvp.earnpoint.view.EarnPointActivity;
 import id.mygetplus.getpluspos.mvp.evoucher.view.EVoucher;
 import id.mygetplus.getpluspos.mvp.main.HomeActivity;
+import id.mygetplus.getpluspos.mvp.tukarpoin.view.TukarPoint;
 
 public class ScanQR extends AppCompatActivity implements SurfaceHolder.Callback {
   @BindView(R.id.cameraPreview)
@@ -108,10 +109,17 @@ public class ScanQR extends AppCompatActivity implements SurfaceHolder.Callback 
           Fungsi.storeToSharedPref(getApplicationContext(), barcodeText, Preference.PrefScanQRConfirm);
           mainIntent = new Intent(ScanQR.this, CekPointActivity.class);
         }
+        else
         if(intActiveMenu == 2)
         {
-          Fungsi.storeToSharedPref(getApplicationContext(), barcodeText, Preference.PrefScanQRConfirm);
+          Fungsi.storeToSharedPref(getApplicationContext(), barcodeText, Preference.PrefGetPlusID);
           mainIntent = new Intent(ScanQR.this, EarnPointActivity.class);
+        }
+        else
+        if(intActiveMenu == 3)
+        {
+          Fungsi.storeToSharedPref(getApplicationContext(), barcodeText, Preference.PrefGetPlusID);
+          mainIntent = new Intent(ScanQR.this, TukarPoint.class);
         }
         else
         if(intActiveMenu == 41)
@@ -253,6 +261,9 @@ public class ScanQR extends AppCompatActivity implements SurfaceHolder.Callback 
     else
     if(intActiveMenu == 2)
       BackIntent = new Intent(ScanQR.this, EarnPointActivity.class);
+    else
+    if(intActiveMenu == 3)
+      BackIntent = new Intent(ScanQR.this, TukarPoint.class);
     else
     if((intActiveMenu == 41) || (intActiveMenu == 42))
       BackIntent = new Intent(ScanQR.this, EVoucher.class);

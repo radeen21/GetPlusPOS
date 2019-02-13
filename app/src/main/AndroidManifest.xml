@@ -60,6 +60,10 @@
 		</activity>
 		<activity android:name=".mvp.evoucher.view.EVoucher"></activity>
 		<activity android:name=".mvp.evoucher.view.KonfirmasiEvoucher"></activity>
+		<activity android:name=".mvp.evoucher.view.InformasiEvoucher"></activity>
+		<activity android:name=".mvp.tukarpoin.view.TukarPoint"></activity>
+    <activity android:name=".mvp.tukarpoin.view.KonfirmasiTukar"></activity>
+		<activity android:name=".mvp.tukarpoin.view.InformasiTukar"></activity>
 	</application>
 
 </manifest>

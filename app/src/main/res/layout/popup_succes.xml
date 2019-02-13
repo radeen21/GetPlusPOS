@@ -44,7 +44,7 @@
             android:textColor="@color/pureWhite"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:text="BERHASIL"/>
+            android:text="@string/strBerhasil"/>
 
         <TextView
             android:layout_width="wrap_content"

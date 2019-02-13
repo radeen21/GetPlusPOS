@@ -180,7 +180,7 @@ public class Fungsi extends AppCompatActivity
 				readTimeout(FixValue.TimeoutConnection, TimeUnit.SECONDS).
 				writeTimeout(FixValue.TimeoutConnection, TimeUnit.SECONDS).build();
 
-		Retrofit retBindingData = new Retrofit.Builder().baseUrl(FixValue.BASE_URL).
+		Retrofit retBindingData = new Retrofit.Builder().baseUrl(FixValue.POS_URL).
 				addConverterFactory(GsonConverterFactory.create()).
 				client(okClient).build();
 

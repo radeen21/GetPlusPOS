@@ -64,7 +64,13 @@ public interface POSLink
 	@POST(FixValue.RestLogout)
 	Observable<ResponsePojo> getUserLogout(@Body LoginHolder loginHolder);
 
+	@POST(FixValue.RestVoucher)
+	Observable<ResponsePojo> VoucherService(@Body CekPointHolder cekPointHolder);
+
 	@POST(FixValue.EarnPoint)
 	Observable<ResponsePojo> getEarnPoint(@Body RequestHolder requestHolder);
+
+	@POST(FixValue.TukarPoint)
+	Observable<ResponsePojo> TukarPoint(@Body CekPointHolder cekPointHolder);
 }
 

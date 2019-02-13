@@ -45,6 +45,14 @@
                       android:background="@drawable/btn_earn_point"/>
 
                     <Button
+                      android:id="@+id/btnTukarPoin"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_gravity="center_horizontal"
+                      android:layout_marginTop="20dp"
+                      android:background="@drawable/btn_konversi_point"/>
+
+                    <Button
                       android:id="@+id/btnBayarPoin"
                       android:layout_width="wrap_content"
                       android:layout_height="wrap_content"

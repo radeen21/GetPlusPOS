@@ -6,3 +6,7 @@
 # Gradle files
 .gradle/
 build/
+
+# Built application files
+*.apk
+*.ap_

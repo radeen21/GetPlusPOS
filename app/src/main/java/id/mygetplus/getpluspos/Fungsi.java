@@ -7,53 +7,34 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.content.res.Configuration;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Matrix;
 import android.graphics.PixelFormat;
 import android.graphics.Point;
 import android.hardware.Camera;
-import android.media.ExifInterface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
-import android.os.Environment;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.telephony.TelephonyManager;
-import android.text.TextUtils;
-import android.util.Base64;
 import android.util.Log;
 import android.view.Display;
 import android.view.Surface;
 import android.view.WindowManager;
-import android.widget.EditText;
 
 import com.google.gson.Gson;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.security.MessageDigest;
 import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
-import java.util.UUID;
 import java.util.concurrent.TimeUnit;
-
-import javax.crypto.Cipher;
-import javax.crypto.spec.SecretKeySpec;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
@@ -322,10 +303,11 @@ public class Fungsi extends AppCompatActivity
 		editor.putString(key, value).commit();
 	}
 
-	public static void storeToSharedPref(final Context context, int value, String key)
+	public static String storeToSharedPref(final Context context, int value, String key)
 	{
 		SharedPreferences.Editor editor = context.getSharedPreferences(FixValue.strNamePref, Context.MODE_PRIVATE).edit();
 		editor.putInt(key, value).commit();
+		return key;
 	}
 
 	public static void storeObjectToSharedPref(final Context context, Object object, String key)

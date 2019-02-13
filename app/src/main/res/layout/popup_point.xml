@@ -55,6 +55,7 @@
             android:gravity="center"
             android:textColor="@color/pureWhite"
             android:layout_marginTop="10dp"
+            android:text="-"
             android:textSize="18sp"
             />
 
@@ -75,6 +76,7 @@
             android:gravity="center"
             android:textColor="@color/pureWhite"
             android:layout_marginTop="10dp"
+            android:text="-"
             android:textSize="18sp"
             />
 

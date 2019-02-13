@@ -25,8 +25,7 @@ import id.mygetplus.getpluspos.mvp.main.HomeActivity;
 import id.mygetplus.getpluspos.preference.GetPlusSession;
 import id.mygetplus.getpluspos.service.PosLinkGenerator;
 
-public class CekPointActivity extends AppCompatActivity implements CekPointContract.View
-{
+public class CekPointActivity extends AppCompatActivity implements CekPointContract.View {
 
 	CekPointPresenter cekPointPresenter;
 

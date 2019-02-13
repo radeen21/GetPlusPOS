@@ -8,12 +8,12 @@
         "source": "D:\\Babar\\coding\\pribadi\\GetPlusIos\\GetPlusPOS\\app\\src\\main\\res\\layout\\bill_item.xml"
     },
     {
-        "merged": "D:\\Babar\\coding\\pribadi\\GetPlusIos\\GetPlusPOS\\app\\build\\intermediates\\res\\merged\\debug\\drawable_design_snackbar_background.xml.flat",
-        "source": "C:\\Users\\babar.trihapsoro\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\356c63471e8b4e45ffb037f3a1dcf208\\res\\drawable\\design_snackbar_background.xml"
-    },
-    {
         "merged": "D:\\Babar\\coding\\pribadi\\GetPlusIos\\GetPlusPOS\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_shrink_fade_out_from_bottom.xml.flat",
         "source": "C:\\Users\\babar.trihapsoro\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b58dd380878154e4b9735af6c34231c6\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
+    },
+    {
+        "merged": "D:\\Babar\\coding\\pribadi\\GetPlusIos\\GetPlusPOS\\app\\build\\intermediates\\res\\merged\\debug\\drawable_design_snackbar_background.xml.flat",
+        "source": "C:\\Users\\babar.trihapsoro\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\356c63471e8b4e45ffb037f3a1dcf208\\res\\drawable\\design_snackbar_background.xml"
     },
     {
         "merged": "D:\\Babar\\coding\\pribadi\\GetPlusIos\\GetPlusPOS\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_logo_get_plus_vertical_white.png.flat",
@@ -32,12 +32,12 @@
         "source": "C:\\Users\\babar.trihapsoro\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\f8b28e0beb0714ca330a8d657396dee8\\res\\layout-v21\\notification_action.xml"
     },
     {
-        "merged": "D:\\Babar\\coding\\pribadi\\GetPlusIos\\GetPlusPOS\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_big_media_custom.xml.flat",
-        "source": "C:\\Users\\babar.trihapsoro\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-28.0.0.aar\\6b62c76956d779ad3c6683bc18d7a5d1\\res\\layout\\notification_template_big_media_custom.xml"
-    },
-    {
         "merged": "D:\\Babar\\coding\\pribadi\\GetPlusIos\\GetPlusPOS\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_btn_settlement.png.flat",
         "source": "D:\\Babar\\coding\\pribadi\\GetPlusIos\\GetPlusPOS\\app\\src\\main\\res\\drawable-xxhdpi\\btn_settlement.png"
+    },
+    {
+        "merged": "D:\\Babar\\coding\\pribadi\\GetPlusIos\\GetPlusPOS\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_big_media_custom.xml.flat",
+        "source": "C:\\Users\\babar.trihapsoro\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-28.0.0.aar\\6b62c76956d779ad3c6683bc18d7a5d1\\res\\layout\\notification_template_big_media_custom.xml"
     },
     {
         "merged": "D:\\Babar\\coding\\pribadi\\GetPlusIos\\GetPlusPOS\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
@@ -56,12 +56,12 @@
         "source": "D:\\Babar\\coding\\pribadi\\GetPlusIos\\GetPlusPOS\\app\\src\\main\\res\\drawable-xhdpi\\logo_get_plus_vertical_white.png"
     },
     {
-        "merged": "D:\\Babar\\coding\\pribadi\\GetPlusIos\\GetPlusPOS\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_alert_dialog_title_material.xml.flat",
-        "source": "C:\\Users\\babar.trihapsoro\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b58dd380878154e4b9735af6c34231c6\\res\\layout\\abc_alert_dialog_title_material.xml"
-    },
-    {
         "merged": "D:\\Babar\\coding\\pribadi\\GetPlusIos\\GetPlusPOS\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ico_check.png.flat",
         "source": "D:\\Babar\\coding\\pribadi\\GetPlusIos\\GetPlusPOS\\app\\src\\main\\res\\drawable-mdpi\\ico_check.png"
+    },
+    {
+        "merged": "D:\\Babar\\coding\\pribadi\\GetPlusIos\\GetPlusPOS\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_alert_dialog_title_material.xml.flat",
+        "source": "C:\\Users\\babar.trihapsoro\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b58dd380878154e4b9735af6c34231c6\\res\\layout\\abc_alert_dialog_title_material.xml"
     },
     {
         "merged": "D:\\Babar\\coding\\pribadi\\GetPlusIos\\GetPlusPOS\\app\\build\\intermediates\\res\\merged\\debug\\drawable-watch-v20_abc_dialog_material_background.xml.flat",
@@ -200,12 +200,12 @@
         "source": "C:\\Users\\babar.trihapsoro\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b58dd380878154e4b9735af6c34231c6\\res\\drawable-hdpi-v4\\abc_ic_star_black_16dp.png"
     },
     {
-        "merged": "D:\\Babar\\coding\\pribadi\\GetPlusIos\\GetPlusPOS\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "D:\\Babar\\coding\\pribadi\\GetPlusIos\\GetPlusPOS\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
-    },
-    {
         "merged": "D:\\Babar\\coding\\pribadi\\GetPlusIos\\GetPlusPOS\\app\\build\\intermediates\\res\\merged\\debug\\animator_mtrl_fab_transformation_sheet_collapse_spec.xml.flat",
         "source": "C:\\Users\\babar.trihapsoro\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\356c63471e8b4e45ffb037f3a1dcf208\\res\\animator\\mtrl_fab_transformation_sheet_collapse_spec.xml"
+    },
+    {
+        "merged": "D:\\Babar\\coding\\pribadi\\GetPlusIos\\GetPlusPOS\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "D:\\Babar\\coding\\pribadi\\GetPlusIos\\GetPlusPOS\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
         "merged": "D:\\Babar\\coding\\pribadi\\GetPlusIos\\GetPlusPOS\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",

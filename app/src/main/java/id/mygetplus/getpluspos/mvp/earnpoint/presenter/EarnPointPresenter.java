@@ -24,8 +24,7 @@ public class EarnPointPresenter  extends BaseViewPresenter implements EarnPointC
     }
 
     @Override
-    public void loadEarnPointData(POSLink posLink, String token, String cardNumber, String date,
-                                  String transactionId, int saleValue) {
+    public void loadEarnPointData(POSLink posLink, String token, String cardNumber, String date) {
         AValue aValue = new AValue();
 
         SimValue simValues = new SimValue();
@@ -37,11 +36,9 @@ public class EarnPointPresenter  extends BaseViewPresenter implements EarnPointC
         simValues.setSim1PublishedByRSN(aValue.getBAccountOwnerRSN());
         simValues.setSim1TerminalID("123456");
         simValues.setSim1TransactionDate(date);
-        simValues.setSim1TransactionID(String.valueOf(transactionId));
+//        simValues.setSim1TransactionID(String.valueOf(transactionId));
         simValues.setSim1TransactionNotes("Pembelian DI hero Supermarket");
-        simValues.setSim1TransactionSaleValue(saleValue);
-
-
+//        simValues.setSim1TransactionSaleValue(saleValue);
 
         PoinRequest poinRequest = new PoinRequest();
         poinRequest.setSimToken(token);

@@ -1,17 +1,11 @@
 package id.mygetplus.getpluspos.mvp.main;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.res.TypedArray;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.InsetDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Toast;
@@ -30,14 +24,12 @@ import id.mygetplus.getpluspos.mvp.evoucher.view.EVoucher;
 import id.mygetplus.getpluspos.mvp.login.view.LoginActivity;
 import id.mygetplus.getpluspos.mvp.logout.presenter.LogoutContract;
 import id.mygetplus.getpluspos.mvp.logout.presenter.LogoutPresenter;
-import id.mygetplus.getpluspos.mvp.main.adapter.HomeAdapter;
 import id.mygetplus.getpluspos.preference.GetPlusSession;
 import id.mygetplus.getpluspos.service.PosLinkGenerator;
 
 
-public class HomeActivity extends AppCompatActivity implements HomeAdapter.ItemClickListener,
-	LogoutContract.View
-{
+public class HomeActivity extends AppCompatActivity implements LogoutContract.View {
+
 	LogoutPresenter logoutPresenter;
 	private PopupMessege popupMessege = new PopupMessege();
 	private Context context = this;
@@ -83,37 +75,37 @@ public class HomeActivity extends AppCompatActivity implements HomeAdapter.ItemC
 //		recHome.setAdapter(mainAdapter);
 	}
 
-	@Override
-	public void onItemClick(View view, int position)
-	{
-		Intent intent = new Intent();
-		switch (position)
-		{
-			case 0:
-				intent = new Intent(this, ScanQR.class);
-				break;
-			case 1:
-				intent = new Intent(this, ScanQR.class);
-				break;
-			case 2:
-				Toast.makeText(this, "click oii 2", Toast.LENGTH_SHORT).show();
-//                intent =  new Intent(this, SecondActivity.class);
-				break;
-			case 3:
-				Toast.makeText(this, "click oii 3", Toast.LENGTH_SHORT).show();
-//                intent =  new Intent(this, SecondActivity.class);
-				break;
-			case 4:
-				Toast.makeText(this, "click oii 4", Toast.LENGTH_SHORT).show();
-//                intent =  new Intent(this, SecondActivity.class);
-				break;
-			case 5:
-				Toast.makeText(this, "click oii 5", Toast.LENGTH_SHORT).show();
-//                intent =  new Intent(this, SecondActivity.class);
-				break;
-		}
-		this.startActivity(intent);
-	}
+//	@Override
+//	public void onItemClick(View view, int position)
+//	{
+//		Intent intent = new Intent();
+//		switch (position)
+//		{
+//			case 0:
+//				intent = new Intent(this, ScanQR.class);
+//				break;
+//			case 1:
+//				intent = new Intent(this, ScanQR.class);
+//				break;
+//			case 2:
+//				Toast.makeText(this, "click oii 2", Toast.LENGTH_SHORT).show();
+////                intent =  new Intent(this, SecondActivity.class);
+//				break;
+//			case 3:
+//				Toast.makeText(this, "click oii 3", Toast.LENGTH_SHORT).show();
+////                intent =  new Intent(this, SecondActivity.class);
+//				break;
+//			case 4:
+//				Toast.makeText(this, "click oii 4", Toast.LENGTH_SHORT).show();
+////                intent =  new Intent(this, SecondActivity.class);
+//				break;
+//			case 5:
+//				Toast.makeText(this, "click oii 5", Toast.LENGTH_SHORT).show();
+////                intent =  new Intent(this, SecondActivity.class);
+//				break;
+//		}
+//		this.startActivity(intent);
+//	}
 
 	@Override
 	public void getData(ResponsePojo responsePojo)

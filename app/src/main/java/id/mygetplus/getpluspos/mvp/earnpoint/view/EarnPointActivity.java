@@ -58,17 +58,19 @@ public class EarnPointActivity extends AppCompatActivity implements EarnPointCon
 
         dfTrans = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         dateTrans = dfTrans.format(c.getTime());
-        dateTrans = Fungsi.getDate(dateTrans, "yyyy-MM-dd HH:mm:ss", "yyyy-MM-dd") + "T" +
-                Fungsi.getTime(dateTrans, "yyyy-MM-dd HH:mm:ss", "HH:mm:ss");
+        dateTrans = Fungsi.getDate(dateTrans, "yyyy-MM-dd HH:mm:ss",
+                "yyyy-MM-dd") + "T" +
+                Fungsi.getTime(dateTrans, "yyyy-MM-dd HH:mm:ss",
+                        "HH:mm:ss");
 
-        brandsRsp = new BrandsRsp();
-        brandsRsp = Fungsi.getObjectFromSharedPref(this, BrandsRsp.class, Preference.PrefBrandItem);
-        String transactionId = String.valueOf(brandsRsp.getIntInvoice());
-        int saleValue = brandsRsp.getPrice();
+//        brandsRsp = new BrandsRsp();
+//        brandsRsp = Fungsi.getObjectFromSharedPref(this, BrandsRsp.class, Preference.PrefBrandItem);
+//        String transactionId = String.valueOf(brandsRsp.getIntInvoice());
+//        int saleValue = brandsRsp.getPrice();
 
         earnPointPresenter = new EarnPointPresenter(this, this);
         earnPointPresenter.loadEarnPointData(PosLinkGenerator.createService(this),
-                token, cardId, dateTrans, transactionId, saleValue);
+                token, cardId, dateTrans);
     }
 
 

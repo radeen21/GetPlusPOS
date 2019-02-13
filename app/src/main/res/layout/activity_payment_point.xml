@@ -20,15 +20,15 @@
 
     <Button
         android:id="@+id/btn_next"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_margin="20dp"
         android:text="LANJUT"
         android:textColor="@color/pureWhite"
         android:textSize="16sp"
-        android:background="@drawable/rounded_btn"
+        android:background="@drawable/ic_btn_lanjut_dark"
         app:layout_constraintTop_toBottomOf="@id/rec_payment_point"
-        />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
 
 </android.support.constraint.ConstraintLayout>

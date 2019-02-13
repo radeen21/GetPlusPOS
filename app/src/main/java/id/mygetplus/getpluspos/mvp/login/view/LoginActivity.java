@@ -27,7 +27,6 @@ import id.mygetplus.getpluspos.service.PosLinkGenerator;
 
 public class LoginActivity extends AppCompatActivity implements LoginContract.View
 {
-
 	LoginPresenter loginPresenter;
 	private PopupMessege popupMessege = new PopupMessege();
 	private Context context = this;

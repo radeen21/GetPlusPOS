@@ -55,15 +55,18 @@
 
 	</LinearLayout>
 
-	<Button
-		android:id="@+id/btnEVoucher"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:layout_marginLeft="31dp"
-		android:layout_marginRight="31dp"
-		android:layout_marginBottom="40dp"
-		android:gravity="center_horizontal"
-		android:background="@drawable/btn_lanjut_dark"
-		app:layout_constraintBottom_toBottomOf="parent"/>
+  <Button
+    android:id="@+id/btnEVoucher"
+    android:layout_width="wrap_content"
+    android:layout_height="48dp"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginBottom="40dp"
+    android:background="@drawable/ic_btn_lanjut_dark"
+    android:text="LANJUT"
+    android:textColor="@android:color/white"
+    android:textSize="18sp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

@@ -78,10 +78,10 @@ public class KonfirmasiTukar extends AppCompatActivity implements TukarPointCont
     int width = dm.widthPixels;
     int height = dm.heightPixels;
 
-    getWindow().setLayout((int) (width * .8), (int) (height * .6));
+    getWindow().setLayout((int) (width * .8), (int) (height * .7));
   }
 
-  @OnClick({R.id.btnBatalTukar, R.id.btnLanjutTukar})
+  @OnClick({R.id.btnBatalTukar, R.id.btnLanjutConfirm})
   public void onViewClicked(View view)
   {
     switch (view.getId())
@@ -91,7 +91,7 @@ public class KonfirmasiTukar extends AppCompatActivity implements TukarPointCont
         startActivity(BackVoucher);
         finish();
         break;
-      case R.id.btnLanjutTukar:
+      case R.id.btnLanjutConfirm:
         AValue aValue = Fungsi.getObjectFromSharedPref(context, AValue.class, Preference.PrefResponsePojo);
         tukarPointPresenter.loadTukarPointData(PosLinkGenerator.createService(this), aValue,
           GetPlusID, ReffID, Amount);

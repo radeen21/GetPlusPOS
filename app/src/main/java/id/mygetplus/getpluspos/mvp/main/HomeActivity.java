@@ -31,6 +31,7 @@ import id.mygetplus.getpluspos.mvp.login.view.LoginActivity;
 import id.mygetplus.getpluspos.mvp.logout.presenter.LogoutContract;
 import id.mygetplus.getpluspos.mvp.logout.presenter.LogoutPresenter;
 import id.mygetplus.getpluspos.mvp.main.adapter.HomeAdapter;
+import id.mygetplus.getpluspos.mvp.tukarpoin.view.TukarPoint;
 import id.mygetplus.getpluspos.preference.GetPlusSession;
 import id.mygetplus.getpluspos.service.PosLinkGenerator;
 

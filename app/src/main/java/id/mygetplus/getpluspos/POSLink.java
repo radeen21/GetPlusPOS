@@ -68,7 +68,7 @@ public interface POSLink
 	Observable<ResponsePojo> VoucherService(@Body CekPointHolder cekPointHolder);
 
 	@POST(FixValue.EarnPoint)
-	Observable<ResponsePojo> getEarnPoint(@Body RequestHolder requestHolder);
+	Observable<ResponsePojo> getEarnPoint(@Body CekPointHolder requestHolder);
 
 	@POST(FixValue.TukarPoint)
 	Observable<ResponsePojo> TukarPoint(@Body CekPointHolder cekPointHolder);

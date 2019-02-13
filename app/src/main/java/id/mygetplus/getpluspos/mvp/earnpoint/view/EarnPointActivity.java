@@ -2,104 +2,92 @@ package id.mygetplus.getpluspos.mvp.earnpoint.view;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.PersistableBundle;
+import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
+import android.widget.ImageView;
+import android.widget.Toast;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import id.mygetplus.getpluspos.AValue;
 import id.mygetplus.getpluspos.BrandsRsp;
 import id.mygetplus.getpluspos.Fungsi;
 import id.mygetplus.getpluspos.Preference;
 import id.mygetplus.getpluspos.R;
 import id.mygetplus.getpluspos.ResponsePojo;
 import id.mygetplus.getpluspos.ScanQR;
+import id.mygetplus.getpluspos.SimValue;
+import id.mygetplus.getpluspos.mvp.cekpoint.presenter.CekPointContract;
+import id.mygetplus.getpluspos.mvp.cekpoint.presenter.CekPointPresenter;
 import id.mygetplus.getpluspos.mvp.earnpoint.presenter.EarnPointContract;
 import id.mygetplus.getpluspos.mvp.earnpoint.presenter.EarnPointPresenter;
-import id.mygetplus.getpluspos.mvp.main.HomeActivity;
+import id.mygetplus.getpluspos.mvp.tukarpoin.view.KonfirmasiTukar;
+import id.mygetplus.getpluspos.preference.GetPlusSession;
+import id.mygetplus.getpluspos.service.PosLinkGenerator;
 
-public class EarnPointActivity extends AppCompatActivity implements EarnPointContract.View
-{
+public class EarnPointActivity extends AppCompatActivity implements CekPointContract.View {
 
-  EarnPointPresenter earnPointPresenter;
+    CekPointPresenter cekPointPresenter;
 
-  @BindView(R.id.etGetPlusId)
-  TextInputEditText etGetPlusID;
+    @BindView(R.id.etGetPlusId)
+    TextInputEditText etGetPlusID;
 
-  @BindView(R.id.etMemberId)
-  TextInputEditText etMemberId;
-  @BindView(R.id.etMechantName)
-  TextInputEditText etMechantName;
-  @BindView(R.id.etNoReff)
-  TextInputEditText etNoReff;
-  @BindView(R.id.etAmount)
-  TextInputEditText etAmount;
+    @BindView(R.id.etNoReff)
+    TextInputEditText etNoReff;
 
-  @Override
-  protected void onCreate(Bundle savedInstanceState)
-  {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_earn_point);
-    ButterKnife.bind(this);
+    @BindView(R.id.etAmount)
+    TextInputEditText etAmount;
 
-    etGetPlusID.setText(Fungsi.getStringFromSharedPref(getApplicationContext(),
-      Preference.PrefGetPlusID));
+    @BindView(R.id.etMechantName)
+    TextInputEditText etMerchantName;
 
-    earnPointPresenter = new EarnPointPresenter(this, this);
-  }
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_earn_point);
+        ButterKnife.bind(this);
 
-<<<<<<< HEAD
-        dfTrans = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        dateTrans = dfTrans.format(c.getTime());
-        dateTrans = Fungsi.getDate(dateTrans, "yyyy-MM-dd HH:mm:ss",
-                "yyyy-MM-dd") + "T" +
-                Fungsi.getTime(dateTrans, "yyyy-MM-dd HH:mm:ss",
-                        "HH:mm:ss");
+        etGetPlusID.setText(Fungsi.getStringFromSharedPref(getApplicationContext(),
+                Preference.PrefGetPlusID));
 
-//        brandsRsp = new BrandsRsp();
-//        brandsRsp = Fungsi.getObjectFromSharedPref(this, BrandsRsp.class, Preference.PrefBrandItem);
-//        String transactionId = String.valueOf(brandsRsp.getIntInvoice());
-//        int saleValue = brandsRsp.getPrice();
-
-        earnPointPresenter = new EarnPointPresenter(this, this);
-        earnPointPresenter.loadEarnPointData(PosLinkGenerator.createService(this),
-                token, cardId, dateTrans);
+        cekPointPresenter = new CekPointPresenter(this, this);
     }
-=======
 
-  @Override
-  public void setEarnPoint(ResponsePojo cekPoint)
-  {
->>>>>>> 8344ac39ee625d24ba5468b8729b970eba37710e
-
-  }
-
-  @OnClick({R.id.iv_camera, R.id.btnLanjutEarn})
-  public void onViewClicked(View view)
-  {
-    switch (view.getId())
-    {
-      case R.id.iv_camera:
+    @OnClick(R.id.iv_camera)
+    void scanCameraClick() {
         Fungsi.storeToSharedPref(this, 2, Preference.PrefActiveMenu);
         Intent GetPlusID = new Intent(this, ScanQR.class);
         startActivity(GetPlusID);
-      break;
-      case R.id.btnLanjutEarn:
-//        earnPointPresenter.loadEarnPointData(PosLinkGenerator.createService(this), token, cardId, dateTrans, transactionId, saleValue);
-      break;
     }
-  }
 
-  private void BackHomeProcess()
-  {
-    Intent BackHome = new Intent(this, HomeActivity.class);
-    startActivity(BackHome);
-  }
+    @OnClick(R.id.btnLanjutEarn)
+    void nextBtn() {
+        cekPointPresenter.loadCekPointData(PosLinkGenerator.createService(this),
+                GetPlusSession.getInstance(this).getTokenSession(), etGetPlusID.getText().toString());
+    }
 
-  @Override
-  public void onBackPressed()
-  {
-    BackHomeProcess();
-  }
+    @Override
+    public void onBackPressed() {
+        finish();
+    }
+
+    @Override
+    public void setCekPoint(ResponsePojo cekPoint) {
+        if (cekPoint.getAFaultCode().matches("0")) {
+            Intent cekPoints = new Intent(this, KonfirmasiTukar.class);
+            cekPoints.putExtra("GetPlusID", etGetPlusID.getText().toString());
+            cekPoints.putExtra("ReffID", etNoReff.getText().toString());
+            cekPoints.putExtra("Amount", etAmount.getText().toString());
+            cekPoints.putExtra("Nama Merchant", etMerchantName.getText().toString());
+            startActivity(cekPoints);
+        } else
+            Toast.makeText(getApplicationContext(), cekPoint.getAFaultDescription(),
+                    Toast.LENGTH_SHORT).show();
+    }
 }

@@ -228,11 +228,12 @@
 
         <Button
             android:id="@+id/btnLanjutEarn"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
+            android:layout_gravity="center"
             android:background="@drawable/btn_next"
             android:textColor="@color/pureWhite" />
     </LinearLayout>

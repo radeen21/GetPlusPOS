@@ -53,7 +53,8 @@ public class EarnPointPresenter  extends BaseViewPresenter implements EarnPointC
 
         SimpleDateFormat dfTrans = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String dateTrans = dfTrans.format(c.getTime());
-        dateTrans = Fungsi.getDate(dateTrans, "yyyy-MM-dd HH:mm:ss", "yyyy-MM-dd") + "T" +
+        dateTrans = Fungsi.getDate(dateTrans, "yyyy-MM-dd HH:mm:ss",
+                "yyyy-MM-dd") + "T" +
                 Fungsi.getTime(dateTrans, "yyyy-MM-dd HH:mm:ss", "HH:mm:ss");
 
         Random random = new Random();

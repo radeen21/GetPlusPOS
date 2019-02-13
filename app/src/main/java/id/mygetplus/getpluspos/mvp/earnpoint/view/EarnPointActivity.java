@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
@@ -47,12 +48,16 @@ public class EarnPointActivity extends AppCompatActivity implements CekPointCont
     @BindView(R.id.etMechantName)
     TextInputEditText etMerchantName;
 
+    @BindView(R.id.tv_toolbar)
+    TextView tvToolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_earn_point);
         ButterKnife.bind(this);
 
+        tvToolbar.setText("BERI POINT");
         etGetPlusID.setText(Fungsi.getStringFromSharedPref(getApplicationContext(),
                 Preference.PrefGetPlusID));
 
@@ -80,11 +85,12 @@ public class EarnPointActivity extends AppCompatActivity implements CekPointCont
     @Override
     public void setCekPoint(ResponsePojo cekPoint) {
         if (cekPoint.getAFaultCode().matches("0")) {
-            Intent cekPoints = new Intent(this, KonfirmasiTukar.class);
+            Intent cekPoints = new Intent(this, EarnConfirmPopUp.class);
             cekPoints.putExtra("GetPlusID", etGetPlusID.getText().toString());
             cekPoints.putExtra("ReffID", etNoReff.getText().toString());
             cekPoints.putExtra("Amount", etAmount.getText().toString());
             cekPoints.putExtra("Nama Merchant", etMerchantName.getText().toString());
+            cekPoints.putExtra("Nama", cekPoint.getAValue().getBDisplayValue());
             startActivity(cekPoints);
         } else
             Toast.makeText(getApplicationContext(), cekPoint.getAFaultDescription(),

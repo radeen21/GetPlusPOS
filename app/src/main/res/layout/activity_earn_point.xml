@@ -14,6 +14,7 @@
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:orientation="vertical"
+        android:layout_margin="10dp"
         app:layout_constraintTop_toBottomOf="@id/toolbar">
 
         <TextView
@@ -225,17 +226,20 @@
                     android:text="Struk"/>
             </LinearLayout>
         </LinearLayout>
-
-        <Button
-            android:id="@+id/btnLanjutEarn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_gravity="center"
-            android:background="@drawable/btn_next"
-            android:textColor="@color/pureWhite" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btnLanjutEarn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="LANJUT"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/rounded_btn"
+        android:textColor="@color/pureWhite"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </android.support.constraint.ConstraintLayout>

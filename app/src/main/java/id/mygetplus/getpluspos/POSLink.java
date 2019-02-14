@@ -72,5 +72,8 @@ public interface POSLink
 
 	@POST(FixValue.TukarPoint)
 	Observable<ResponsePojo> TukarPoint(@Body CekPointHolder cekPointHolder);
+
+	@POST(FixValue.RestTransaksiPoin)
+	Observable<ResponsePojo> PaymentPoint(@Body CekPointHolder cekPointHolder);
 }
 

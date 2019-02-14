@@ -22,4 +22,6 @@ public class Preference
   public static final String PrefGetPlusID = "PrefGetPlusID";
   public static final String PrefEVoucher = "PrefEVoucher";
   public static final String PrefResponsePojo = "PrefResponsePojo";
+  public static final String PrefJumlahHarga = "PrefJumlahHarga";
+  public static final String PrefGetPlusIDEarn = "PrefGetPlusIDEarn";
 }

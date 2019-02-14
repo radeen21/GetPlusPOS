@@ -158,4 +158,5 @@
 	<string name="msgLoginFailed">Login failed</string>
 	<string name="msgLogoutApp">Tutup aplikasi ?</string>
 	<string name="msgPakaiVoucher">Apakah anda yakin akan menggunakan eVoucher ini ?</string>
+    <string name="msgEmptyProduct">Tentukan jumlah barang</string>
 </resources>

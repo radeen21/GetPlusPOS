@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo_get_plus_vertical_white"
+        app:srcCompat="@drawable/ic_logo_get_plus_vertical"
         tools:layout_editor_absoluteX="0dp"/>
 
     <LinearLayout
@@ -35,9 +35,11 @@
             <android.support.design.widget.TextInputEditText
                 android:id="@+id/et_email"
                 android:layout_width="match_parent"
+                android:imeOptions="actionNext"
                 android:textColor="@color/pureWhite"
                 android:textColorHint="@color/pureWhite"
                 android:layout_height="wrap_content"
+                app:backgroundTint="@color/pureWhite"
                 android:textColorLink="@color/pureWhite"
                 android:shadowColor="@color/pureWhite"
                 android:hint="Email/Phone number" />
@@ -58,6 +60,9 @@
                 android:inputType="textPassword"
                 android:textColor="@color/pureWhite"
                 android:textColorHint="@color/pureWhite"
+                app:backgroundTint="@color/pureWhite"
+                android:textColorLink="@color/pureWhite"
+                android:shadowColor="@color/pureWhite"
                 android:hint="Password" />
 
         </android.support.design.widget.TextInputLayout>
@@ -73,7 +78,7 @@
         android:layout_marginBottom="40dp"
         android:text="LOGIN"
         android:textColor="#FFFFFF"
-        android:background="@drawable/rounded_btn"
+        android:background="@drawable/ic_btn_login"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
 

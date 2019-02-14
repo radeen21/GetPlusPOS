@@ -1,12 +1,31 @@
 package id.mygetplus.getpluspos.mvp.earnpoint.view;
 
+import android.app.Activity;
+import android.content.ContentResolver;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+<<<<<<< HEAD
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 import android.widget.Toast;
 
+=======
+import android.os.Environment;
+import android.provider.MediaStore;
+import android.support.design.widget.TextInputEditText;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import java.io.File;
+
+>>>>>>> e62eb2a05ad358327b22d9f6c92b5809b8dd5eb3
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -17,6 +36,11 @@ import id.mygetplus.getpluspos.ResponsePojo;
 import id.mygetplus.getpluspos.ScanQR;
 import id.mygetplus.getpluspos.mvp.cekpoint.presenter.CekPointContract;
 import id.mygetplus.getpluspos.mvp.cekpoint.presenter.CekPointPresenter;
+<<<<<<< HEAD
+=======
+import id.mygetplus.getpluspos.mvp.main.HomeActivity;
+import id.mygetplus.getpluspos.mvp.tukarpoin.view.KonfirmasiTukar;
+>>>>>>> e62eb2a05ad358327b22d9f6c92b5809b8dd5eb3
 import id.mygetplus.getpluspos.preference.GetPlusSession;
 import id.mygetplus.getpluspos.service.PosLinkGenerator;
 
@@ -47,33 +71,20 @@ public class EarnPointActivity extends AppCompatActivity implements CekPointCont
 
         tvToolbar.setText("BERI POINT");
         etGetPlusID.setText(Fungsi.getStringFromSharedPref(getApplicationContext(),
-                Preference.PrefGetPlusID));
+                Preference.PrefGetPlusIDEarn));
 
         cekPointPresenter = new CekPointPresenter(this, this);
     }
 
-    @OnClick(R.id.iv_camera)
-    void scanCameraClick() {
-        Fungsi.storeToSharedPref(this, 2, Preference.PrefActiveMenu);
-        Intent GetPlusID = new Intent(this, ScanQR.class);
-        startActivity(GetPlusID);
-    }
-
-    @OnClick(R.id.btnLanjutEarn)
-    void nextBtn() {
-        cekPointPresenter.loadCekPointData(PosLinkGenerator.createService(this),
-                GetPlusSession.getInstance(this).getTokenSession(), etGetPlusID.getText().toString());
-    }
-
     @Override
     public void onBackPressed() {
-        finish();
+        goHome();
     }
 
     @Override
     public void setCekPoint(ResponsePojo cekPoint) {
         if (cekPoint.getAFaultCode().matches("0")) {
-            Intent cekPoints = new Intent(this, EarnConfirmPopUp.class);
+            Intent cekPoints = new Intent(this, KonfirmasiTukar.class);
             cekPoints.putExtra("GetPlusID", etGetPlusID.getText().toString());
             cekPoints.putExtra("ReffID", etNoReff.getText().toString());
             cekPoints.putExtra("Amount", etAmount.getText().toString());
@@ -84,4 +95,33 @@ public class EarnPointActivity extends AppCompatActivity implements CekPointCont
             Toast.makeText(getApplicationContext(), cekPoint.getAFaultDescription(),
                     Toast.LENGTH_SHORT).show();
     }
+
+    @OnClick({R.id.btn_back, R.id.btnLanjutEarn, R.id.iv_camera, R.id.llBeriStruk1, R.id.llBeriStruk2})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.iv_camera:
+                Fungsi.storeToSharedPref(this, 2, Preference.PrefActiveMenu);
+                Intent GetPlusID = new Intent(this, ScanQR.class);
+                startActivity(GetPlusID);
+                break;
+            case R.id.btn_back:
+                goHome();
+                break;
+            case R.id.btnLanjutEarn:
+                cekPointPresenter.loadCekPointData(PosLinkGenerator.createService(this),
+                        GetPlusSession.getInstance(this).getTokenSession(), etGetPlusID.getText().toString());
+                break;
+            case R.id.llBeriStruk1:
+                break;
+            case R.id.llBeriStruk2:
+                break;
+        }
+    }
+
+    private void goHome() {
+        Intent intent = new Intent(this, HomeActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
 }

@@ -31,6 +31,7 @@ import id.mygetplus.getpluspos.mvp.login.view.LoginActivity;
 import id.mygetplus.getpluspos.mvp.logout.presenter.LogoutContract;
 import id.mygetplus.getpluspos.mvp.logout.presenter.LogoutPresenter;
 import id.mygetplus.getpluspos.mvp.main.adapter.HomeAdapter;
+import id.mygetplus.getpluspos.mvp.payment.view.PaymentActivity;
 import id.mygetplus.getpluspos.mvp.tukarpoin.view.TukarPoint;
 import id.mygetplus.getpluspos.preference.GetPlusSession;
 import id.mygetplus.getpluspos.service.PosLinkGenerator;
@@ -180,6 +181,9 @@ public class HomeActivity extends AppCompatActivity implements LogoutContract.Vi
 				finish();
 				break;
 			case R.id.btnBayarPoin:
+				Intent payIntent = new Intent(this, PaymentActivity.class);
+				startActivity(payIntent);
+				finish();
 				break;
 			case R.id.btnVoucherPoin:
 				Intent EVoucherintent = new Intent(this, EVoucher.class);

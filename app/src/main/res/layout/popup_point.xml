@@ -51,7 +51,7 @@
           android:id="@+id/tv_NamaCekPoin"
           android:layout_width="match_parent"
           android:layout_height="match_parent"
-          android:text="Nama Pengguna"
+          android:text="-"
           android:gravity="center"
           android:textSize="23sp"
           android:textColor="@color/pureWhite"
@@ -71,7 +71,7 @@
           android:id="@+id/tv_id"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="GetPlus ID"
+            android:text="-"
             android:gravity="center"
             android:textSize="23sp"
             android:textColor="@color/pureWhite"
@@ -92,7 +92,7 @@
           android:id="@+id/tv_jumlah"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Jumlah"
+            android:text="-"
             android:gravity="center"
             android:textSize="23sp"
             android:textColor="@color/pureWhite"
@@ -110,7 +110,9 @@
         android:layout_marginRight="60dp"
         android:layout_marginBottom="20dp"
         android:textColor="@color/pureWhite"
-        android:background="@drawable/btn_add_more_receipt"
+        android:text="LANJUT"
+        android:textSize="16sp"
+        android:background="@drawable/rounded_btn"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
 

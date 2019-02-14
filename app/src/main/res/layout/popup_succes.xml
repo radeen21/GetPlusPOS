@@ -62,7 +62,7 @@
             android:textColor="@color/pureWhite"
             android:textSize="16sp"
             android:textStyle="bold"
-            android:text="Total Point"/>
+            android:text="-"/>
 
     </LinearLayout>
 

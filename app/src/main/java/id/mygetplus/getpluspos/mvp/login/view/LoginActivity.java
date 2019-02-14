@@ -8,6 +8,7 @@ import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import butterknife.BindView;
@@ -36,6 +37,9 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
 
 	@BindView(R.id.et_password)
 	TextInputEditText etPass;
+
+	@BindView(R.id.progressbar)
+	ProgressBar progressBar;
 
 	@Override
 	protected void onCreate(@Nullable Bundle savedInstanceState)
@@ -69,8 +73,8 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
 	}
 
 	@OnClick(R.id.btn_login)
-	public void onViewClicked(View view)
-	{
+	public void onViewClicked(View view) {
+		progressBar.setVisibility(View.VISIBLE);
 		switch(view.getId())
 		{
 			case R.id.btn_login:
@@ -91,5 +95,11 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
 	public void onBackPressed()
 	{
 		moveTaskToBack(true);
+	}
+
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		progressBar.setVisibility(View.GONE);
 	}
 }

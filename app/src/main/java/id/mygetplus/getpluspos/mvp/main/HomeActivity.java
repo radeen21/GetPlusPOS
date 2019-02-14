@@ -62,8 +62,7 @@ public class HomeActivity extends AppCompatActivity implements LogoutContract.Vi
 //		init();
 	}
 
-	void init()
-	{
+	void init() {
 //		int[] ATTRS = new int[]{android.R.attr.listDivider};
 //
 //		TypedArray a = this.obtainStyledAttributes(ATTRS);

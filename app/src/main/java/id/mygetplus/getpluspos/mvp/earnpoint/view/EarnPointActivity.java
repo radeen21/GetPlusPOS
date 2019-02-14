@@ -6,13 +6,11 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
-<<<<<<< HEAD
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 import android.widget.Toast;
 
-=======
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.design.widget.TextInputEditText;
@@ -25,7 +23,6 @@ import android.widget.Toast;
 
 import java.io.File;
 
->>>>>>> e62eb2a05ad358327b22d9f6c92b5809b8dd5eb3
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -36,11 +33,10 @@ import id.mygetplus.getpluspos.ResponsePojo;
 import id.mygetplus.getpluspos.ScanQR;
 import id.mygetplus.getpluspos.mvp.cekpoint.presenter.CekPointContract;
 import id.mygetplus.getpluspos.mvp.cekpoint.presenter.CekPointPresenter;
-<<<<<<< HEAD
-=======
+
 import id.mygetplus.getpluspos.mvp.main.HomeActivity;
 import id.mygetplus.getpluspos.mvp.tukarpoin.view.KonfirmasiTukar;
->>>>>>> e62eb2a05ad358327b22d9f6c92b5809b8dd5eb3
+
 import id.mygetplus.getpluspos.preference.GetPlusSession;
 import id.mygetplus.getpluspos.service.PosLinkGenerator;
 
@@ -84,7 +80,7 @@ public class EarnPointActivity extends AppCompatActivity implements CekPointCont
     @Override
     public void setCekPoint(ResponsePojo cekPoint) {
         if (cekPoint.getAFaultCode().matches("0")) {
-            Intent cekPoints = new Intent(this, KonfirmasiTukar.class);
+            Intent cekPoints = new Intent(this, EarnConfirmPopUp.class);
             cekPoints.putExtra("GetPlusID", etGetPlusID.getText().toString());
             cekPoints.putExtra("ReffID", etNoReff.getText().toString());
             cekPoints.putExtra("Amount", etAmount.getText().toString());

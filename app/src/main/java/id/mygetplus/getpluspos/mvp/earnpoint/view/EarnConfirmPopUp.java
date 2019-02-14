@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,7 +45,7 @@ public class EarnConfirmPopUp extends AppCompatActivity implements EarnPointCont
     TextView tvAmount;
 
     @BindView(R.id.btn_back)
-    Button btnBack;
+    ImageView btnBack;
 
     @BindView(R.id.tv_toolbar)
     TextView tvToolbar;
@@ -81,8 +82,7 @@ public class EarnConfirmPopUp extends AppCompatActivity implements EarnPointCont
         earnPointPresenter = new EarnPointPresenter(this, this);
     }
 
-    void initPopUp()
-    {
+    void initPopUp() {
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
         getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));

@@ -29,7 +29,7 @@ import id.mygetplus.getpluspos.mvp.model.SimValues;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
-public class TukarPointPresenter  extends BaseViewPresenter implements TukarPointContract.Presenter {
+public class TukarPointPresenter extends BaseViewPresenter implements TukarPointContract.Presenter {
 
     private Context context;
     private TukarPointContract.View view;
@@ -92,7 +92,6 @@ public class TukarPointPresenter  extends BaseViewPresenter implements TukarPoin
           public void onError(Throwable throwable) {
             super.onError(throwable);
             view.setTukarPoint(Fungsi.getObjectFromSharedPref(context, ResponsePojo.class, ConfigManager.AccountSession.MSG_RESPONSE));
-            Log.d("Test", "okBuilder: Masuk sini 3");
           }
 
           @Override

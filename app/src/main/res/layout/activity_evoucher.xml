@@ -7,31 +7,36 @@
 	android:background="@color/colorPrimary"
 	tools:context=".mvp.evoucher.view.EVoucher">
 
+	<include
+		android:id="@+id/toolbar"
+		layout="@layout/toolbar_view"/>
+
 	<LinearLayout
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:orientation="vertical"
+		android:layout_marginTop="8dp"
 		android:gravity="center"
-		android:layout_marginTop="40dp">
+		android:orientation="vertical"
+		app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
 		<android.support.design.widget.TextInputLayout
 			android:id="@+id/til_getplus_id"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:textColorHint="@color/pureWhite"
 			android:layout_margin="@dimen/activity_horizontal_margin"
+			android:textColorHint="@color/pureWhite"
 			app:hintEnabled="false">
 
 			<android.support.design.widget.TextInputEditText
 				android:id="@+id/etGetPlusID"
 				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:drawableEnd="@drawable/icon_scan"
+				android:hint="@string/strGetPlusID"
+				android:shadowColor="@color/pureWhite"
 				android:textColor="@color/pureWhite"
 				android:textColorHint="@color/pureWhite"
-				android:layout_height="wrap_content"
-				android:textColorLink="@color/pureWhite"
-				android:shadowColor="@color/pureWhite"
-				android:hint="@string/strGetPlusID"
-				android:drawableEnd="@drawable/icon_scan"/>
+				android:textColorLink="@color/pureWhite" />
 
 		</android.support.design.widget.TextInputLayout>
 
@@ -46,10 +51,10 @@
 				android:id="@+id/etEVoucher"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:textColor="@color/pureWhite"
-				android:textColorHint="@color/pureWhite"
+				android:drawableEnd="@drawable/icon_scan"
 				android:hint="@string/strEVoucher"
-				android:drawableEnd="@drawable/icon_scan"/>
+				android:textColor="@color/pureWhite"
+				android:textColorHint="@color/pureWhite" />
 
 		</android.support.design.widget.TextInputLayout>
 

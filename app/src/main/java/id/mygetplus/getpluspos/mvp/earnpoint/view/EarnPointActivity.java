@@ -2,33 +2,21 @@ package id.mygetplus.getpluspos.mvp.earnpoint.view;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
-import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import id.mygetplus.getpluspos.AValue;
-import id.mygetplus.getpluspos.BrandsRsp;
 import id.mygetplus.getpluspos.Fungsi;
 import id.mygetplus.getpluspos.Preference;
 import id.mygetplus.getpluspos.R;
 import id.mygetplus.getpluspos.ResponsePojo;
 import id.mygetplus.getpluspos.ScanQR;
-import id.mygetplus.getpluspos.SimValue;
 import id.mygetplus.getpluspos.mvp.cekpoint.presenter.CekPointContract;
 import id.mygetplus.getpluspos.mvp.cekpoint.presenter.CekPointPresenter;
-import id.mygetplus.getpluspos.mvp.earnpoint.presenter.EarnPointContract;
-import id.mygetplus.getpluspos.mvp.earnpoint.presenter.EarnPointPresenter;
-import id.mygetplus.getpluspos.mvp.tukarpoin.view.KonfirmasiTukar;
 import id.mygetplus.getpluspos.preference.GetPlusSession;
 import id.mygetplus.getpluspos.service.PosLinkGenerator;
 

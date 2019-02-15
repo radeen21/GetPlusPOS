@@ -22,6 +22,7 @@ import id.mygetplus.getpluspos.service.response.WrapperLogin;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 import rx.Observable;
 
 /**
@@ -75,5 +76,8 @@ public interface POSLink
 
 	@POST(FixValue.RestTransaksiPoin)
 	Observable<ResponsePojo> PaymentPoint(@Body CekPointHolder cekPointHolder);
+
+	@POST(FixValue.payment)
+	Observable<ResponsePojo> getPaymentList(@Path("AccountRSN") String AccountRSN);
 }
 

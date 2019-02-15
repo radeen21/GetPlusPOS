@@ -1,10 +1,11 @@
 package id.mygetplus.getpluspos;
 
+import id.mygetplus.getpluspos.preference.GetPlusSession;
+
 /**
  * Created by ignat on 16-Jun-16.
  */
-public class FixValue
-{
+public class FixValue {
 // Server Online
 //	public static final String BASE_URL = "https://mygetplus-development.azurewebsites.net/mobile/v1/201812/";      // URL to GPI Gateway
 	public static final String POS_URL = "https://mygetplus-development.azurewebsites.net/pos/v1/201812/";      // URL to GPI Gateway
@@ -29,6 +30,7 @@ public class FixValue
 	public static final String RestVoucher = "transaction/voucherredemption";
 	public static final String TukarPoint = "transaction/SaleTransaction";
 	public static final String EarnPoint = "transaction/EarnTransaction";
+	public static final String payment = "merchants/brands/{AccountRSN}";
 
 
 	//Network Connectivity

@@ -9,13 +9,6 @@ import id.mygetplus.getpluspos.helper.ConfigManager;
 
 public class GetPlusSession {
 
-//    static final String KEY_USER_NAME = "user";
-//    static final String KEY_PASS = "pass";
-//    static final String KEY_USERNAME_LOGIN = "username_logged_in";
-//    static final String KEY_STILL_LOGIN ="status_logged_in";
-//    public static final String SESSION_IN_PREF = "session_pref";
-//    public static final String TOKEN_PREF = "token_pref";
-
     private SharedPreferences preferencesGetPlus;
     private static GetPlusSession sSharedPrefs;
 
@@ -46,6 +39,16 @@ public class GetPlusSession {
 
     public String getTokenSession() {
         return preferencesGetPlus.getString(ConfigManager.AccountSession.TOKEN, "");
+    }
+
+    public void setAccountRsn(String acount) {
+        SharedPreferences.Editor editor = preferencesGetPlus.edit();
+        editor.putString(ConfigManager.AccountSession.ACCOUNTRSN, acount);
+        editor.apply();
+    }
+
+    public String getAccountRsn() {
+        return preferencesGetPlus.getString(ConfigManager.AccountSession.ACCOUNTRSN, "");
     }
 
     public void clearSession() {

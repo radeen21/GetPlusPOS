@@ -11,5 +11,6 @@ public class ConfigManager {
         public static String FIRST_LOGIN = "getpluspos.session-first-login";
         public static String MSG_RESPONSE = "getpluspos.session-msg-response";
         public static String UserEmail = "getpluspos.session-user-email";
+        public static String ACCOUNTRSN = "getpluspos.session-acccount_rsn";
     }
 }

@@ -14,6 +14,8 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -96,5 +98,10 @@ public class InformasiPayment extends AppCompatActivity  implements PaymentContr
         }
         else
             Toast.makeText(getApplicationContext(), responsePojo.getAFaultDescription(), Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void setListPayment(ResponsePojo responsePojo) {
+
     }
 }

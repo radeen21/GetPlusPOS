@@ -2,6 +2,7 @@ package id.mygetplus.getpluspos.mvp.payment.view;
 
 import android.content.Context;
 import android.content.Intent;
+import android.hardware.camera2.CameraManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -13,18 +14,28 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import id.mygetplus.getpluspos.AValue;
 import id.mygetplus.getpluspos.Fungsi;
 import id.mygetplus.getpluspos.PopupMessege;
 import id.mygetplus.getpluspos.Preference;
 import id.mygetplus.getpluspos.R;
+import id.mygetplus.getpluspos.ResponsePojo;
 import id.mygetplus.getpluspos.ScanQR;
+import id.mygetplus.getpluspos.SimValue;
 import id.mygetplus.getpluspos.mvp.main.HomeActivity;
 import id.mygetplus.getpluspos.mvp.payment.adapter.PaymentAdapter;
+import id.mygetplus.getpluspos.mvp.payment.presenter.PaymentContract;
+import id.mygetplus.getpluspos.mvp.payment.presenter.PaymentPresenter;
+import id.mygetplus.getpluspos.preference.GetPlusSession;
+import id.mygetplus.getpluspos.service.PosLinkGenerator;
 
-public class PaymentActivity extends AppCompatActivity {
+public class PaymentActivity extends AppCompatActivity implements PaymentContract.View {
     private PopupMessege popupMessege = new PopupMessege();
     private Context context = this;
 
@@ -43,6 +54,12 @@ public class PaymentActivity extends AppCompatActivity {
     @BindView(R.id.rec_payment_point)
     RecyclerView recPaymentPoint;
 
+    private PaymentAdapter paymentAdapter;
+
+    private List<ResponsePojo> responsePojos;
+
+    private PaymentPresenter paymentPresenter;
+
     private String titleMain[] = {
             "Wheels of Fortune"
     };
@@ -52,6 +69,8 @@ public class PaymentActivity extends AppCompatActivity {
     int intHarga = 10000;
     int Jumlah;
 
+    String accountRSN = "";
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,14 +78,20 @@ public class PaymentActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         tvToolbar.setText("Payment");
 
+        String acount = GetPlusSession.getInstance(this).getAccountRsn();
+
+        paymentPresenter = new PaymentPresenter(this, this);
+        paymentPresenter.loadListPayment(PosLinkGenerator.createService(this),
+                acount);
         init();
     }
 
     void init() {
+        List<ResponsePojo> responsePojos = new ArrayList<>();
+        paymentAdapter = new PaymentAdapter(this, responsePojos);
 
         recPaymentPoint.setHasFixedSize(true);
 		recPaymentPoint.setLayoutManager(new LinearLayoutManager(this));
-		PaymentAdapter paymentAdapter = new PaymentAdapter(this, titleMain);
 		recPaymentPoint.setAdapter(paymentAdapter);
     }
 
@@ -127,5 +152,17 @@ public class PaymentActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         goHome();
+    }
+
+    @Override
+    public void setPaymentPoint(ResponsePojo responsePojo) {
+
+    }
+
+    @Override
+    public void setListPayment(ResponsePojo responsePojo) {
+        if (responsePojo.getAFaultCode().matches("0")) {
+            GetPlusSession.getInstance(this).setAccountRsn(responsePojo.getAValue().getBAccountRSN());
+        }
     }
 }

@@ -8,9 +8,11 @@ import id.mygetplus.getpluspos.base.IBaseViewPresenter;
 public interface PaymentContract {
     interface Presenter extends IBaseViewPresenter {
         void loadPaymentData(POSLink posLink, AValue aValue, String GetPlusID, Integer Amount);
+        void loadListPayment(POSLink posLink, String accountBrs);
     }
 
     interface View {
         void setPaymentPoint(ResponsePojo responsePojo);
+        void setListPayment(ResponsePojo responsePojo);
     }
 }

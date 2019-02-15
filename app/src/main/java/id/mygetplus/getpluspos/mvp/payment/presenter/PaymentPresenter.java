@@ -97,4 +97,25 @@ public class PaymentPresenter extends BaseViewPresenter implements PaymentContra
                     }
                 });
     }
+
+    @Override
+    public void loadListPayment(POSLink posLink, String accountBrs) {
+        AValue aValue = new AValue();
+        aValue.setBAccountRSN(accountBrs);
+
+        posLink.getPaymentList(accountBrs).subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new ResponseSubscriber<ResponsePojo>(){
+                    @Override
+                    public void onError(Throwable throwable) {
+                        super.onError(throwable);
+                    }
+
+                    @Override
+                    public void onNext(ResponsePojo responsePojo) {
+                        super.onNext(responsePojo);
+                        view.setListPayment(responsePojo);
+                    }
+                });
+    }
 }

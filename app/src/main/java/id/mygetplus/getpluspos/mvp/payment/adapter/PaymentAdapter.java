@@ -9,11 +9,16 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import id.mygetplus.getpluspos.R;
+import id.mygetplus.getpluspos.ResponsePojo;
 
 public class PaymentAdapter extends RecyclerView.Adapter<PaymentAdapter.PaymentHolder>{
+
+    private List<ResponsePojo> responsePojos;
 
     private Context context;
     private String title[];
@@ -22,9 +27,9 @@ public class PaymentAdapter extends RecyclerView.Adapter<PaymentAdapter.PaymentH
     int intHarga = 10000;
     int Jumlah;
 
-    public PaymentAdapter(Context context, String[] title) {
+    public PaymentAdapter(Context context, List<ResponsePojo> responsePojos) {
         this.context = context;
-        this.title = title;
+        this.responsePojos = responsePojos;
     }
 
     @NonNull
@@ -38,33 +43,43 @@ public class PaymentAdapter extends RecyclerView.Adapter<PaymentAdapter.PaymentH
 
     @Override
     public void onBindViewHolder(PaymentHolder paymentHolder, int position) {
-        paymentHolder.tvTitle.setText(title[position]);
-        paymentHolder.imgMin.setOnClickListener(v -> {
-            intMin = Integer.valueOf(paymentHolder.tvValue.getText().toString());
-            intMin--;
-            Jumlah = intHarga * intMin;
-            paymentHolder.tvPoint.setText("Rp " + String.valueOf(Jumlah));
+        if (paymentHolder instanceof PaymentHolder) {
+            ResponsePojo responsePojo = responsePojos.get(position);
 
-            if(intMin <= 0)
-            {
-                paymentHolder.tvValue.setText("0");
-                paymentHolder.tvPoint.setText("Rp 0");
-                Jumlah = 0;
-            }
-        });
+            paymentHolder.tvTitle.setText(responsePojo.getAValue().getBAccountName());
+            paymentHolder.imgMin.setOnClickListener(v -> {
+                intMin = Integer.valueOf(paymentHolder.tvValue.getText().toString());
+                intMin--;
+                Jumlah = intHarga * intMin;
+                paymentHolder.tvPoint.setText("Rp " + String.valueOf(Jumlah));
 
-        paymentHolder.imgPlus.setOnClickListener(v -> {
-            intMax = Integer.valueOf(paymentHolder.tvValue.getText().toString());
-            intMax++;
-            Jumlah = intHarga * intMax;
-            paymentHolder.tvValue.setText(String.valueOf(intMax));
-            paymentHolder.tvPoint.setText("Rp " + String.valueOf(Jumlah));
-        });
+                if(intMin <= 0)
+                {
+                    paymentHolder.tvValue.setText("0");
+                    paymentHolder.tvPoint.setText("Rp 0");
+                    Jumlah = 0;
+                }
+            });
+
+            paymentHolder.imgPlus.setOnClickListener(v -> {
+                intMax = Integer.valueOf(paymentHolder.tvValue.getText().toString());
+                intMax++;
+                Jumlah = intHarga * intMax;
+                paymentHolder.tvValue.setText(String.valueOf(intMax));
+                paymentHolder.tvPoint.setText("Rp " + String.valueOf(Jumlah));
+            });
+        }
+
+    }
+
+    public void addListPayment(List<ResponsePojo> responsePojo) {
+        this.responsePojos = responsePojo;
+        notifyDataSetChanged();
     }
 
     @Override
     public int getItemCount() {
-        return title.length;
+        return responsePojos.size();
     }
 
     public class PaymentHolder extends RecyclerView.ViewHolder {

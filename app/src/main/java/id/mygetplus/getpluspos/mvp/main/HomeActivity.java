@@ -158,6 +158,7 @@ public class HomeActivity extends AppCompatActivity implements LogoutContract.Vi
 	public void onViewClicked(View view)
 	{
 		Fungsi.storeToSharedPref(getApplicationContext(), "", Preference.PrefGetPlusID);
+		Fungsi.storeToSharedPref(getApplicationContext(), "", Preference.PrefGetPlusIDEarn);
 		Fungsi.storeToSharedPref(getApplicationContext(), "", Preference.PrefEVoucher);
 
 		switch (view.getId())

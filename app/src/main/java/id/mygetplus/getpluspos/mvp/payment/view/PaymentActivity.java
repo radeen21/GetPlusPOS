@@ -44,7 +44,7 @@ public class PaymentActivity extends AppCompatActivity {
     RecyclerView recPaymentPoint;
 
     private String titleMain[] = {
-            "Wheels of Fortune", "Wheels of Fortune"
+            "Wheels of Fortune"
     };
 
     int intMin;

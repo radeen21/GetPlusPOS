@@ -125,7 +125,15 @@
             android:layout_marginTop="20dp"
             android:orientation="horizontal">
 
+            <ImageView
+              android:id="@+id/ivThumbTukar1"
+              android:layout_width="64dp"
+              android:layout_height="64dp"
+              android:visibility="gone"
+              android:scaleType="centerInside"/>
+
             <LinearLayout
+                android:id="@+id/llStrukTukar1"
                 android:layout_width="80dp"
                 android:layout_height="64dp"
                 android:gravity="center"
@@ -134,11 +142,13 @@
                 android:background="@drawable/rounded_grey">
 
                 <ImageView
+                  android:id="@+id/ivStrukTukar1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_add_blue"/>
 
                 <TextView
+                  android:id="@+id/tvStrukTukar1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/pureWhite"
@@ -146,7 +156,15 @@
 
             </LinearLayout>
 
+            <ImageView
+              android:id="@+id/ivThumbTukar2"
+              android:layout_width="64dp"
+              android:layout_height="64dp"
+              android:visibility="gone"
+              android:scaleType="centerInside"/>
+
             <LinearLayout
+                android:id="@+id/llStrukTukar2"
                 android:layout_width="80dp"
                 android:layout_height="64dp"
                 android:gravity="center"
@@ -154,11 +172,13 @@
                 android:background="@drawable/rounded_grey">
 
                 <ImageView
+                  android:id="@+id/ivStrukTukar2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_add_blue"/>
 
                 <TextView
+                  android:id="@+id/tvStrukTukar2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/pureWhite"

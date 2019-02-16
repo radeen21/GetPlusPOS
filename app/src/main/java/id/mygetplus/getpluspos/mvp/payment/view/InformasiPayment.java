@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -25,6 +26,7 @@ import id.mygetplus.getpluspos.Preference;
 import id.mygetplus.getpluspos.R;
 import id.mygetplus.getpluspos.ResponsePojo;
 import id.mygetplus.getpluspos.mvp.main.HomeActivity;
+import id.mygetplus.getpluspos.mvp.payment.model.AvalueList;
 import id.mygetplus.getpluspos.mvp.payment.presenter.PaymentContract;
 import id.mygetplus.getpluspos.mvp.payment.presenter.PaymentPresenter;
 import id.mygetplus.getpluspos.service.PosLinkGenerator;
@@ -100,7 +102,7 @@ public class InformasiPayment extends AppCompatActivity  implements PaymentContr
     }
 
     @Override
-    public void setListPayment(List<BrandsRsp> brandsRsps) {
+    public void setListPayment(List<AvalueList> listPayment) {
 
     }
 }

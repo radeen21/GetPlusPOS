@@ -83,7 +83,7 @@ public class LogoutPresenter extends BaseViewPresenter implements LogoutContract
                     @Override
                     public void onNext(ResponsePojo responsePojo) {
                         super.onNext(responsePojo);
-                        view.getData(responsePojo);
+                        view.getData(Fungsi.getObjectFromSharedPref(context, ResponsePojo.class, ConfigManager.AccountSession.MSG_RESPONSE));
                     }
                 });
     }

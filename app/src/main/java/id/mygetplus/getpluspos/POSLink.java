@@ -18,6 +18,7 @@ package id.mygetplus.getpluspos;
 
 import id.mygetplus.getpluspos.mvp.model.CekPointHolder;
 import id.mygetplus.getpluspos.mvp.model.LoginHolder;
+import id.mygetplus.getpluspos.mvp.payment.model.ListPaymentPojo;
 import id.mygetplus.getpluspos.service.response.WrapperLogin;
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -79,11 +80,7 @@ public interface POSLink
 	Observable<ResponsePojo> PaymentPoint(@Body CekPointHolder cekPointHolder);
 
 	@GET(FixValue.payment)
-	Observable<ResponseBrandsPojo> getPaymentList(@Path("AccountRSN") String AccountRSN);
-
-	@GET(FixValue.payment)
-	Observable<ResponseBrandsPojo> getPaymentLists(@Path("AccountRSN") String AccountRSN);
-
+	Observable<ListPaymentPojo> getPaymentList(@Path("AccountRSN") String AccountRSN);
 
 }
 

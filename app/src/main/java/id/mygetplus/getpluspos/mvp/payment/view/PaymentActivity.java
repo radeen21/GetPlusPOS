@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -25,6 +26,7 @@ import id.mygetplus.getpluspos.ResponsePojo;
 import id.mygetplus.getpluspos.ScanQR;
 import id.mygetplus.getpluspos.mvp.main.HomeActivity;
 import id.mygetplus.getpluspos.mvp.payment.adapter.PaymentAdapter;
+import id.mygetplus.getpluspos.mvp.payment.model.AvalueList;
 import id.mygetplus.getpluspos.mvp.payment.presenter.PaymentContract;
 import id.mygetplus.getpluspos.mvp.payment.presenter.PaymentPresenter;
 import id.mygetplus.getpluspos.service.PosLinkGenerator;
@@ -132,7 +134,11 @@ public class PaymentActivity extends AppCompatActivity implements PaymentContrac
 
     @OnClick(R.id.btn_next_Payment)
     void btnNextPayment() {
-        Fungsi.storeToSharedPref(getApplicationContext(), Jumlah, Preference.PrefJumlahHarga);
+        int summary = 0;
+        for (int i=0; i<this.paymentAdapter.getItemCount(); i++) {
+            summary += this.paymentAdapter.getSum();
+        }
+        Fungsi.storeToSharedPref(getApplicationContext(), summary, Preference.PrefJumlahHarga);
         Fungsi.storeToSharedPref(context, 5, Preference.PrefActiveMenu);
         Intent EVoucher = new Intent(this, ScanQR.class);
         startActivity(EVoucher);
@@ -155,7 +161,8 @@ public class PaymentActivity extends AppCompatActivity implements PaymentContrac
     }
 
     @Override
-    public void setListPayment(List<BrandsRsp> brandsRsps) {
-        this.paymentAdapter.addListPayment(brandsRsps);
+    public void setListPayment(List<AvalueList> avalueLists) {
+        this.paymentAdapter.addListPayment(avalueLists);
     }
+
 }

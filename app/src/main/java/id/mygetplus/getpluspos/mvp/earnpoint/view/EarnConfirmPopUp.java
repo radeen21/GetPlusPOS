@@ -95,17 +95,25 @@ public class EarnConfirmPopUp extends AppCompatActivity implements EarnPointCont
 
     @Override
     public void setEarnPoint(ResponsePojo cekPoint) {
-    {
-        if (cekPoint.getAFaultCode().matches("0")) {
-             Intent InformasiTukar = new Intent(this, InformasiTukar.class);
-             InformasiTukar.putExtra("JumlahPoin",
-                     cekPoint.getAValue().getBLoyaltyPointsBalance());
-             startActivity(InformasiTukar);
-             finish();
-        } else
-            Toast.makeText(getApplicationContext(), cekPoint.getAFaultDescription(),
-                    Toast.LENGTH_SHORT).show();
-        }
+        setResult(RESULT_OK);
+        finish();
+
+
+//    {
+//        if (cekPoint.getAFaultCode().matches("0")) {
+//            Intent intent = new Intent(this, EarnPointActivity.class);
+//            startActivityForResult(intent, RESULT_OK);
+
+
+//             Intent InformasiTukar = new Intent(this, InformasiTukar.class);
+//             InformasiTukar.putExtra("JumlahPoin",
+//                     cekPoint.getAValue().getBLoyaltyPointsBalance());
+//             startActivity(InformasiTukar);
+//             finish();
+//        } else
+//            Toast.makeText(getApplicationContext(), cekPoint.getAFaultDescription(),
+//                    Toast.LENGTH_SHORT).show();
+//        }
     }
 
     @OnClick(R.id.btn_next)

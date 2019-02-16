@@ -99,7 +99,7 @@ public class EarnPointPresenter  extends BaseViewPresenter implements EarnPointC
                     @Override
                     public void onNext(ResponsePojo responsePojo) {
                         super.onNext(responsePojo);
-                        view.setEarnPoint(responsePojo);
+                        view.setEarnPoint(Fungsi.getObjectFromSharedPref(context, ResponsePojo.class, ConfigManager.AccountSession.MSG_RESPONSE));
                     }
                 });
     }

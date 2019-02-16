@@ -72,6 +72,10 @@
         "source": "C:\\Users\\babar.trihapsoro\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b58dd380878154e4b9735af6c34231c6\\res\\drawable-mdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
     },
     {
+        "merged": "D:\\Babar\\coding\\pribadi\\GetPlusIos\\GetPlusPOS\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_earn_transaction.xml.flat",
+        "source": "D:\\Babar\\coding\\pribadi\\GetPlusIos\\GetPlusPOS\\app\\src\\main\\res\\layout\\activity_earn_transaction.xml"
+    },
+    {
         "merged": "D:\\Babar\\coding\\pribadi\\GetPlusIos\\GetPlusPOS\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_icon_scan.png.flat",
         "source": "D:\\Babar\\coding\\pribadi\\GetPlusIos\\GetPlusPOS\\app\\src\\main\\res\\drawable-hdpi\\icon_scan.png"
     },
@@ -142,6 +146,10 @@
     {
         "merged": "D:\\Babar\\coding\\pribadi\\GetPlusIos\\GetPlusPOS\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_expanded_menu_layout.xml.flat",
         "source": "C:\\Users\\babar.trihapsoro\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b58dd380878154e4b9735af6c34231c6\\res\\layout\\abc_expanded_menu_layout.xml"
+    },
+    {
+        "merged": "D:\\Babar\\coding\\pribadi\\GetPlusIos\\GetPlusPOS\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_earn_point.xml.flat",
+        "source": "D:\\Babar\\coding\\pribadi\\GetPlusIos\\GetPlusPOS\\app\\src\\main\\res\\layout\\item_earn_point.xml"
     },
     {
         "merged": "D:\\Babar\\coding\\pribadi\\GetPlusIos\\GetPlusPOS\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_login.xml.flat",
@@ -1090,6 +1098,10 @@
     {
         "merged": "D:\\Babar\\coding\\pribadi\\GetPlusIos\\GetPlusPOS\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_btn_settlement.png.flat",
         "source": "D:\\Babar\\coding\\pribadi\\GetPlusIos\\GetPlusPOS\\app\\src\\main\\res\\drawable-mdpi\\btn_settlement.png"
+    },
+    {
+        "merged": "D:\\Babar\\coding\\pribadi\\GetPlusIos\\GetPlusPOS\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_close_grey_24dp.xml.flat",
+        "source": "D:\\Babar\\coding\\pribadi\\GetPlusIos\\GetPlusPOS\\app\\src\\main\\res\\drawable\\ic_close_grey_24dp.xml"
     },
     {
         "merged": "D:\\Babar\\coding\\pribadi\\GetPlusIos\\GetPlusPOS\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_logo_get_plus_vertical.png.flat",

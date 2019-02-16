@@ -155,6 +155,8 @@
 	<string name="msgGetPlusIDEmpty">Masukan GetPlus ID</string>
 	<string name="msgEVoucherEmpty">Masukan Kode Voucher</string>
 	<string name="msgPasswordEmpty">Masukan password</string>
+	<string name="msgNoReffEmpty">Masukan Nomor Reff</string>
+	<string name="msgMerchantIDEmpty">Masukan Merchant ID</string>
 	<string name="msgLoginFailed">Login failed</string>
 	<string name="msgLogoutApp">Tutup aplikasi ?</string>
 	<string name="msgPakaiVoucher">Apakah anda yakin akan menggunakan eVoucher ini ?</string>

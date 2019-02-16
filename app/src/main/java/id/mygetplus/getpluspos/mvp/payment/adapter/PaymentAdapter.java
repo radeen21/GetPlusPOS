@@ -12,18 +12,19 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import id.mygetplus.getpluspos.BrandsRsp;
 import id.mygetplus.getpluspos.R;
+import id.mygetplus.getpluspos.mvp.payment.model.AvalueList;
 
 public class PaymentAdapter extends RecyclerView.Adapter<PaymentAdapter.PaymentHolder>{
 
-    private List<BrandsRsp> brandsRsps = new ArrayList<>();
+    private List<AvalueList> avalueLists = new ArrayList<>();
 
     int quantity;
-    int intHarga = 10000;
     int Jumlah;
 
     @NonNull
@@ -38,18 +39,20 @@ public class PaymentAdapter extends RecyclerView.Adapter<PaymentAdapter.PaymentH
     @Override
     public void onBindViewHolder(PaymentHolder paymentHolder, int position) {
         if (paymentHolder instanceof PaymentHolder) {
-            BrandsRsp brandsRsp = brandsRsps.get(position);
+            AvalueList avalueList = avalueLists.get(position);
 
-            paymentHolder.tvTitle.setText(brandsRsp.getBrandName());
-//            paymentHolder.tvPoint.setText(brandsRsp.getPrice());
+//            AtomicInteger minQty = new AtomicInteger(avalueList.getMinQty());
+//            AtomicInteger maxQty = new AtomicInteger(avalueList.getMaxQty());
+
+            paymentHolder.tvTitle.setText(avalueList.getBrandName());
             Glide.with(paymentHolder.itemView.getContext())
-                    .load(brandsRsp.getImageURL())
+                    .load(avalueList.getImageURL())
                     .into(paymentHolder.imgPayment);
 
             paymentHolder.imgMin.setOnClickListener(v -> {
                 quantity = Integer.valueOf(paymentHolder.tvValue.getText().toString());
                 quantity--;
-                Jumlah = brandsRsp.getPrice() * quantity;
+                Jumlah = avalueList.getPrice() * quantity;
                 paymentHolder.tvValue.setText(String.valueOf(quantity));
                 paymentHolder.tvPoint.setText("Rp " + String.valueOf(Jumlah));
 
@@ -64,7 +67,7 @@ public class PaymentAdapter extends RecyclerView.Adapter<PaymentAdapter.PaymentH
             paymentHolder.imgPlus.setOnClickListener(v -> {
                 quantity = Integer.valueOf(paymentHolder.tvValue.getText().toString());
                 quantity++;
-                Jumlah = brandsRsp.getPrice() * quantity;
+                Jumlah = avalueList.getPrice() * quantity;
                 paymentHolder.tvValue.setText(String.valueOf(quantity));
                 paymentHolder.tvPoint.setText("Rp " + String.valueOf(Jumlah));
             });
@@ -72,14 +75,22 @@ public class PaymentAdapter extends RecyclerView.Adapter<PaymentAdapter.PaymentH
 
     }
 
-    public void addListPayment(List<BrandsRsp> brandsRsps) {
-        this.brandsRsps = brandsRsps;
+    public void addListPayment(List<AvalueList> avalueLists) {
+        this.avalueLists = avalueLists;
         notifyDataSetChanged();
+    }
+
+    public List<AvalueList> getBrandsRspsList() {
+        return avalueLists;
+    }
+
+    public int getSum() {
+        return Jumlah;
     }
 
     @Override
     public int getItemCount() {
-        return brandsRsps.size();
+        return avalueLists.size();
     }
 
     public class PaymentHolder extends RecyclerView.ViewHolder {

@@ -18,12 +18,14 @@ import id.mygetplus.getpluspos.ResponsePojo;
 import id.mygetplus.getpluspos.Sim1SaleTransactionLine;
 import id.mygetplus.getpluspos.Sim1TransactionLines;
 import id.mygetplus.getpluspos.base.BaseViewPresenter;
+import id.mygetplus.getpluspos.base.ResponseListPaymentSubcriber;
 import id.mygetplus.getpluspos.base.ResponsePaymentSubscriber;
 import id.mygetplus.getpluspos.base.ResponseSubscriber;
 import id.mygetplus.getpluspos.helper.ConfigManager;
 import id.mygetplus.getpluspos.mvp.model.CekPointHolder;
 import id.mygetplus.getpluspos.mvp.model.PointRequestNew;
 import id.mygetplus.getpluspos.mvp.model.SimValues;
+import id.mygetplus.getpluspos.mvp.payment.model.ListPaymentPojo;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
@@ -88,7 +90,8 @@ public class PaymentPresenter extends BaseViewPresenter implements PaymentContra
                     @Override
                     public void onError(Throwable throwable) {
                         super.onError(throwable);
-                        view.setPaymentPoint(Fungsi.getObjectFromSharedPref(context, ResponsePojo.class, ConfigManager.AccountSession.MSG_RESPONSE));
+                        view.setPaymentPoint(Fungsi.getObjectFromSharedPref(context,
+                                ResponsePojo.class, ConfigManager.AccountSession.MSG_RESPONSE));
                     }
 
                     @Override
@@ -106,23 +109,23 @@ public class PaymentPresenter extends BaseViewPresenter implements PaymentContra
 
         posLink.getPaymentList(accountBrs).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new ResponsePaymentSubscriber<ResponseBrandsPojo>(){
+                .subscribe(new ResponseListPaymentSubcriber<ListPaymentPojo>(){
                     @Override
                     public void onError(Throwable throwable) {
                         super.onError(throwable);
+//                      view.setListPayment(Fungsi.getObjectFromSharedPref
+//                              (context, ResponsePojo.class, ConfigManager.AccountSession.MSG_RESPONSE));
                     }
 
                     @Override
-                    public void onNext(ResponseBrandsPojo responsePojo) {
-                        super.onNext(responsePojo);
-//                        view.setListPayment(responsePojo);
-                        view.setListPayment(responsePojo.getBrandsRsps());
+                    public void onNext(ListPaymentPojo listPaymentPojo) {
+                        super.onNext(listPaymentPojo);
+                        Fungsi.getObjectFromSharedPref
+                              (context, ResponsePojo.class, ConfigManager.AccountSession.MSG_RESPONSE);
+                        view.setListPayment(listPaymentPojo.getAvalueLists());
+//                        view.setListPayment(Fungsi.getObjectFromSharedPref(context,context
+//                        ResponsePojo.class, ConfigManager.AccountSession.MSG_RESPONSE));
                     }
                 });
-    }
-
-    @Override
-    public void loadList(POSLink posLink) {
-//        posLink.g
     }
 }

@@ -1,6 +1,5 @@
 package id.mygetplus.getpluspos.mvp.payment.adapter;
 
-import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,28 +8,23 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import id.mygetplus.getpluspos.BrandsRsp;
 import id.mygetplus.getpluspos.R;
-import id.mygetplus.getpluspos.ResponsePojo;
 
 public class PaymentAdapter extends RecyclerView.Adapter<PaymentAdapter.PaymentHolder>{
 
-    private List<ResponsePojo> responsePojos;
+    private List<BrandsRsp> brandsRsps = new ArrayList<>();
 
-    private Context context;
-    private String title[];
-    int intMin;
-    int intMax;
+    int quantity;
     int intHarga = 10000;
     int Jumlah;
-
-    public PaymentAdapter(Context context, List<ResponsePojo> responsePojos) {
-        this.context = context;
-        this.responsePojos = responsePojos;
-    }
 
     @NonNull
     @Override
@@ -44,16 +38,22 @@ public class PaymentAdapter extends RecyclerView.Adapter<PaymentAdapter.PaymentH
     @Override
     public void onBindViewHolder(PaymentHolder paymentHolder, int position) {
         if (paymentHolder instanceof PaymentHolder) {
-            ResponsePojo responsePojo = responsePojos.get(position);
+            BrandsRsp brandsRsp = brandsRsps.get(position);
 
-            paymentHolder.tvTitle.setText(responsePojo.getAValue().getBAccountName());
+            paymentHolder.tvTitle.setText(brandsRsp.getBrandName());
+//            paymentHolder.tvPoint.setText(brandsRsp.getPrice());
+            Glide.with(paymentHolder.itemView.getContext())
+                    .load(brandsRsp.getImageURL())
+                    .into(paymentHolder.imgPayment);
+
             paymentHolder.imgMin.setOnClickListener(v -> {
-                intMin = Integer.valueOf(paymentHolder.tvValue.getText().toString());
-                intMin--;
-                Jumlah = intHarga * intMin;
+                quantity = Integer.valueOf(paymentHolder.tvValue.getText().toString());
+                quantity--;
+                Jumlah = brandsRsp.getPrice() * quantity;
+                paymentHolder.tvValue.setText(String.valueOf(quantity));
                 paymentHolder.tvPoint.setText("Rp " + String.valueOf(Jumlah));
 
-                if(intMin <= 0)
+                if(quantity <= 0)
                 {
                     paymentHolder.tvValue.setText("0");
                     paymentHolder.tvPoint.setText("Rp 0");
@@ -62,24 +62,24 @@ public class PaymentAdapter extends RecyclerView.Adapter<PaymentAdapter.PaymentH
             });
 
             paymentHolder.imgPlus.setOnClickListener(v -> {
-                intMax = Integer.valueOf(paymentHolder.tvValue.getText().toString());
-                intMax++;
-                Jumlah = intHarga * intMax;
-                paymentHolder.tvValue.setText(String.valueOf(intMax));
+                quantity = Integer.valueOf(paymentHolder.tvValue.getText().toString());
+                quantity++;
+                Jumlah = brandsRsp.getPrice() * quantity;
+                paymentHolder.tvValue.setText(String.valueOf(quantity));
                 paymentHolder.tvPoint.setText("Rp " + String.valueOf(Jumlah));
             });
         }
 
     }
 
-    public void addListPayment(List<ResponsePojo> responsePojo) {
-        this.responsePojos = responsePojo;
+    public void addListPayment(List<BrandsRsp> brandsRsps) {
+        this.brandsRsps = brandsRsps;
         notifyDataSetChanged();
     }
 
     @Override
     public int getItemCount() {
-        return responsePojos.size();
+        return brandsRsps.size();
     }
 
     public class PaymentHolder extends RecyclerView.ViewHolder {
@@ -98,6 +98,9 @@ public class PaymentAdapter extends RecyclerView.Adapter<PaymentAdapter.PaymentH
 
         @BindView(R.id.tv_point)
         TextView tvPoint;
+
+        @BindView(R.id.img_payment)
+        ImageView imgPayment;
 
 
         public PaymentHolder(View itemView) {

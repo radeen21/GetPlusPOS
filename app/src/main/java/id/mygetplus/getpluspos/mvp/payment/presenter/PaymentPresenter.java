@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import android.support.v4.app.ActivityCompat;
 import android.telephony.TelephonyManager;
-import android.util.Log;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -14,10 +13,12 @@ import java.util.Random;
 import id.mygetplus.getpluspos.AValue;
 import id.mygetplus.getpluspos.Fungsi;
 import id.mygetplus.getpluspos.POSLink;
+import id.mygetplus.getpluspos.ResponseBrandsPojo;
 import id.mygetplus.getpluspos.ResponsePojo;
 import id.mygetplus.getpluspos.Sim1SaleTransactionLine;
 import id.mygetplus.getpluspos.Sim1TransactionLines;
 import id.mygetplus.getpluspos.base.BaseViewPresenter;
+import id.mygetplus.getpluspos.base.ResponsePaymentSubscriber;
 import id.mygetplus.getpluspos.base.ResponseSubscriber;
 import id.mygetplus.getpluspos.helper.ConfigManager;
 import id.mygetplus.getpluspos.mvp.model.CekPointHolder;
@@ -105,17 +106,23 @@ public class PaymentPresenter extends BaseViewPresenter implements PaymentContra
 
         posLink.getPaymentList(accountBrs).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new ResponseSubscriber<ResponsePojo>(){
+                .subscribe(new ResponsePaymentSubscriber<ResponseBrandsPojo>(){
                     @Override
                     public void onError(Throwable throwable) {
                         super.onError(throwable);
                     }
 
                     @Override
-                    public void onNext(ResponsePojo responsePojo) {
+                    public void onNext(ResponseBrandsPojo responsePojo) {
                         super.onNext(responsePojo);
-                        view.setListPayment(responsePojo);
+//                        view.setListPayment(responsePojo);
+                        view.setListPayment(responsePojo.getBrandsRsps());
                     }
                 });
+    }
+
+    @Override
+    public void loadList(POSLink posLink) {
+//        posLink.g
     }
 }

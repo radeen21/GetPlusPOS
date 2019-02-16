@@ -17,9 +17,7 @@ package id.mygetplus.getpluspos;
 
 
 import retrofit2.Call;
-import retrofit2.http.Body;
 import retrofit2.http.GET;
-import retrofit2.http.POST;
 import retrofit2.http.Path;
 
 /**
@@ -30,6 +28,6 @@ import retrofit2.http.Path;
 public interface DataLink
 {
   @GET(FixValue.RestfulWarehouse)
-  Call<BrandsPojo> MerchantBrandService(@Path("AccountRSN") String AccountRSN);
+  Call<ResponseBrandsPojo> MerchantBrandService(@Path("AccountRSN") String AccountRSN);
 }
 

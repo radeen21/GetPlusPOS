@@ -2,37 +2,31 @@ package id.mygetplus.getpluspos.mvp.payment.view;
 
 import android.content.Context;
 import android.content.Intent;
-import android.hardware.camera2.CameraManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import id.mygetplus.getpluspos.AValue;
+import id.mygetplus.getpluspos.BrandsRsp;
 import id.mygetplus.getpluspos.Fungsi;
 import id.mygetplus.getpluspos.PopupMessege;
 import id.mygetplus.getpluspos.Preference;
 import id.mygetplus.getpluspos.R;
 import id.mygetplus.getpluspos.ResponsePojo;
 import id.mygetplus.getpluspos.ScanQR;
-import id.mygetplus.getpluspos.SimValue;
 import id.mygetplus.getpluspos.mvp.main.HomeActivity;
 import id.mygetplus.getpluspos.mvp.payment.adapter.PaymentAdapter;
 import id.mygetplus.getpluspos.mvp.payment.presenter.PaymentContract;
 import id.mygetplus.getpluspos.mvp.payment.presenter.PaymentPresenter;
-import id.mygetplus.getpluspos.preference.GetPlusSession;
 import id.mygetplus.getpluspos.service.PosLinkGenerator;
 
 public class PaymentActivity extends AppCompatActivity implements PaymentContract.View {
@@ -78,17 +72,18 @@ public class PaymentActivity extends AppCompatActivity implements PaymentContrac
         ButterKnife.bind(this);
         tvToolbar.setText("Payment");
 
-        String acount = GetPlusSession.getInstance(this).getAccountRsn();
+        AValue aValue = Fungsi.getObjectFromSharedPref(context, AValue.class, Preference.PrefResponsePojo);
+        accountRSN = aValue.getBAccountRSN();
+        aValue.setBAccountRSN(accountRSN);
 
         paymentPresenter = new PaymentPresenter(this, this);
         paymentPresenter.loadListPayment(PosLinkGenerator.createService(this),
-                acount);
+                accountRSN);
         init();
     }
 
     void init() {
-        List<ResponsePojo> responsePojos = new ArrayList<>();
-        paymentAdapter = new PaymentAdapter(this, responsePojos);
+        paymentAdapter = new PaymentAdapter();
 
         recPaymentPoint.setHasFixedSize(true);
 		recPaymentPoint.setLayoutManager(new LinearLayoutManager(this));
@@ -160,9 +155,7 @@ public class PaymentActivity extends AppCompatActivity implements PaymentContrac
     }
 
     @Override
-    public void setListPayment(ResponsePojo responsePojo) {
-        if (responsePojo.getAFaultCode().matches("0")) {
-            GetPlusSession.getInstance(this).setAccountRsn(responsePojo.getAValue().getBAccountRSN());
-        }
+    public void setListPayment(List<BrandsRsp> brandsRsps) {
+        this.paymentAdapter.addListPayment(brandsRsps);
     }
 }

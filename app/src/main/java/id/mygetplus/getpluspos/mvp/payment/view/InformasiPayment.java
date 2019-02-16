@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,6 +19,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import id.mygetplus.getpluspos.AValue;
+import id.mygetplus.getpluspos.BrandsRsp;
 import id.mygetplus.getpluspos.Fungsi;
 import id.mygetplus.getpluspos.Preference;
 import id.mygetplus.getpluspos.R;
@@ -27,7 +27,6 @@ import id.mygetplus.getpluspos.ResponsePojo;
 import id.mygetplus.getpluspos.mvp.main.HomeActivity;
 import id.mygetplus.getpluspos.mvp.payment.presenter.PaymentContract;
 import id.mygetplus.getpluspos.mvp.payment.presenter.PaymentPresenter;
-import id.mygetplus.getpluspos.preference.GetPlusSession;
 import id.mygetplus.getpluspos.service.PosLinkGenerator;
 
 public class InformasiPayment extends AppCompatActivity  implements PaymentContract.View{
@@ -101,7 +100,7 @@ public class InformasiPayment extends AppCompatActivity  implements PaymentContr
     }
 
     @Override
-    public void setListPayment(ResponsePojo responsePojo) {
+    public void setListPayment(List<BrandsRsp> brandsRsps) {
 
     }
 }

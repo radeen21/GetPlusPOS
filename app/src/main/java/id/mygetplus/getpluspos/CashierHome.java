@@ -15,7 +15,6 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.KeyEvent;
 import android.view.View;
@@ -266,12 +265,12 @@ public class CashierHome extends AppCompatActivity
 
         DataLink dataLink = Fungsi.BindingData();
 
-        final Call<BrandsPojo> ReceivePojo = dataLink.MerchantBrandService(strAccountRSN);
+        final Call<ResponseBrandsPojo> ReceivePojo = dataLink.MerchantBrandService(strAccountRSN);
 
-        ReceivePojo.enqueue(new Callback<BrandsPojo>()
+        ReceivePojo.enqueue(new Callback<ResponseBrandsPojo>()
         {
             @Override
-            public void onResponse(Call<BrandsPojo> call, retrofit2.Response<BrandsPojo> response)
+            public void onResponse(Call<ResponseBrandsPojo> call, retrofit2.Response<ResponseBrandsPojo> response)
             {
                 if(response.isSuccessful())
                 {
@@ -304,7 +303,7 @@ public class CashierHome extends AppCompatActivity
             }
 
             @Override
-            public void onFailure(Call<BrandsPojo> call, Throwable t)
+            public void onFailure(Call<ResponseBrandsPojo> call, Throwable t)
             {
                 swipeRefreshLayout.setRefreshing(false);
                 popupMessege.ShowMessege1(context, context.getResources().getString(R.string.msgServerFailure));

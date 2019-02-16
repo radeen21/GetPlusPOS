@@ -10,7 +10,7 @@ import com.google.gson.annotations.SerializedName;
  */
 public class BrandsRsp
 {
-  @SerializedName("uid")
+  @SerializedName("id")
   @Expose
   private Integer Id;
   @SerializedName("BrandName")
@@ -28,6 +28,25 @@ public class BrandsRsp
   @SerializedName("ImageURL")
   @Expose
   private String ImageURL;
+  @SerializedName("AccountRSN")
+  @Expose
+  private String AccountRSN;
+  @SerializedName("PosID")
+  @Expose
+  private String PosID;
+  @SerializedName("MinQty")
+  @Expose
+  private String MinQty;
+  @SerializedName("MaxQty")
+  @Expose
+  private String MaxQty;
+  @SerializedName("Created")
+  @Expose
+  private String Created;
+  @SerializedName("Notes")
+  @Expose
+  private String Notes;
+
 
   private String strDate;
   private String strTime;
@@ -109,5 +128,53 @@ public class BrandsRsp
   public void setIntInvoice(Integer intInvoice)
   {
     this.intInvoice = intInvoice;
+  }
+
+  public String getAccountRSN() {
+    return AccountRSN;
+  }
+
+  public void setAccountRSN(String accountRSN) {
+    AccountRSN = accountRSN;
+  }
+
+  public String getPosID() {
+    return PosID;
+  }
+
+  public void setPosID(String posID) {
+    PosID = posID;
+  }
+
+  public String getMinQty() {
+    return MinQty;
+  }
+
+  public void setMinQty(String minQty) {
+    MinQty = minQty;
+  }
+
+  public String getMaxQty() {
+    return MaxQty;
+  }
+
+  public void setMaxQty(String maxQty) {
+    MaxQty = maxQty;
+  }
+
+  public String getCreated() {
+    return Created;
+  }
+
+  public void setCreated(String created) {
+    Created = created;
+  }
+
+  public String getNotes() {
+    return Notes;
+  }
+
+  public void setNotes(String notes) {
+    Notes = notes;
   }
 }

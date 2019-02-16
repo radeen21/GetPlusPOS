@@ -1,5 +1,6 @@
 package id.mygetplus.getpluspos.mvp.tukarpoin.view;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -9,6 +10,7 @@ import android.os.StrictMode;
 import android.provider.MediaStore;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -24,6 +26,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import id.mygetplus.getpluspos.Fungsi;
+import id.mygetplus.getpluspos.PopupMessege;
 import id.mygetplus.getpluspos.Preference;
 import id.mygetplus.getpluspos.R;
 import id.mygetplus.getpluspos.ResponsePojo;
@@ -37,18 +40,23 @@ import id.mygetplus.getpluspos.service.PosLinkGenerator;
 public class TukarPoint extends AppCompatActivity implements CekPointContract.View
 {
   CekPointPresenter cekPointPresenter;
+	private PopupMessege popupMessege = new PopupMessege();
+	private Context context = this;
+
+	private static final int TAKE_PICTURE = 1;
+	private static final String PICTURE_EXT = ".jpg";
+	private Bitmap mImageBitmap;
+	private String mCurrentPhotoPath;
+	private String mCurrentPhotoPath1;
+	private String mCurrentPhotoPath2;
+	int Thumb=0;
+	String imgStruk1 = "";
+	String imgStruk2 = "";
+
   @BindView(R.id.ivThumbTukar1)
   ImageView ivThumbTukar1;
   @BindView(R.id.ivThumbTukar2)
   ImageView ivThumbTukar2;
-  private Uri UrlGambar;
-  private static final int TAKE_PICTURE = 1;
-  private Uri imageUri;
-  private Bitmap mImageBitmap;
-  private String mCurrentPhotoPath;
-  private ImageView mImageView;
-  int Thumb=0;
-
   @BindView(R.id.etGetPlusId)
   TextInputEditText etGetPlusID;
   @BindView(R.id.etNoReff)
@@ -90,8 +98,13 @@ public class TukarPoint extends AppCompatActivity implements CekPointContract.Vi
         startActivity(GetPlusID);
         break;
       case R.id.btnLanjutTukar:
-        cekPointPresenter.loadCekPointData(PosLinkGenerator.createService(this),
-          GetPlusSession.getInstance(this).getTokenSession(), etGetPlusID.getText().toString());
+	      if (TextUtils.isEmpty(etGetPlusID.getText()))
+		      popupMessege.ShowMessege1(context, context.getResources().getString(R.string.msgGetPlusIDEmpty));
+	      else if (TextUtils.isEmpty(etNoReff.getText()))
+		      popupMessege.ShowMessege1(context, context.getResources().getString(R.string.msgNoReffEmpty));
+	      else
+	        cekPointPresenter.loadCekPointData(PosLinkGenerator.createService(this),
+            GetPlusSession.getInstance(this).getTokenSession(), etGetPlusID.getText().toString());
         break;
       case R.id.btn_back:
         BackHomeProcess();
@@ -99,6 +112,19 @@ public class TukarPoint extends AppCompatActivity implements CekPointContract.Vi
       case R.id.llStrukTukar1:
       case R.id.tvStrukTukar1:
       case R.id.ivStrukTukar1:
+	      if (TextUtils.isEmpty(etGetPlusID.getText()))
+	      {
+		      popupMessege.ShowMessege1(context, context.getResources().getString(R.string.msgGetPlusIDEmpty));
+		      return;
+	      }
+	      else
+	      if (TextUtils.isEmpty(etNoReff.getText()))
+	      {
+		      popupMessege.ShowMessege1(context, context.getResources().getString(R.string.msgNoReffEmpty));
+		      return;
+	      }
+
+	      Thumb = 1;
         Intent cameraIntent1 = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if (cameraIntent1.resolveActivity(getPackageManager()) != null)
         {
@@ -114,7 +140,6 @@ public class TukarPoint extends AppCompatActivity implements CekPointContract.Vi
 
           if (photoFile != null)
           {
-            Thumb = 1;
             cameraIntent1.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(photoFile));
             startActivityForResult(cameraIntent1, TAKE_PICTURE);
           }
@@ -123,6 +148,19 @@ public class TukarPoint extends AppCompatActivity implements CekPointContract.Vi
       case R.id.llStrukTukar2:
       case R.id.tvStrukTukar2:
       case R.id.ivStrukTukar2:
+	      if (TextUtils.isEmpty(etGetPlusID.getText()))
+	      {
+		      popupMessege.ShowMessege1(context, context.getResources().getString(R.string.msgGetPlusIDEmpty));
+		      return;
+	      }
+	      else
+	      if (TextUtils.isEmpty(etNoReff.getText()))
+	      {
+		      popupMessege.ShowMessege1(context, context.getResources().getString(R.string.msgNoReffEmpty));
+		      return;
+	      }
+
+	      Thumb = 2;
         Intent cameraIntent2 = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if (cameraIntent2.resolveActivity(getPackageManager()) != null)
         {
@@ -138,7 +176,6 @@ public class TukarPoint extends AppCompatActivity implements CekPointContract.Vi
 
           if (photoFile != null)
           {
-            Thumb = 2;
             cameraIntent2.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(photoFile));
             startActivityForResult(cameraIntent2, TAKE_PICTURE);
           }
@@ -176,11 +213,27 @@ public class TukarPoint extends AppCompatActivity implements CekPointContract.Vi
 
   private File createImageFile() throws IOException
   {
-    String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-    String imageFileName = "JPEG_Tukar_" + String.valueOf(Thumb) + "_" + timeStamp + "_";
-    File storageDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
-    File image = File.createTempFile(imageFileName, ".jpg", storageDir);
-    mCurrentPhotoPath = "file:" + image.getAbsolutePath();
+	  String imageFileName = "TUKAR_" + String.valueOf(Thumb) + "_" + etGetPlusID.getText().toString().trim() +
+		  "_" + etNoReff.getText().toString().trim() + PICTURE_EXT;
+	  File storageDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
+	  File image = new File(storageDir, imageFileName);
+	  mCurrentPhotoPath = "file:" + image.getAbsolutePath();
+
+	  if(image.exists())
+		  image.delete();
+
+	  if(Thumb == 1)
+	  {
+		  imgStruk1 = imageFileName;
+		  mCurrentPhotoPath1 = "file:" + image.getAbsolutePath();
+	  }
+	  else
+	  if(Thumb == 2)
+	  {
+		  imgStruk2 = imageFileName;
+		  mCurrentPhotoPath2 = "file:" + image.getAbsolutePath();
+	  }
+
     return image;
   }
 

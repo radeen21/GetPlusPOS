@@ -109,12 +109,13 @@ public class PaymentPresenter extends BaseViewPresenter implements PaymentContra
                     @Override
                     public void onError(Throwable throwable) {
                         super.onError(throwable);
+                      view.setListPayment(Fungsi.getObjectFromSharedPref(context, ResponsePojo.class, ConfigManager.AccountSession.MSG_RESPONSE));
                     }
 
                     @Override
                     public void onNext(ResponsePojo responsePojo) {
                         super.onNext(responsePojo);
-                        view.setListPayment(responsePojo);
+                        view.setListPayment(Fungsi.getObjectFromSharedPref(context, ResponsePojo.class, ConfigManager.AccountSession.MSG_RESPONSE));
                     }
                 });
     }

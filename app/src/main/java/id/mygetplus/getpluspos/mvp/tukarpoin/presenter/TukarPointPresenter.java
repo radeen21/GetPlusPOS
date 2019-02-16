@@ -97,7 +97,7 @@ public class TukarPointPresenter extends BaseViewPresenter implements TukarPoint
           @Override
           public void onNext(ResponsePojo responsePojo) {
             super.onNext(responsePojo);
-            view.setTukarPoint(responsePojo);
+            view.setTukarPoint(Fungsi.getObjectFromSharedPref(context, ResponsePojo.class, ConfigManager.AccountSession.MSG_RESPONSE));
           }
         });
     }

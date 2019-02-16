@@ -103,7 +103,7 @@ public class EVoucherPresenter extends BaseViewPresenter implements EVoucherCont
         @Override
         public void onNext(ResponsePojo responsePojo) {
           super.onNext(responsePojo);
-          view.getDataVoucher(responsePojo);
+          view.getDataVoucher(Fungsi.getObjectFromSharedPref(context, ResponsePojo.class, ConfigManager.AccountSession.MSG_RESPONSE));
         }
       });
   }

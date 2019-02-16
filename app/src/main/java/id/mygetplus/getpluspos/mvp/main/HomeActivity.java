@@ -1,24 +1,20 @@
 package id.mygetplus.getpluspos.mvp.main;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.res.TypedArray;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.InsetDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import id.mygetplus.getpluspos.AValue;
 import id.mygetplus.getpluspos.Fungsi;
 import id.mygetplus.getpluspos.PopupMessege;
 import id.mygetplus.getpluspos.Preference;
@@ -30,16 +26,20 @@ import id.mygetplus.getpluspos.mvp.evoucher.view.EVoucher;
 import id.mygetplus.getpluspos.mvp.login.view.LoginActivity;
 import id.mygetplus.getpluspos.mvp.logout.presenter.LogoutContract;
 import id.mygetplus.getpluspos.mvp.logout.presenter.LogoutPresenter;
-import id.mygetplus.getpluspos.mvp.main.adapter.HomeAdapter;
 import id.mygetplus.getpluspos.mvp.payment.view.PaymentActivity;
 import id.mygetplus.getpluspos.mvp.tukarpoin.view.TukarPoint;
 import id.mygetplus.getpluspos.preference.GetPlusSession;
 import id.mygetplus.getpluspos.service.PosLinkGenerator;
 
 
-public class HomeActivity extends AppCompatActivity implements LogoutContract.View {
+public class HomeActivity extends AppCompatActivity implements LogoutContract.View
+{
 
 	LogoutPresenter logoutPresenter;
+	@BindView(R.id.btnBeriPoin)
+	Button btnBeriPoin;
+	@BindView(R.id.btnTukarPoin)
+	Button btnTukarPoin;
 	private PopupMessege popupMessege = new PopupMessege();
 	private Context context = this;
 
@@ -59,10 +59,19 @@ public class HomeActivity extends AppCompatActivity implements LogoutContract.Vi
 		ButterKnife.bind(this);
 
 		logoutPresenter = new LogoutPresenter(this, this);
+
+		AValue aValue = Fungsi.getObjectFromSharedPref(context, AValue.class, Preference.PrefResponsePojo);
+		if (aValue.getBAccountRSN().matches("65a76367-8a22-4a36-8f42-e682dde6a4bc"))
+			btnBeriPoin.setVisibility(View.GONE);
+		else
+		if (aValue.getBAccountRSN().matches("5feac1e5-444a-43f9-9af8-0e03381cc6c9"))
+			btnTukarPoin.setVisibility(View.GONE);
+
 //		init();
 	}
 
-	void init() {
+	void init()
+	{
 //		int[] ATTRS = new int[]{android.R.attr.listDivider};
 //
 //		TypedArray a = this.obtainStyledAttributes(ATTRS);
@@ -127,7 +136,7 @@ public class HomeActivity extends AppCompatActivity implements LogoutContract.Vi
 		}
 		else
 			Toast.makeText(getApplicationContext(), responsePojo.getAFaultDescription(),
-					Toast.LENGTH_SHORT).show();
+				Toast.LENGTH_SHORT).show();
 	}
 
 	private void LogoutProcess()
@@ -139,8 +148,8 @@ public class HomeActivity extends AppCompatActivity implements LogoutContract.Vi
 			.setIcon(android.R.drawable.ic_dialog_alert)
 			.setCancelable(false)
 			.setPositiveButton(R.string.strBtnOK, (dialog, which) -> logoutPresenter
-					.loadLogoutData(PosLinkGenerator.createService(context),
-							GetPlusSession.getInstance(context).getUserEmail()))
+				.loadLogoutData(PosLinkGenerator.createService(context),
+					GetPlusSession.getInstance(context).getUserEmail()))
 			.setNegativeButton(R.string.strBtnCancel, (dialog, id) -> dialog.cancel());
 
 		AlertDialog alert = builder.create();

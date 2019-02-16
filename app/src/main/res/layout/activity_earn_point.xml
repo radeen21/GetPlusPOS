@@ -202,11 +202,13 @@
                     android:orientation="vertical">
 
                     <ImageView
+                      android:id="@+id/ivBeriStruk1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_add_blue" />
 
                     <TextView
+                      android:id="@+id/tvBeriStruk1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Struk"
@@ -223,11 +225,13 @@
                     android:orientation="vertical">
 
                     <ImageView
+                      android:id="@+id/ivBeriStruk2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_add_blue" />
 
                     <TextView
+                      android:id="@+id/tvBeriStruk2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Struk"

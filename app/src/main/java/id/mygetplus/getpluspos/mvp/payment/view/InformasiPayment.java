@@ -100,9 +100,4 @@ public class InformasiPayment extends AppCompatActivity  implements PaymentContr
         else
             Toast.makeText(getApplicationContext(), responsePojo.getAFaultDescription(), Toast.LENGTH_SHORT).show();
     }
-
-    @Override
-    public void setListPayment(List<AvalueList> listPayment) {
-
-    }
 }

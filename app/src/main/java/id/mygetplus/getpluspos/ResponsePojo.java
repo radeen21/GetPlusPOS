@@ -3,6 +3,10 @@ package id.mygetplus.getpluspos;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
+import id.mygetplus.getpluspos.mvp.payment.model.AvalueList;
+
 public class ResponsePojo
 {
 	@SerializedName("a:FaultCode")
@@ -14,6 +18,9 @@ public class ResponsePojo
 	@SerializedName("a:Value")
 	@Expose
 	private AValue aValue;
+	@SerializedName("AvalueList")
+	@Expose
+	private List<AvalueList> avalueLists = null;
 
 	public String getAFaultCode() {
 		return aFaultCode;
@@ -37,5 +44,15 @@ public class ResponsePojo
 
 	public void setAValue(AValue aValue) {
 		this.aValue = aValue;
+	}
+
+	public List<AvalueList> getAvalueLists()
+	{
+		return avalueLists;
+	}
+
+	public void setAvalueLists(List<AvalueList> avalueLists)
+	{
+		this.avalueLists = avalueLists;
 	}
 }

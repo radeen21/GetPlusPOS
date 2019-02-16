@@ -18,7 +18,5 @@ public interface PaymentContract {
 
     interface View {
         void setPaymentPoint(ResponsePojo responsePojo);
-        void setListPayment(List<AvalueList> avalueLists);
-
     }
 }

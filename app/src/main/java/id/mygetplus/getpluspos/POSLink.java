@@ -80,7 +80,7 @@ public interface POSLink
 	Observable<ResponsePojo> PaymentPoint(@Body CekPointHolder cekPointHolder);
 
 	@GET(FixValue.payment)
-	Observable<ListPaymentPojo> getPaymentList(@Path("AccountRSN") String AccountRSN);
+	Observable<ResponsePojo> getPaymentList(@Path("AccountRSN") String AccountRSN);
 
 }
 

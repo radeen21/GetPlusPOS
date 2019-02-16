@@ -157,12 +157,6 @@ public class PaymentActivity extends AppCompatActivity implements PaymentContrac
 
     @Override
     public void setPaymentPoint(ResponsePojo responsePojo) {
-
+        this.paymentAdapter.addListPayment(responsePojo.getAvalueLists());
     }
-
-    @Override
-    public void setListPayment(List<AvalueList> avalueLists) {
-        this.paymentAdapter.addListPayment(avalueLists);
-    }
-
 }

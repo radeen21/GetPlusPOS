@@ -109,22 +109,17 @@ public class PaymentPresenter extends BaseViewPresenter implements PaymentContra
 
         posLink.getPaymentList(accountBrs).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new ResponseListPaymentSubcriber<ListPaymentPojo>(){
+                .subscribe(new ResponseSubscriber<ResponsePojo>(){
                     @Override
                     public void onError(Throwable throwable) {
                         super.onError(throwable);
-//                      view.setListPayment(Fungsi.getObjectFromSharedPref
-//                              (context, ResponsePojo.class, ConfigManager.AccountSession.MSG_RESPONSE));
+                      view.setPaymentPoint(Fungsi.getObjectFromSharedPref(context, ResponsePojo.class, ConfigManager.AccountSession.MSG_RESPONSE));
                     }
 
                     @Override
-                    public void onNext(ListPaymentPojo listPaymentPojo) {
-                        super.onNext(listPaymentPojo);
-                        Fungsi.getObjectFromSharedPref
-                              (context, ResponsePojo.class, ConfigManager.AccountSession.MSG_RESPONSE);
-                        view.setListPayment(listPaymentPojo.getAvalueLists());
-//                        view.setListPayment(Fungsi.getObjectFromSharedPref(context,context
-//                        ResponsePojo.class, ConfigManager.AccountSession.MSG_RESPONSE));
+                    public void onNext(ResponsePojo responsePojo) {
+                        super.onNext(responsePojo);
+                        view.setPaymentPoint(Fungsi.getObjectFromSharedPref(context, ResponsePojo.class, ConfigManager.AccountSession.MSG_RESPONSE));
                     }
                 });
     }

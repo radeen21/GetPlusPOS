@@ -58,10 +58,15 @@ public class CekPointActivity extends AppCompatActivity implements CekPointContr
 		String cardId = Fungsi.getStringFromSharedPref(this, Preference.PrefScanQRConfirm);
 		simValues.setSim1CardNumber(cardId);
 
+		SimValue simValue = new SimValue();
+		String cardNumber = Fungsi.getStringFromSharedPref(this, Preference.PrefScanQRConfirm);
+		simValue.setSim1CardNumber(cardNumber);
+
 		cekPointPresenter = new CekPointPresenter(this, this);
 		cekPointPresenter.loadCekPointData(PosLinkGenerator.createService(this),
 			token, cardId);
-	}
+		cekPointPresenter.loadjumlahCekPointData(PosLinkGenerator.createService(this),
+				token, cardNumber);	}
 
 	void initPopUp() {
 		DisplayMetrics dm = new DisplayMetrics();
@@ -86,6 +91,11 @@ public class CekPointActivity extends AppCompatActivity implements CekPointContr
 		}
 		else
 			Toast.makeText(getApplicationContext(), userData.getAFaultDescription(), Toast.LENGTH_SHORT).show();
+	}
+
+	@Override
+	public void setAmountEarn(ResponsePojo cekJumlah) {
+
 	}
 
 	@OnClick(R.id.btn_ok_points)

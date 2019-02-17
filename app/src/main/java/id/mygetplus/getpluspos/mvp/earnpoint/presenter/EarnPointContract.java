@@ -10,9 +10,12 @@ public interface EarnPointContract {
     interface Presenter extends IBaseViewPresenter {
         void loadEarnPointData(POSLink posLink, AValue aValue, String GetPlusID, String Reff,
                                String Amount);
+        void loadAmountEarnPoint(POSLink posLink, AValue aValue, String GetPlusID, String Reff,
+                                 String Amount);
     }
 
     interface View {
         void setEarnPoint(ResponsePojo cekPoint);
+
     }
 }

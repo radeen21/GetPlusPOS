@@ -11,30 +11,23 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import id.mygetplus.getpluspos.AValue;
-import id.mygetplus.getpluspos.BrandsRsp;
 import id.mygetplus.getpluspos.Fungsi;
-import id.mygetplus.getpluspos.PopupMessege;
 import id.mygetplus.getpluspos.Preference;
 import id.mygetplus.getpluspos.R;
 import id.mygetplus.getpluspos.ResponsePojo;
 import id.mygetplus.getpluspos.ScanQR;
 import id.mygetplus.getpluspos.mvp.main.HomeActivity;
 import id.mygetplus.getpluspos.mvp.payment.adapter.PaymentAdapter;
-import id.mygetplus.getpluspos.mvp.payment.model.AvalueList;
 import id.mygetplus.getpluspos.mvp.payment.presenter.PaymentContract;
 import id.mygetplus.getpluspos.mvp.payment.presenter.PaymentPresenter;
 import id.mygetplus.getpluspos.service.PosLinkGenerator;
 
 public class PaymentActivity extends AppCompatActivity implements PaymentContract.View {
-    private PopupMessege popupMessege = new PopupMessege();
-    private Context context = this;
+     private Context context = this;
 
     @BindView(R.id.tvQty)
     TextView tvQty;
@@ -47,24 +40,11 @@ public class PaymentActivity extends AppCompatActivity implements PaymentContrac
     @BindView(R.id.ivMax)
     ImageView ivMax;
 
-
     @BindView(R.id.rec_payment_point)
     RecyclerView recPaymentPoint;
 
     private PaymentAdapter paymentAdapter;
-
-    private List<ResponsePojo> responsePojos;
-
     private PaymentPresenter paymentPresenter;
-
-    private String titleMain[] = {
-            "Wheels of Fortune"
-    };
-
-    int intMin;
-    int intMax;
-    int intHarga = 10000;
-    int Jumlah;
 
     String accountRSN = "";
 
@@ -93,56 +73,20 @@ public class PaymentActivity extends AppCompatActivity implements PaymentContrac
 		recPaymentPoint.setAdapter(paymentAdapter);
     }
 
-//    @OnClick({R.id.btn_back, R.id.btn_next_Payment, R.id.ivMin, R.id.ivMax})
-//    public void onViewClicked(View view) {
-//        switch (view.getId()) {
-//            case R.id.btn_back:
-//                goHome();
-//                break;
-//            case R.id.ivMin:
-//                intMin = Integer.valueOf(tvQty.getText().toString());
-//                intMin--;
-//                tvQty.setText(String.valueOf(intMin));
-//
-//                Jumlah = intHarga * intMin;
-//                tvAmount.setText("Rp " + String.valueOf(Jumlah));
-//
-//                if(intMin <= 0)
-//                {
-//                    tvQty.setText("0");
-//                    tvAmount.setText("Rp 0");
-//                    Jumlah = 0;
-//                }
-//                break;
-//            case R.id.ivMax:
-//                intMax = Integer.valueOf(tvQty.getText().toString());
-//                intMax++;
-//                Jumlah = intHarga * intMax;
-//                tvQty.setText(String.valueOf(intMax));
-//                tvAmount.setText("Rp " + String.valueOf(Jumlah));
-//                break;
-//            case R.id.btn_next_Payment:
-//                if (tvQty.getText().toString().matches("0"))
-//                    popupMessege.ShowMessege1(context, context.getResources().getString(R.string.msgEmptyProduct));
-//                else
-//                    Fungsi.storeToSharedPref(getApplicationContext(), Jumlah, Preference.PrefJumlahHarga);
-//                    Fungsi.storeToSharedPref(context, 5, Preference.PrefActiveMenu);
-//                    Intent EVoucher = new Intent(this, ScanQR.class);
-//                    startActivity(EVoucher);
-//                break;
-//        }
-//    }
-
     @OnClick(R.id.btn_next_Payment)
     void btnNextPayment() {
         int summary = 0;
         for (int i=0; i<this.paymentAdapter.getItemCount(); i++) {
             summary += this.paymentAdapter.getSum();
         }
-        Fungsi.storeToSharedPref(getApplicationContext(), summary, Preference.PrefJumlahHarga);
-        Fungsi.storeToSharedPref(context, 5, Preference.PrefActiveMenu);
-        Intent EVoucher = new Intent(this, ScanQR.class);
-        startActivity(EVoucher);
+        if (summary == 0) {
+            Toast.makeText(this, "value harap di isi", Toast.LENGTH_SHORT).show();
+        } else {
+            Fungsi.storeToSharedPref(getApplicationContext(), summary, Preference.PrefJumlahHarga);
+            Fungsi.storeToSharedPref(context, 5, Preference.PrefActiveMenu);
+            Intent EVoucher = new Intent(this, ScanQR.class);
+            startActivity(EVoucher);
+        }
     }
 
     private void goHome() {
@@ -161,6 +105,7 @@ public class PaymentActivity extends AppCompatActivity implements PaymentContrac
         if (responsePojo.getAFaultCode().matches("0"))
             this.paymentAdapter.addListPayment(responsePojo.getAvalueLists());
         else
-            Toast.makeText(getApplicationContext(), responsePojo.getAFaultDescription(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), responsePojo.getAFaultDescription(),
+                    Toast.LENGTH_SHORT).show();
     }
 }

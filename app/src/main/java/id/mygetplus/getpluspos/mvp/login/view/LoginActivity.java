@@ -20,6 +20,7 @@ import id.mygetplus.getpluspos.PopupMessege;
 import id.mygetplus.getpluspos.Preference;
 import id.mygetplus.getpluspos.R;
 import id.mygetplus.getpluspos.ResponsePojo;
+import id.mygetplus.getpluspos.helper.ConnectionDetector;
 import id.mygetplus.getpluspos.mvp.login.presenter.LoginContract;
 import id.mygetplus.getpluspos.mvp.login.presenter.LoginPresenter;
 import id.mygetplus.getpluspos.mvp.main.HomeActivity;
@@ -38,12 +39,8 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
 	@BindView(R.id.et_password)
 	TextInputEditText etPass;
 
-	@BindView(R.id.progressbar)
-	ProgressBar progressBar;
-
 	@Override
-	protected void onCreate(@Nullable Bundle savedInstanceState)
-	{
+	protected void onCreate(@Nullable Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
 		ButterKnife.bind(this);
@@ -53,8 +50,7 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
 	}
 
 	@Override
-	public void getData(ResponsePojo responsePojo)
-	{
+	public void getData(ResponsePojo responsePojo) {
 		if (responsePojo.getAFaultCode().matches("0"))
 		{
 			if (TextUtils.isEmpty(responsePojo.getAValue().getBToken()))
@@ -69,37 +65,36 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
 			}
 		}
 		else
-			Toast.makeText(getApplicationContext(), responsePojo.getAFaultDescription(), Toast.LENGTH_SHORT).show();
+			Toast.makeText(getApplicationContext(), responsePojo.getAFaultDescription(),
+					Toast.LENGTH_SHORT).show();
+	}
+
+	@Override
+	public void failedConnected() {
+		Toast.makeText(this, "Gak ada koneksi", Toast.LENGTH_SHORT).show();
 	}
 
 	@OnClick(R.id.btn_login)
 	public void onViewClicked(View view) {
-		progressBar.setVisibility(View.VISIBLE);
-		switch(view.getId())
-		{
+		switch(view.getId()) {
 			case R.id.btn_login:
 				if (TextUtils.isEmpty(etMail.getText()))
 					popupMessege.ShowMessege1(context, context.getResources().getString(R.string.msgUsernameEmpty));
 				else if (TextUtils.isEmpty(etPass.getText()))
 					popupMessege.ShowMessege1(context, context.getResources().getString(R.string.msgPasswordEmpty));
-				else
-				{
+				else if (!ConnectionDetector.isNetworkConnected(context))
+					Toast.makeText(this, "Gak ada koneksi", Toast.LENGTH_SHORT).show();
+				else {
 					GetPlusSession.getInstance(this).setUserEmail(etMail.getText().toString());
-					loginPresenter.loadLoginData(PosLinkGenerator.createService(context), etMail.getText().toString(), etPass.getText().toString());
+					loginPresenter.loadLoginData(PosLinkGenerator.createService(context),
+							etMail.getText().toString(), etPass.getText().toString());
 				}
 			break;
 		}
 	}
 
 	@Override
-	public void onBackPressed()
-	{
+	public void onBackPressed() {
 		moveTaskToBack(true);
-	}
-
-	@Override
-	protected void onDestroy() {
-		super.onDestroy();
-		progressBar.setVisibility(View.GONE);
 	}
 }

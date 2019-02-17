@@ -24,7 +24,8 @@ public class PaymentAdapter extends RecyclerView.Adapter<PaymentAdapter.PaymentH
 
     private List<AvalueList> avalueLists = new ArrayList<>();
 
-    int quantity;
+    int minQty;
+    int maxQty;
     int Jumlah;
 
     @NonNull
@@ -40,9 +41,8 @@ public class PaymentAdapter extends RecyclerView.Adapter<PaymentAdapter.PaymentH
     public void onBindViewHolder(PaymentHolder paymentHolder, int position) {
         if (paymentHolder instanceof PaymentHolder) {
             AvalueList avalueList = avalueLists.get(position);
-
-//            AtomicInteger minQty = new AtomicInteger(avalueList.getMinQty());
-//            AtomicInteger maxQty = new AtomicInteger(avalueList.getMaxQty());
+            minQty = avalueList.getMinQty();
+            maxQty = avalueList.getMaxQty();
 
             paymentHolder.tvTitle.setText(avalueList.getBrandName());
             Glide.with(paymentHolder.itemView.getContext())
@@ -50,13 +50,13 @@ public class PaymentAdapter extends RecyclerView.Adapter<PaymentAdapter.PaymentH
                     .into(paymentHolder.imgPayment);
 
             paymentHolder.imgMin.setOnClickListener(v -> {
-                quantity = Integer.valueOf(paymentHolder.tvValue.getText().toString());
-                quantity--;
-                Jumlah = avalueList.getPrice() * quantity;
-                paymentHolder.tvValue.setText(String.valueOf(quantity));
+                minQty = Integer.valueOf(paymentHolder.tvValue.getText().toString());
+                minQty--;
+                Jumlah = avalueList.getPrice() * minQty;
+                paymentHolder.tvValue.setText(String.valueOf(minQty));
                 paymentHolder.tvPoint.setText("Rp " + String.valueOf(Jumlah));
 
-                if(quantity <= 0)
+                if(minQty <= 0)
                 {
                     paymentHolder.tvValue.setText("0");
                     paymentHolder.tvPoint.setText("Rp 0");
@@ -65,10 +65,10 @@ public class PaymentAdapter extends RecyclerView.Adapter<PaymentAdapter.PaymentH
             });
 
             paymentHolder.imgPlus.setOnClickListener(v -> {
-                quantity = Integer.valueOf(paymentHolder.tvValue.getText().toString());
-                quantity++;
-                Jumlah = avalueList.getPrice() * quantity;
-                paymentHolder.tvValue.setText(String.valueOf(quantity));
+                maxQty = Integer.valueOf(paymentHolder.tvValue.getText().toString());
+                maxQty++;
+                Jumlah = avalueList.getPrice() * maxQty;
+                paymentHolder.tvValue.setText(String.valueOf(maxQty));
                 paymentHolder.tvPoint.setText("Rp " + String.valueOf(Jumlah));
             });
         }

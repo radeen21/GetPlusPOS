@@ -302,11 +302,11 @@
             android:textStyle="bold"
             android:textSize="18sp"
             android:textColor="@color/pureWhite"
-            app:layout_constraintBottom_toTopOf="@id/btn_next"/>
+            app:layout_constraintBottom_toTopOf="@id/btn_next_list"/>
 
 
         <Button
-            android:id="@+id/btn_next"
+            android:id="@+id/btn_next_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"

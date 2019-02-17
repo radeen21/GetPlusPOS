@@ -13,5 +13,6 @@ public interface LoginContract {
 
     interface View {
         void getData(ResponsePojo responsePojo);
+        void failedConnected();
     }
 }

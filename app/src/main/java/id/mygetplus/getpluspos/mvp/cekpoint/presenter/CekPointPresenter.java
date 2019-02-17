@@ -51,7 +51,42 @@ public class CekPointPresenter extends BaseViewPresenter implements CekPointCont
                     @Override
                     public void onNext(ResponsePojo responsePojo) {
                         super.onNext(responsePojo);
-                        view.setCekPoint(Fungsi.getObjectFromSharedPref(context, ResponsePojo.class, ConfigManager.AccountSession.MSG_RESPONSE));
+                        view.setCekPoint(Fungsi.getObjectFromSharedPref(context, ResponsePojo.class,
+                                ConfigManager.AccountSession.MSG_RESPONSE));
+                        view.setAmountEarn(Fungsi.getObjectFromSharedPref(context, ResponsePojo.class,
+                                ConfigManager.AccountSession.MSG_RESPONSE));
+                    }
+                });
+    }
+
+    @Override
+    public void loadjumlahCekPointData(POSLink posLink, String token, String cardNumber) {
+        SimValues simValues = new SimValues();
+        simValues.setSim1Cardnumber(cardNumber);
+        simValues.setSim1ReturnAllMemberData("true");
+
+        PointRequestNew pointRequestNew = new PointRequestNew();
+        pointRequestNew.setSimToken(token);
+        pointRequestNew.setSimValue(simValues);
+
+        CekPointHolder cekPointHolder = new CekPointHolder();
+        cekPointHolder.setPoinRequest(pointRequestNew);
+
+        posLink.getPoints(cekPointHolder).subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new ResponseSubscriber<ResponsePojo>() {
+                    @Override
+                    public void onError(Throwable throwable) {
+                        super.onError(throwable);
+                        view.setCekPoint(Fungsi.getObjectFromSharedPref(context, ResponsePojo.class,
+                                ConfigManager.AccountSession.MSG_RESPONSE));
+                    }
+
+                    @Override
+                    public void onNext(ResponsePojo responsePojo) {
+                        super.onNext(responsePojo);
+                        view.setAmountEarn(Fungsi.getObjectFromSharedPref(context, ResponsePojo.class,
+                                ConfigManager.AccountSession.MSG_RESPONSE));
                     }
                 });
     }

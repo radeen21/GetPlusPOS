@@ -15,6 +15,7 @@ import id.mygetplus.getpluspos.ResponsePojo;
 import id.mygetplus.getpluspos.base.BaseViewPresenter;
 import id.mygetplus.getpluspos.base.ResponseSubscriber;
 import id.mygetplus.getpluspos.helper.ConfigManager;
+import id.mygetplus.getpluspos.helper.ConnectionDetector;
 import id.mygetplus.getpluspos.mvp.model.DeviceData;
 import id.mygetplus.getpluspos.mvp.model.LoginHolder;
 import id.mygetplus.getpluspos.mvp.model.UserData;
@@ -79,6 +80,7 @@ public class LoginPresenter extends BaseViewPresenter implements LoginContract.P
                     @Override
                     public void onError(Throwable throwable) {
                         super.onError(throwable);
+                        cekConnection();
                         view.getData(Fungsi.getObjectFromSharedPref(context, ResponsePojo.class, ConfigManager.AccountSession.MSG_RESPONSE));
                     }
 
@@ -88,5 +90,11 @@ public class LoginPresenter extends BaseViewPresenter implements LoginContract.P
                         view.getData(Fungsi.getObjectFromSharedPref(context, ResponsePojo.class, ConfigManager.AccountSession.MSG_RESPONSE));
                     }
                 });
+    }
+
+    public void cekConnection() {
+        if (!ConnectionDetector.isNetworkConnected(context)) {
+            view.failedConnected();
+        }
     }
 }

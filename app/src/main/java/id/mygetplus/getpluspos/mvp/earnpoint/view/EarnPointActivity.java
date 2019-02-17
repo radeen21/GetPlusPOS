@@ -1,6 +1,5 @@
 package id.mygetplus.getpluspos.mvp.earnpoint.view;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -18,16 +17,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.zxing.common.StringUtils;
-
 import java.io.File;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -43,15 +37,16 @@ import id.mygetplus.getpluspos.mvp.cekpoint.presenter.CekPointContract;
 import id.mygetplus.getpluspos.mvp.cekpoint.presenter.CekPointPresenter;
 import id.mygetplus.getpluspos.mvp.earnpoint.adapter.EarnTransactionAdapter;
 import id.mygetplus.getpluspos.mvp.earnpoint.model.EarnListModel;
+import id.mygetplus.getpluspos.mvp.earnpoint.presenter.EarnPointContract;
+import id.mygetplus.getpluspos.mvp.earnpoint.presenter.EarnPointPresenter;
 import id.mygetplus.getpluspos.mvp.main.HomeActivity;
 import id.mygetplus.getpluspos.mvp.tukarpoin.view.InformasiTukar;
 import id.mygetplus.getpluspos.preference.GetPlusSession;
 import id.mygetplus.getpluspos.service.PosLinkGenerator;
 
 public class EarnPointActivity extends AppCompatActivity implements CekPointContract.View,
-		EarnTransactionAdapter.EventClickListenr
-{
-	public static final String EARN_ACTIVTY = "EARNACTIVITY";
+		EarnTransactionAdapter.EventClickListenr, EarnPointContract.View {
+
 	private final int REQUEST_CODE_CONFIRMATION = 110;
 
 	CekPointPresenter cekPointPresenter;
@@ -109,6 +104,12 @@ public class EarnPointActivity extends AppCompatActivity implements CekPointCont
 	String merchant;
 	String amount;
 
+	EarnPointPresenter earnPointPresenter;
+	String getPlusID;
+	String reffID;
+	String merchantName;
+	String nama;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
@@ -122,7 +123,15 @@ public class EarnPointActivity extends AppCompatActivity implements CekPointCont
 
 		cekPointPresenter = new CekPointPresenter(this, this);
 
+		Intent intent = getIntent();
+		getPlusID = intent.getStringExtra("GetPlusID");
+		reffID = intent.getStringExtra("ReffID");
+		amount = intent.getStringExtra("Amount");
+		nama = intent.getStringExtra("Nama");
+		merchantName = intent.getStringExtra("Nama Merchant");
+
 		initAdapter();
+		earnPointPresenter = new EarnPointPresenter(this, this);
 	}
 
 	void initAdapter() {
@@ -144,8 +153,8 @@ public class EarnPointActivity extends AppCompatActivity implements CekPointCont
 	{
 		if (cekPoint.getAFaultCode().matches("0"))
 		{
-			 merchant = etMerchantName.getText().toString();
-			 amount = etAmount.getText().toString();
+			merchant = etMerchantName.getText().toString();
+			amount = etAmount.getText().toString();
 			Intent cekPoints = new Intent(this, EarnConfirmPopUp.class);
 			cekPoints.putExtra("GetPlusID", etGetPlusID.getText().toString());
 			cekPoints.putExtra("ReffID", etNoReff.getText().toString());
@@ -353,8 +362,25 @@ public class EarnPointActivity extends AppCompatActivity implements CekPointCont
 		earnTransactionAdapter.removeItemAdapter(earnListModel);
 	}
 
-	@OnClick(R.id.btn_next)
+	@Override
+	public void setAmountEarn(ResponsePojo cekJumlah) {
+
+	}
+
+	@OnClick(R.id.btn_next_list)
 	void onClickNext() {
-			// To Do
+		AValue aValue = Fungsi.getObjectFromSharedPref(this,
+				AValue.class, Preference.PrefResponsePojo);
+		earnPointPresenter.loadEarnPointData(PosLinkGenerator.createService(this), aValue,
+				getPlusID, reffID, amount);
+	}
+
+	@Override
+	public void setEarnPoint(ResponsePojo cekPoint) {
+		Intent InformasiTukar = new Intent(this, InformasiTukar.class);
+		InformasiTukar.putExtra("JumlahPoin",
+				cekPoint.getAValue().getBLoyaltyPointsBalance());
+		startActivity(InformasiTukar);
+		finish();
 	}
 }

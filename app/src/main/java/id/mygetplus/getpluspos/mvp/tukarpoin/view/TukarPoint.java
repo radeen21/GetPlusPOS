@@ -218,7 +218,12 @@ public class TukarPoint extends AppCompatActivity implements CekPointContract.Vi
       Toast.makeText(getApplicationContext(), responsePojo.getAFaultDescription(), Toast.LENGTH_SHORT).show();
   }
 
-  private File createImageFile() throws IOException
+    @Override
+    public void setAmountEarn(ResponsePojo cekJumlah) {
+
+    }
+
+    private File createImageFile() throws IOException
   {
 	  String imageFileName = "TUKAR_" + String.valueOf(Thumb) + "_" + etGetPlusID.getText().toString().trim() +
 		  "_" + etNoReff.getText().toString().trim() + PICTURE_EXT;

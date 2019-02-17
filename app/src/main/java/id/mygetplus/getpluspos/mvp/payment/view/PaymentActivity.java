@@ -9,6 +9,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -157,6 +158,9 @@ public class PaymentActivity extends AppCompatActivity implements PaymentContrac
 
     @Override
     public void setPaymentPoint(ResponsePojo responsePojo) {
-        this.paymentAdapter.addListPayment(responsePojo.getAvalueLists());
+        if (responsePojo.getAFaultCode().matches("0"))
+            this.paymentAdapter.addListPayment(responsePojo.getAvalueLists());
+        else
+            Toast.makeText(getApplicationContext(), responsePojo.getAFaultDescription(), Toast.LENGTH_SHORT).show();
     }
 }

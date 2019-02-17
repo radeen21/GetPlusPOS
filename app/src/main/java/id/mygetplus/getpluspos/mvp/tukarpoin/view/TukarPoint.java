@@ -73,6 +73,9 @@ public class TukarPoint extends AppCompatActivity implements CekPointContract.Vi
     setContentView(R.layout.activity_tukar_point);
     ButterKnife.bind(this);
 
+    imgStruk1 = "";
+	  imgStruk2 = "";
+
     etGetPlusID.setText(Fungsi.getStringFromSharedPref(getApplicationContext(),
       Preference.PrefGetPlusID));
 
@@ -98,7 +101,9 @@ public class TukarPoint extends AppCompatActivity implements CekPointContract.Vi
         startActivity(GetPlusID);
         break;
       case R.id.btnLanjutTukar:
-	      if (TextUtils.isEmpty(etGetPlusID.getText()))
+	      if (TextUtils.isEmpty(imgStruk1))
+		      popupMessege.ShowMessege1(context, context.getResources().getString(R.string.msgImage1Empty));
+	      else if (TextUtils.isEmpty(etGetPlusID.getText()))
 		      popupMessege.ShowMessege1(context, context.getResources().getString(R.string.msgGetPlusIDEmpty));
 	      else if (TextUtils.isEmpty(etNoReff.getText()))
 		      popupMessege.ShowMessege1(context, context.getResources().getString(R.string.msgNoReffEmpty));
@@ -206,6 +211,8 @@ public class TukarPoint extends AppCompatActivity implements CekPointContract.Vi
       KonfirmasiTukar.putExtra("ReffID", etNoReff.getText().toString());
       KonfirmasiTukar.putExtra("Amount", etAmount.getText().toString());
       KonfirmasiTukar.putExtra("Nama", responsePojo.getAValue().getBDisplayValue());
+	    KonfirmasiTukar.putExtra("Image1", imgStruk1);
+	    KonfirmasiTukar.putExtra("Image2", imgStruk2);
       startActivity(KonfirmasiTukar);
     } else
       Toast.makeText(getApplicationContext(), responsePojo.getAFaultDescription(), Toast.LENGTH_SHORT).show();

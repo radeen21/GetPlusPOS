@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import android.support.v4.app.ActivityCompat;
 import android.telephony.TelephonyManager;
-import android.util.Log;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -14,16 +13,15 @@ import java.util.Random;
 import id.mygetplus.getpluspos.AValue;
 import id.mygetplus.getpluspos.Fungsi;
 import id.mygetplus.getpluspos.POSLink;
-import id.mygetplus.getpluspos.PoinRequest;
-import id.mygetplus.getpluspos.RequestHolder;
 import id.mygetplus.getpluspos.ResponsePojo;
 import id.mygetplus.getpluspos.Sim1SaleTransactionLine;
 import id.mygetplus.getpluspos.Sim1TransactionLines;
-import id.mygetplus.getpluspos.SimValue;
 import id.mygetplus.getpluspos.base.BaseViewPresenter;
 import id.mygetplus.getpluspos.base.ResponseSubscriber;
 import id.mygetplus.getpluspos.helper.ConfigManager;
 import id.mygetplus.getpluspos.mvp.model.CekPointHolder;
+import id.mygetplus.getpluspos.mvp.model.MerchantData;
+import id.mygetplus.getpluspos.mvp.model.TransactionData;
 import id.mygetplus.getpluspos.mvp.model.PointRequestNew;
 import id.mygetplus.getpluspos.mvp.model.SimValues;
 import rx.android.schedulers.AndroidSchedulers;
@@ -40,7 +38,8 @@ public class TukarPointPresenter extends BaseViewPresenter implements TukarPoint
     }
 
     @Override
-    public void loadTukarPointData(POSLink posLink, AValue aValue, String GetPlusID, String Reff, String Amount) {
+    public void loadTukarPointData(POSLink posLink, AValue aValue, String GetPlusID, String Reff,
+                                   String Amount, String Image1, String Image2) {
       TelephonyManager telephonyManager = (TelephonyManager)
         context.getSystemService(Context.TELEPHONY_SERVICE);
 
@@ -82,8 +81,20 @@ public class TukarPointPresenter extends BaseViewPresenter implements TukarPoint
       pointRequestNew.setSimToken(aValue.getBToken());
       pointRequestNew.setSimValue(simValues);
 
+	    TransactionData transactionData = new TransactionData();
+	    transactionData.setReffNo(Integer.valueOf(Reff));
+	    transactionData.setAmount(Integer.valueOf(Amount));
+	    transactionData.setImage1(Image1);
+	    transactionData.setImage2(Image2);
+
+	    MerchantData merchantData = new MerchantData();
+	    merchantData.setMerchantID("9999999999999999");
+	    merchantData.setMerchantName("BCA Reward");
+
       CekPointHolder cekPointHolder = new CekPointHolder();
       cekPointHolder.setPoinRequest(pointRequestNew);
+	    cekPointHolder.setTransactionData(transactionData);
+	    cekPointHolder.setMerchantData(merchantData);
 
       posLink.TukarPoint(cekPointHolder).subscribeOn(Schedulers.io())
         .observeOn(AndroidSchedulers.mainThread())

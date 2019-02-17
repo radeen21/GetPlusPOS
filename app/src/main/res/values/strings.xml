@@ -160,6 +160,7 @@
 	<string name="msgLoginFailed">Login failed</string>
 	<string name="msgLogoutApp">Tutup aplikasi ?</string>
 	<string name="msgPakaiVoucher">Apakah anda yakin akan menggunakan eVoucher ini ?</string>
-    <string name="msgEmptyProduct">Tentukan jumlah barang</string>
-    <string name="haloo">haloo</string>
+  <string name="msgEmptyProduct">Tentukan jumlah barang</string>
+  <string name="haloo">haloo</string>
+	<string name="msgImage1Empty">Photo 1 belum ada</string>
 </resources>

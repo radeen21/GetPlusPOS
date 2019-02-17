@@ -45,6 +45,8 @@ public class KonfirmasiTukar extends AppCompatActivity implements TukarPointCont
   String ReffID;
   String Amount;
   String Nama;
+  String Image1;
+  String Image2;
 
   @Override
   public void onCreate(@Nullable Bundle savedInstanceState)
@@ -58,6 +60,8 @@ public class KonfirmasiTukar extends AppCompatActivity implements TukarPointCont
     ReffID = intent.getStringExtra("ReffID");
     Amount = intent.getStringExtra("Amount");
     Nama = intent.getStringExtra("Nama");
+    Image1 = intent.getStringExtra("Image1");
+    Image2 = intent.getStringExtra("Image2");
 
     tvId.setText(GetPlusID);
     tvNama.setText(Nama);
@@ -94,7 +98,7 @@ public class KonfirmasiTukar extends AppCompatActivity implements TukarPointCont
       case R.id.btnLanjutConfirm:
         AValue aValue = Fungsi.getObjectFromSharedPref(context, AValue.class, Preference.PrefResponsePojo);
         tukarPointPresenter.loadTukarPointData(PosLinkGenerator.createService(this), aValue,
-          GetPlusID, ReffID, Amount);
+          GetPlusID, ReffID, Amount, Image1, Image2);
         break;
     }
   }

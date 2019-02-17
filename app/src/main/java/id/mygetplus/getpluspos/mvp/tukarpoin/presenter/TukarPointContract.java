@@ -8,7 +8,8 @@ import id.mygetplus.getpluspos.base.IBaseViewPresenter;
 public interface TukarPointContract {
 
     interface Presenter extends IBaseViewPresenter {
-        void loadTukarPointData(POSLink posLink, AValue aValue, String GetPlusID, String Reff, String Amount);
+        void loadTukarPointData(POSLink posLink, AValue aValue, String GetPlusID, String Reff,
+                                String Amount, String Image1, String Image2);
     }
 
     interface View {

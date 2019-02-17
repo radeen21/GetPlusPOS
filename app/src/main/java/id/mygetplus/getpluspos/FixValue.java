@@ -29,7 +29,7 @@ public class FixValue {
 	public static final String RestLogout = "account/userlogout";
 	public static final String RestVoucher = "transaction/voucherredemption";
 	public static final String TukarPoint = "transaction/SaleTransaction";
-	public static final String EarnPoint = "transaction/EarnTransaction";
+	public static final String ConvertPoint = "transaction/ConvertTransaction";
 	public static final String payment = "merchants/brands/{AccountRSN}";
 
 

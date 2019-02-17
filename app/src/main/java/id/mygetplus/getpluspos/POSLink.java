@@ -73,7 +73,7 @@ public interface POSLink
 	@POST(FixValue.TukarPoint)
 	Observable<ResponsePojo> getEarnPoint(@Body CekPointHolder requestHolder);
 
-	@POST(FixValue.TukarPoint)
+	@POST(FixValue.ConvertPoint)
 	Observable<ResponsePojo> TukarPoint(@Body CekPointHolder cekPointHolder);
 
 	@POST(FixValue.RestTransaksiPoin)

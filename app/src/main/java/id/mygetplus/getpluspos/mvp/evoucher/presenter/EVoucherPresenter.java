@@ -97,7 +97,15 @@ public class EVoucherPresenter extends BaseViewPresenter implements EVoucherCont
         @Override
         public void onError(Throwable throwable) {
           super.onError(throwable);
-          view.getDataVoucher(Fungsi.getObjectFromSharedPref(context, ResponsePojo.class, ConfigManager.AccountSession.MSG_RESPONSE));
+          if(throwable.getMessage().contains("failed to connect to"))
+          {
+            ResponsePojo responsePojo = new ResponsePojo();
+            responsePojo.setAFaultCode("-1");
+            responsePojo.setAFaultDescription(throwable.getMessage());
+            view.getDataVoucher(responsePojo);
+          }
+          else
+            view.getDataVoucher(Fungsi.getObjectFromSharedPref(context, ResponsePojo.class, ConfigManager.AccountSession.MSG_RESPONSE));
         }
 
         @Override

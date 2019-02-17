@@ -1,5 +1,6 @@
 package id.mygetplus.getpluspos.mvp.login.view;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import id.mygetplus.getpluspos.AValue;
+import id.mygetplus.getpluspos.FixValue;
 import id.mygetplus.getpluspos.Fungsi;
 import id.mygetplus.getpluspos.PopupMessege;
 import id.mygetplus.getpluspos.Preference;
@@ -29,6 +31,7 @@ import id.mygetplus.getpluspos.service.PosLinkGenerator;
 
 public class LoginActivity extends AppCompatActivity implements LoginContract.View
 {
+	private ProgressDialog progressDialog;
 	LoginPresenter loginPresenter;
 	private PopupMessege popupMessege = new PopupMessege();
 	private Context context = this;
@@ -51,6 +54,8 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
 
 	@Override
 	public void getData(ResponsePojo responsePojo) {
+		progressDialog.dismiss();
+
 		if (responsePojo.getAFaultCode().matches("0"))
 		{
 			if (TextUtils.isEmpty(responsePojo.getAValue().getBToken()))
@@ -82,12 +87,21 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
 					popupMessege.ShowMessege1(context, context.getResources().getString(R.string.msgUsernameEmpty));
 				else if (TextUtils.isEmpty(etPass.getText()))
 					popupMessege.ShowMessege1(context, context.getResources().getString(R.string.msgPasswordEmpty));
-				else if (!ConnectionDetector.isNetworkConnected(context))
-					Toast.makeText(this, "Gak ada koneksi", Toast.LENGTH_SHORT).show();
 				else {
+					progressDialog = ProgressDialog.show(context, getResources().getString(R.string.hintHarapTunggu),
+						context.getResources().getString(R.string.msgProsesLogin));
+					progressDialog.setCancelable(false);
+
+					if(Fungsi.isNetworkAvailable(context) == FixValue.TYPE_NONE)
+					{
+						progressDialog.dismiss();
+						popupMessege.ShowMessege1(context, context.getResources().getString(R.string.msgKoneksiError));
+						return;
+					}
+
 					GetPlusSession.getInstance(this).setUserEmail(etMail.getText().toString());
 					loginPresenter.loadLoginData(PosLinkGenerator.createService(context),
-							etMail.getText().toString(), etPass.getText().toString());
+						etMail.getText().toString(), etPass.getText().toString());
 				}
 			break;
 		}

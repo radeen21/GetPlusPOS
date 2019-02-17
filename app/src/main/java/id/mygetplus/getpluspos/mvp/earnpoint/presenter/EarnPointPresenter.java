@@ -92,8 +92,15 @@ public class EarnPointPresenter  extends BaseViewPresenter implements EarnPointC
                     @Override
                     public void onError(Throwable throwable) {
                         super.onError(throwable);
-                        view.setEarnPoint(Fungsi.getObjectFromSharedPref(context, ResponsePojo.class,
-                                ConfigManager.AccountSession.MSG_RESPONSE));
+                        if(throwable.getMessage().contains("failed to connect to"))
+                        {
+                            ResponsePojo responsePojo = new ResponsePojo();
+                            responsePojo.setAFaultCode("-1");
+                            responsePojo.setAFaultDescription(throwable.getMessage());
+                            view.setEarnPoint(responsePojo);
+                        }
+                        else
+                            view.setEarnPoint(Fungsi.getObjectFromSharedPref(context, ResponsePojo.class, ConfigManager.AccountSession.MSG_RESPONSE));
                     }
 
                     @Override

@@ -1,5 +1,6 @@
 package id.mygetplus.getpluspos.mvp.earnpoint.view;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -27,6 +28,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import id.mygetplus.getpluspos.AValue;
+import id.mygetplus.getpluspos.FixValue;
 import id.mygetplus.getpluspos.Fungsi;
 import id.mygetplus.getpluspos.PopupMessege;
 import id.mygetplus.getpluspos.Preference;
@@ -47,6 +49,7 @@ import id.mygetplus.getpluspos.service.PosLinkGenerator;
 public class EarnPointActivity extends AppCompatActivity implements CekPointContract.View,
 		EarnTransactionAdapter.EventClickListenr, EarnPointContract.View {
 
+	private ProgressDialog progressDialog;
 	private final int REQUEST_CODE_CONFIRMATION = 110;
 
 	CekPointPresenter cekPointPresenter;
@@ -122,14 +125,14 @@ public class EarnPointActivity extends AppCompatActivity implements CekPointCont
 			Preference.PrefGetPlusIDEarn));
 
 		cekPointPresenter = new CekPointPresenter(this, this);
-
+/*
 		Intent intent = getIntent();
 		getPlusID = intent.getStringExtra("GetPlusID");
 		reffID = intent.getStringExtra("ReffID");
 		amount = intent.getStringExtra("Amount");
 		nama = intent.getStringExtra("Nama");
 		merchantName = intent.getStringExtra("Nama Merchant");
-
+*/
 		initAdapter();
 		earnPointPresenter = new EarnPointPresenter(this, this);
 	}
@@ -184,15 +187,30 @@ public class EarnPointActivity extends AppCompatActivity implements CekPointCont
 				goHome();
 				break;
 			case R.id.btnLanjutEarn:
-				if (TextUtils.isEmpty(etGetPlusID.getText()))
+				if (TextUtils.isEmpty(imgStruk1))
+					popupMessege.ShowMessege1(context, context.getResources().getString(R.string.msgImage1Empty));
+				else if (TextUtils.isEmpty(etGetPlusID.getText()))
 					popupMessege.ShowMessege1(context, context.getResources().getString(R.string.msgGetPlusIDEmpty));
 				else if (TextUtils.isEmpty(etNoReff.getText()))
 					popupMessege.ShowMessege1(context, context.getResources().getString(R.string.msgNoReffEmpty));
 				else if (TextUtils.isEmpty(etMemberId.getText()))
 					popupMessege.ShowMessege1(context, context.getResources().getString(R.string.msgMerchantIDEmpty));
 				else
+				{
+					progressDialog = ProgressDialog.show(context, getResources().getString(R.string.hintHarapTunggu),
+						context.getResources().getString(R.string.msgProsesLogin));
+					progressDialog.setCancelable(false);
+
+					if(Fungsi.isNetworkAvailable(context) == FixValue.TYPE_NONE)
+					{
+						progressDialog.dismiss();
+						popupMessege.ShowMessege1(context, context.getResources().getString(R.string.msgKoneksiError));
+						return;
+					}
+
 					cekPointPresenter.loadCekPointData(PosLinkGenerator.createService(this),
 						GetPlusSession.getInstance(this).getTokenSession(), etGetPlusID.getText().toString());
+				}
 				break;
 			case R.id.llBeriStruk1:
 			case R.id.ivBeriStruk1:
@@ -377,10 +395,17 @@ public class EarnPointActivity extends AppCompatActivity implements CekPointCont
 
 	@Override
 	public void setEarnPoint(ResponsePojo cekPoint) {
-		Intent InformasiTukar = new Intent(this, InformasiTukar.class);
-		InformasiTukar.putExtra("JumlahPoin",
-				cekPoint.getAValue().getBLoyaltyPointsBalance());
-		startActivity(InformasiTukar);
-		finish();
+    progressDialog.dismiss();
+
+    if (cekPoint.getAFaultCode().matches("0"))
+    {
+      Intent InformasiTukar = new Intent(this, InformasiTukar.class);
+      InformasiTukar.putExtra("JumlahPoin",
+        cekPoint.getAValue().getBLoyaltyPointsBalance());
+      startActivity(InformasiTukar);
+      finish();
+    }
+    else
+      Toast.makeText(getApplicationContext(), cekPoint.getAFaultDescription(), Toast.LENGTH_SHORT).show();
 	}
 }

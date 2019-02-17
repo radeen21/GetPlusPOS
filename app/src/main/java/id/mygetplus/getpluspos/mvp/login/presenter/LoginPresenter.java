@@ -80,7 +80,14 @@ public class LoginPresenter extends BaseViewPresenter implements LoginContract.P
                     @Override
                     public void onError(Throwable throwable) {
                         super.onError(throwable);
-                        cekConnection();
+                      if(throwable.getMessage().contains("failed to connect to"))
+                      {
+                        ResponsePojo responsePojo = new ResponsePojo();
+                        responsePojo.setAFaultCode("-1");
+                        responsePojo.setAFaultDescription(throwable.getMessage());
+                        view.getData(responsePojo);
+                      }
+                      else
                         view.getData(Fungsi.getObjectFromSharedPref(context, ResponsePojo.class, ConfigManager.AccountSession.MSG_RESPONSE));
                     }
 
@@ -90,11 +97,5 @@ public class LoginPresenter extends BaseViewPresenter implements LoginContract.P
                         view.getData(Fungsi.getObjectFromSharedPref(context, ResponsePojo.class, ConfigManager.AccountSession.MSG_RESPONSE));
                     }
                 });
-    }
-
-    public void cekConnection() {
-        if (!ConnectionDetector.isNetworkConnected(context)) {
-            view.failedConnected();
-        }
     }
 }

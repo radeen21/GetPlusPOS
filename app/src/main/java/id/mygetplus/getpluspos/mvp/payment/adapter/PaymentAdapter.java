@@ -2,6 +2,7 @@ package id.mygetplus.getpluspos.mvp.payment.adapter;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +25,9 @@ public class PaymentAdapter extends RecyclerView.Adapter<PaymentAdapter.PaymentH
 
     private List<AvalueList> avalueLists = new ArrayList<>();
 
+    int tmpmin;
+    int tmpmax;
+
     int minQty;
     int maxQty;
     int Jumlah;
@@ -43,6 +47,14 @@ public class PaymentAdapter extends RecyclerView.Adapter<PaymentAdapter.PaymentH
             AvalueList avalueList = avalueLists.get(position);
             minQty = avalueList.getMinQty();
             maxQty = avalueList.getMaxQty();
+            tmpmin = avalueList.getMinQty();
+            tmpmax = avalueList.getMaxQty();
+
+            Jumlah = avalueList.getPrice() * minQty;
+            paymentHolder.tvValue.setText(String.valueOf(tmpmin));
+            paymentHolder.tvPoint.setText(String.valueOf(Jumlah));
+
+          Log.d("Test", "onBindViewHolder: " + String.valueOf(tmpmax));
 
             paymentHolder.tvTitle.setText(avalueList.getBrandName());
             Glide.with(paymentHolder.itemView.getContext())
@@ -52,14 +64,21 @@ public class PaymentAdapter extends RecyclerView.Adapter<PaymentAdapter.PaymentH
             paymentHolder.imgMin.setOnClickListener(v -> {
                 minQty = Integer.valueOf(paymentHolder.tvValue.getText().toString());
                 minQty--;
+
+                if(minQty < tmpmin)
+                {
+                  minQty++;
+                  return;
+                }
+
                 Jumlah = avalueList.getPrice() * minQty;
                 paymentHolder.tvValue.setText(String.valueOf(minQty));
-                paymentHolder.tvPoint.setText("Rp " + String.valueOf(Jumlah));
+                paymentHolder.tvPoint.setText(String.valueOf(Jumlah));
 
                 if(minQty <= 0)
                 {
                     paymentHolder.tvValue.setText("0");
-                    paymentHolder.tvPoint.setText("Rp 0");
+                    paymentHolder.tvPoint.setText("0");
                     Jumlah = 0;
                 }
             });
@@ -67,9 +86,15 @@ public class PaymentAdapter extends RecyclerView.Adapter<PaymentAdapter.PaymentH
             paymentHolder.imgPlus.setOnClickListener(v -> {
                 maxQty = Integer.valueOf(paymentHolder.tvValue.getText().toString());
                 maxQty++;
+                if(maxQty > tmpmax)
+                {
+                  maxQty--;
+                  return;
+                }
+
                 Jumlah = avalueList.getPrice() * maxQty;
                 paymentHolder.tvValue.setText(String.valueOf(maxQty));
-                paymentHolder.tvPoint.setText("Rp " + String.valueOf(Jumlah));
+                paymentHolder.tvPoint.setText(String.valueOf(Jumlah));
             });
         }
 

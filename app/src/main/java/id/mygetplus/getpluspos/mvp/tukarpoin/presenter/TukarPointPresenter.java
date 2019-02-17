@@ -102,7 +102,15 @@ public class TukarPointPresenter extends BaseViewPresenter implements TukarPoint
           @Override
           public void onError(Throwable throwable) {
             super.onError(throwable);
-            view.setTukarPoint(Fungsi.getObjectFromSharedPref(context, ResponsePojo.class, ConfigManager.AccountSession.MSG_RESPONSE));
+            if(throwable.getMessage().contains("failed to connect to"))
+            {
+              ResponsePojo responsePojo = new ResponsePojo();
+              responsePojo.setAFaultCode("-1");
+              responsePojo.setAFaultDescription(throwable.getMessage());
+              view.setTukarPoint(responsePojo);
+            }
+            else
+              view.setTukarPoint(Fungsi.getObjectFromSharedPref(context, ResponsePojo.class, ConfigManager.AccountSession.MSG_RESPONSE));
           }
 
           @Override

@@ -163,4 +163,7 @@
   <string name="msgEmptyProduct">Tentukan jumlah barang</string>
   <string name="haloo">haloo</string>
 	<string name="msgImage1Empty">Photo 1 belum ada</string>
+  <string name="msgProsesLogin">Sedang proses login</string>
+  <string name="msgKoneksiError">Tidak ada koneksi</string>
+  <string name="msgBarangKosong">Barang belum dipilih</string>
 </resources>

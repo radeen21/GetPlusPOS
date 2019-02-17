@@ -1,5 +1,6 @@
 package id.mygetplus.getpluspos.mvp.payment.view;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,7 +16,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import id.mygetplus.getpluspos.AValue;
+import id.mygetplus.getpluspos.FixValue;
 import id.mygetplus.getpluspos.Fungsi;
+import id.mygetplus.getpluspos.PopupMessege;
 import id.mygetplus.getpluspos.Preference;
 import id.mygetplus.getpluspos.R;
 import id.mygetplus.getpluspos.ResponsePojo;
@@ -80,7 +83,7 @@ public class PaymentActivity extends AppCompatActivity implements PaymentContrac
             summary += this.paymentAdapter.getSum();
         }
         if (summary == 0) {
-            Toast.makeText(this, "value harap di isi", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, context.getString(R.string.msgBarangKosong), Toast.LENGTH_SHORT).show();
         } else {
             Fungsi.storeToSharedPref(getApplicationContext(), summary, Preference.PrefJumlahHarga);
             Fungsi.storeToSharedPref(context, 5, Preference.PrefActiveMenu);

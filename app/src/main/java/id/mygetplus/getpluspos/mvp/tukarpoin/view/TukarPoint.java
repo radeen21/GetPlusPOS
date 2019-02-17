@@ -1,5 +1,6 @@
 package id.mygetplus.getpluspos.mvp.tukarpoin.view;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -25,6 +26,7 @@ import java.util.Date;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import id.mygetplus.getpluspos.FixValue;
 import id.mygetplus.getpluspos.Fungsi;
 import id.mygetplus.getpluspos.PopupMessege;
 import id.mygetplus.getpluspos.Preference;
@@ -39,6 +41,7 @@ import id.mygetplus.getpluspos.service.PosLinkGenerator;
 
 public class TukarPoint extends AppCompatActivity implements CekPointContract.View
 {
+  private ProgressDialog progressDialog;
   CekPointPresenter cekPointPresenter;
 	private PopupMessege popupMessege = new PopupMessege();
 	private Context context = this;
@@ -108,8 +111,21 @@ public class TukarPoint extends AppCompatActivity implements CekPointContract.Vi
 	      else if (TextUtils.isEmpty(etNoReff.getText()))
 		      popupMessege.ShowMessege1(context, context.getResources().getString(R.string.msgNoReffEmpty));
 	      else
-	        cekPointPresenter.loadCekPointData(PosLinkGenerator.createService(this),
+        {
+          progressDialog = ProgressDialog.show(context, getResources().getString(R.string.hintHarapTunggu),
+            context.getResources().getString(R.string.msgProsesLogin));
+          progressDialog.setCancelable(false);
+
+          if(Fungsi.isNetworkAvailable(context) == FixValue.TYPE_NONE)
+          {
+            progressDialog.dismiss();
+            popupMessege.ShowMessege1(context, context.getResources().getString(R.string.msgKoneksiError));
+            return;
+          }
+
+          cekPointPresenter.loadCekPointData(PosLinkGenerator.createService(this),
             GetPlusSession.getInstance(this).getTokenSession(), etGetPlusID.getText().toString());
+        }
         break;
       case R.id.btn_back:
         BackHomeProcess();
@@ -204,6 +220,8 @@ public class TukarPoint extends AppCompatActivity implements CekPointContract.Vi
   @Override
   public void setCekPoint(ResponsePojo responsePojo)
   {
+    progressDialog.dismiss();
+
     if (responsePojo.getAFaultCode().matches("0"))
     {
       Intent KonfirmasiTukar = new Intent(this, KonfirmasiTukar.class);
@@ -214,7 +232,8 @@ public class TukarPoint extends AppCompatActivity implements CekPointContract.Vi
 	    KonfirmasiTukar.putExtra("Image1", imgStruk1);
 	    KonfirmasiTukar.putExtra("Image2", imgStruk2);
       startActivity(KonfirmasiTukar);
-    } else
+    }
+    else
       Toast.makeText(getApplicationContext(), responsePojo.getAFaultDescription(), Toast.LENGTH_SHORT).show();
   }
 
